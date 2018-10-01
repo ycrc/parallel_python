@@ -1,5 +1,7 @@
 # Parallel Programming with Python Tutorial
 
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/ycrc/parallel_python/master)
+
 This is a tutorial introducing parallel programming concepts and their implementation in Python. 
 
 Topics covered include:
