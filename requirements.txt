@@ -1,4 +1,5 @@
 numpy==1.15
 pillow==5.2.0
 matplotlib==2.2.3
+dask==0.19
 
