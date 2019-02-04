@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Convert the notebook to slides 
+jupyter nbconvert --to slides ParallelPython.ipynb --output-dir ./docs/ --reveal-prefix "https://cdn.jsdelivr.net/npm/reveal.js@3.6.0 "
+
+# rename to index.html
+mv ./docs/ParallelPython.slides.html ./docs/index.html
+
