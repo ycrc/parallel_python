@@ -17,14 +17,14 @@ cluster.scale(10)
 client = Client(cluster)
 
 # Get the list of NYC taxi cab data
-# http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
+# https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 file_list = glob.glob('./nyc_taxi/*2017*csv')
 print(f"{len(file_list)} files selected")
 
 # Prep Dask to load the data
 data = dd.read_csv(file_list)
 
-# Use the DaskArray Histogram function to visualize the % tip 
+# Use the DaskArray Histogram function to visualize the % tip
 h, bins = da.histogram(np.divide(data['tip_amount'], data['fare_amount']), bins=200, range=[0, 2])
 # Activate the lazy-computing to calculate the results.
 h.compute()
@@ -47,4 +47,3 @@ plt.ylabel('Counts')
 plt.yscale('log')
 plt.xscale('log')
 plt.savefig('hist2.pdf')
-
