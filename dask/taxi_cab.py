@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 import glob, time
 
 # Define single unit of the Dask Distributed "Cluster"
-cluster = SLURMCluster(queue='scavenge', cores=1, memory="10GB")
+cluster = SLURMCluster(queue='gpu',job_extra=['--reservation=tl397_40'], cores=1, memory="10GB")
 # Scale up the cluster to have 10 members
-cluster.scale(10)
+cluster.scale(5)
 # Initialize the "client" so that the script is connected to the Cluster
 client = Client(cluster)
 
