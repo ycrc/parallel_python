@@ -11908,7 +11908,7 @@ a.anchor-link {
 <h1 id="Parallel-Programming-with-Python">Parallel Programming with Python<a class="anchor-link" href="#Parallel-Programming-with-Python">&#182;</a></h1><p><em>Thomas Langford, Ph.D.</em></p>
 <p><em>Yale Center for Research Computing</em></p>
 <p><em>Yale Wright Laboratory</em></p>
-<p><em>February 19, 2019</em></p>
+<p><em>February 20, 2019</em></p>
 
 </div>
 </div>
@@ -12273,12 +12273,12 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 28327
-x = 1, PID = 28327
-x = 2, PID = 28327
-x = 3, PID = 28327
-x = 4, PID = 28327
-x = 5, PID = 28327
+<pre>x = 0, PID = 28649
+x = 1, PID = 28649
+x = 2, PID = 28649
+x = 3, PID = 28649
+x = 4, PID = 28649
+x = 5, PID = 28649
 </pre>
 </div>
 </div>
@@ -12328,12 +12328,12 @@ x = 5, PID = 28327
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 28338
-x = 1, PID = 28339
-x = 3, PID = 28341
-x = 2, PID = 28340
-x = 5, PID = 28343
-x = 4, PID = 28342
+<pre>x = 0, PID = 28660
+x = 1, PID = 28661
+x = 2, PID = 28662
+x = 3, PID = 28663
+x = 4, PID = 28664
+x = 5, PID = 28665
 </pre>
 </div>
 </div>
@@ -12464,7 +12464,7 @@ x = 4, PID = 28342
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>460 ms ± 7.55 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>444 ms ± 10.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12496,7 +12496,7 @@ x = 4, PID = 28342
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.96 s ± 149 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.75 s ± 25.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12530,7 +12530,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.21 s ± 118 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.11 s ± 94.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12767,7 +12767,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Parallel-Processing-on-the-Clusters">Parallel Processing on the Clusters<a class="anchor-link" href="#Parallel-Processing-on-the-Clusters">&#182;</a></h1>
+<h1 id="Embarassingly-Parallel-Processing-on-the-Clusters">Embarassingly Parallel Processing on the Clusters<a class="anchor-link" href="#Embarassingly-Parallel-Processing-on-the-Clusters">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -12775,7 +12775,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can employ these tools and techniques to execute parallel code on the large-scale computing clusters maintained by YCRC.</p>
+<p>We can employ these tools and techniques to run parallel workers on the large-scale computing clusters maintained by YCRC.</p>
 <p>We highly recommend utilizing a tool called Dead Simple Queue.</p>
 
 </div>
@@ -13309,9 +13309,10 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GPUs-on-the-Clusters">GPUs on the Clusters<a class="anchor-link" href="#GPUs-on-the-Clusters">&#182;</a></h2><ul>
+<h2 id="GPUs-on-the-Clusters">GPUs on the Clusters<a class="anchor-link" href="#GPUs-on-the-Clusters">&#182;</a></h2><p>_</p>
+<ul>
 <li>We have a collection of GPUs available on Farnam and Grace</li>
-<li>Requesting these resources is straightforward, and only envolves adding a few flags to your <code>srun</code> or <code>sbatch</code> commands:</li>
+<li>Requesting these resources is straightforward (<a href="http://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/resource-requests/#request-gpus">YCRC docs</a>), and only envolves adding a few flags to your <code>srun</code> or <code>sbatch</code> commands:</li>
 </ul>
 <p><code>srun --pyt --x11 -p gpu_devel -t 2:00:00 --gres=gpu:1 bash</code></p>
 <ul>
@@ -13346,6 +13347,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <li>Allows for near seamless GPU-based computation </li>
 <li>Matrix multiplication, vector operations, etc.</li>
 </ul>
+<p>Easily installed via <code>conda</code> after loading the <code>CUDA</code> module on the clusters</p>
 
 </div>
 </div>
