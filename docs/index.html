@@ -11908,7 +11908,7 @@ a.anchor-link {
 <h1 id="Parallel-Programming-with-Python">Parallel Programming with Python<a class="anchor-link" href="#Parallel-Programming-with-Python">&#182;</a></h1><p><em>Thomas Langford, Ph.D.</em></p>
 <p><em>Yale Center for Research Computing</em></p>
 <p><em>Yale Wright Laboratory</em></p>
-<p><em>Updated: February 11 2019</em></p>
+<p><em>{{print(date.strftime(date.today(), "%B %d, %Y"))}}</em></p>
 
 </div>
 </div>
@@ -12273,12 +12273,12 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 12421
-x = 1, PID = 12421
-x = 2, PID = 12421
-x = 3, PID = 12421
-x = 4, PID = 12421
-x = 5, PID = 12421
+<pre>x = 0, PID = 658
+x = 1, PID = 658
+x = 2, PID = 658
+x = 3, PID = 658
+x = 4, PID = 658
+x = 5, PID = 658
 </pre>
 </div>
 </div>
@@ -12328,12 +12328,12 @@ x = 5, PID = 12421
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 12432
-x = 1, PID = 12433
-x = 2, PID = 12434
-x = 3, PID = 12435
-x = 4, PID = 12436
-x = 5, PID = 12437
+<pre>x = 4, PID = 697
+x = 2, PID = 693
+x = 5, PID = 698
+x = 0, PID = 694
+x = 3, PID = 696
+x = 1, PID = 695
 </pre>
 </div>
 </div>
@@ -12464,7 +12464,7 @@ x = 5, PID = 12437
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>463 ms ± 6.15 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>411 ms ± 792 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12496,7 +12496,7 @@ x = 5, PID = 12437
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.93 s ± 101 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.67 s ± 23 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12507,13 +12507,13 @@ x = 5, PID = 12437
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-with multiprocessing.Pool(processes=4) as pool:
-    result = pool.map(pi_mc, seed_array)
+<span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pi_mc</span><span class="p">,</span> <span class="n">seed_array</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12530,7 +12530,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>960 ms ± 32.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.82 s ± 172 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12551,7 +12551,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python image library functions</span>
@@ -12568,7 +12568,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Read image</span>
@@ -12587,7 +12587,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12606,7 +12606,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
@@ -12622,7 +12622,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12650,7 +12650,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">image_flipper</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
@@ -12674,7 +12674,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./data/*jpg&#39;</span><span class="p">)</span>
@@ -12696,7 +12696,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;./data/kings_cross.jpg&#39;, &#39;./data/charing_cross.jpg&#39;, &#39;./data/victoria.jpg&#39;, &#39;./data/waterloo.jpg&#39;, &#39;./data/euston.jpg&#39;, &#39;./data/fenchurch.jpg&#39;, &#39;./data/st_pancras.jpg&#39;, &#39;./data/london_bridge.jpg&#39;, &#39;./data/liverpool_street.jpg&#39;, &#39;./data/paddington.jpg&#39;]
+<pre>[&#39;./data/waterloo.jpg&#39;, &#39;./data/victoria.jpg&#39;, &#39;./data/paddington.jpg&#39;, &#39;./data/charing_cross.jpg&#39;, &#39;./data/euston.jpg&#39;, &#39;./data/kings_cross.jpg&#39;, &#39;./data/fenchurch.jpg&#39;, &#39;./data/liverpool_street.jpg&#39;, &#39;./data/st_pancras.jpg&#39;, &#39;./data/london_bridge.jpg&#39;]
 </pre>
 </div>
 </div>
@@ -12707,7 +12707,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -12730,7 +12730,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> ./data/*pdf
@@ -12885,7 +12885,7 @@ Job: the line from your job file
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
@@ -12906,16 +12906,16 @@ Job: the line from your job file
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>python image_flipper.py ./data/kings_cross.jpg
-python image_flipper.py ./data/charing_cross.jpg
+<pre>python image_flipper.py ./data/waterloo.jpg
 python image_flipper.py ./data/victoria.jpg
-python image_flipper.py ./data/waterloo.jpg
+python image_flipper.py ./data/paddington.jpg
+python image_flipper.py ./data/charing_cross.jpg
 python image_flipper.py ./data/euston.jpg
+python image_flipper.py ./data/kings_cross.jpg
 python image_flipper.py ./data/fenchurch.jpg
+python image_flipper.py ./data/liverpool_street.jpg
 python image_flipper.py ./data/st_pancras.jpg
 python image_flipper.py ./data/london_bridge.jpg
-python image_flipper.py ./data/liverpool_street.jpg
-python image_flipper.py ./data/paddington.jpg
 </pre>
 </div>
 </div>
@@ -13264,6 +13264,237 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="GPU-Parallelism">GPU Parallelism<a class="anchor-link" href="#GPU-Parallelism">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="CPU-vs-GPU">CPU vs GPU<a class="anchor-link" href="#CPU-vs-GPU">&#182;</a></h2><ul>
+<li><p>CPU (Central Processing Unit)</p>
+<ul>
+<li>highly flexible computing elements, capable of doing any task required</li>
+<li>Few very fast cores with large slow-access memory</li>
+</ul>
+</li>
+<li><p>GPU (Graphics Processing Unit):</p>
+<ul>
+<li>developed to handle very specific tasks, like ray-tracing and image rendering</li>
+<li>1000s of cores with small high-speed memory</li>
+</ul>
+</li>
+<li><p>Some problems can be effectively split across the GPU cores for incredible speed-ups</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vectorized-Functions">Vectorized Functions<a class="anchor-link" href="#Vectorized-Functions">&#182;</a></h2><ul>
+<li>Vectorization: Applying the same function to every element of an array</li>
+<li>Example: multiplying every element in an array by a scalar</li>
+<li>Example 2: matrix multiplication with large matrices (10k x 10k)</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="GPUs-on-the-Clusters">GPUs on the Clusters<a class="anchor-link" href="#GPUs-on-the-Clusters">&#182;</a></h2><ul>
+<li>We have a collection of GPUs available on Farnam and Grace</li>
+<li>Requesting these resources is straightforward, and only envolves adding a few flags to your <code>srun</code> or <code>sbatch</code> commands:</li>
+</ul>
+<p><code>srun --pyt --x11 -p gpu_devel -t 2:00:00 --gres=gpu:1 bash</code></p>
+<ul>
+<li>This will request one GPU (a "general resource" or <code>gres</code>) from the <code>gpu_devel</code> partition</li>
+<li>Similar commands can be added to batch SLURM scripts and run on the <code>gpu</code> partition</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="PyCUDA">PyCUDA<a class="anchor-link" href="#PyCUDA">&#182;</a></h2><p><em><a href="https://documen.tician.de/pycuda/">https://documen.tician.de/pycuda/</a></em></p>
+<ul>
+<li>Python connection to NVIDIA's CUDA GPU framework</li>
+<li>Low-level code written in C++, but all the mess is abstracted away</li>
+<li>Still rather complex to work with, but very powerful</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Cupy">Cupy<a class="anchor-link" href="#Cupy">&#182;</a></h2><p><em><a href="https://docs-cupy.chainer.org/en/stable/">https://docs-cupy.chainer.org/en/stable/</a></em></p>
+<ul>
+<li>Drop-in replacement for numpy (fully compatible API)</li>
+<li>Allows for near seamless GPU-based computation </li>
+<li>Matrix multiplication, vector operations, etc.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load CUPY module</span>
+<span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, let's try this out with numpy</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+
+<span class="c1"># Create 2D numpy arrays</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+
+<span class="c1"># Matrix Mult</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3.29 s ± 912 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, let's perform the same code but running the multiplication on the GPU</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+
+<span class="c1"># Create 2D numpy arrays</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+
+<span class="c1"># Move to GPU</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Matrix Mult</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>404 ms ± 18.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>More than 8x faster matrix multiplication without any complicated parallel work!</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="GPU-Summary">GPU Summary<a class="anchor-link" href="#GPU-Summary">&#182;</a></h2><ul>
+<li>There are a ton of exciting projects that are starting to utilize GPUs. </li>
+<li>Having python connection to these tools enable rapid work with machine learning or other computationally intensive tasks</li>
+<li>Make use of the GPUs in the clusters to get started with this kind of tool</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Dask">Dask<a class="anchor-link" href="#Dask">&#182;</a></h1>
 </div>
 </div>
@@ -13443,6 +13674,14 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <h1 id="Dask.Distributed-on-the-Cluster">Dask.Distributed on the Cluster<a class="anchor-link" href="#Dask.Distributed-on-the-Cluster">&#182;</a></h1><p><code>Dask.Distributed</code> is a utility to launch workers using SLURM on a cluster.</p>
 <p><em>DEMO TIME!</em></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="GPU-Testing">GPU Testing<a class="anchor-link" href="#GPU-Testing">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
