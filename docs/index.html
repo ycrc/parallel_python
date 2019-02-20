@@ -13184,9 +13184,15 @@ rank: 3 has PID: 89137</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We then execute this code (named <code>mpi_message.py</code>) by running the following on the command line:</p>
 
-<pre><code>mpirun -n 4 python mpi_message.py
+<pre><code>mpirun -n 4 python mpi_message.py</code></pre>
 
-</code></pre>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Which outputs the following:</p>
 
 <pre><code>Rank: 0, data: {'key1': [7, 2.72, (2+3j), 0], 'key2': ('abc', 'xyz')}
@@ -13196,7 +13202,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13242,11 +13248,19 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again we execute this on the command line (<code>mpirun -n 4 python mpi/mpi_scatter.py</code>)</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Which prints: <code>Full Average: 10.00002060397186</code></p>
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13298,7 +13312,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Vectorized-Functions">Vectorized Functions<a class="anchor-link" href="#Vectorized-Functions">&#182;</a></h2><ul>
 <li>Vectorization: Applying the same function to every element of an array</li>
-<li>Example: multiplying every element in an array by a scalar</li>
+<li>Example 1: Operate a function on each element of an array</li>
 <li>Example 2: matrix multiplication with large matrices (10k x 10k)</li>
 </ul>
 
@@ -13559,7 +13573,7 @@ out = cp.matmul(g,h)
 </div>
 </div>
 
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
@@ -13594,7 +13608,7 @@ out = cp.matmul(g,h)
 </div>
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
@@ -13628,7 +13642,7 @@ out = cp.matmul(g,h)
 </div>
 </div>
 
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
