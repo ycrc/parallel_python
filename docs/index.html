@@ -12284,12 +12284,12 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 29241
-x = 1, PID = 29241
-x = 2, PID = 29241
-x = 3, PID = 29241
-x = 4, PID = 29241
-x = 5, PID = 29241
+<pre>x = 0, PID = 443723
+x = 1, PID = 443723
+x = 2, PID = 443723
+x = 3, PID = 443723
+x = 4, PID = 443723
+x = 5, PID = 443723
 </pre>
 </div>
 </div>
@@ -12318,7 +12318,7 @@ x = 5, PID = 29241
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -12339,12 +12339,12 @@ x = 5, PID = 29241
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 4, PID = 8786
-x = 5, PID = 8787
-x = 3, PID = 8785
-x = 1, PID = 8783
-x = 2, PID = 8784
-x = 0, PID = 8782
+<pre>x = 4, PID = 444171
+x = 5, PID = 444172
+x = 1, PID = 444168
+x = 2, PID = 444169
+x = 0, PID = 444167
+x = 3, PID = 444170
 </pre>
 </div>
 </div>
@@ -12410,7 +12410,7 @@ x = 0, PID = 8782
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pi_mc</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
@@ -12443,7 +12443,7 @@ x = 0, PID = 8782
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pi_mc(1)
@@ -12463,7 +12463,7 @@ x = 0, PID = 8782
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>419 ms ± 5.31 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>309 ms ± 3.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12474,7 +12474,7 @@ x = 0, PID = 8782
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
@@ -12495,7 +12495,7 @@ x = 0, PID = 8782
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.68 s ± 20.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.22 s ± 17.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12506,13 +12506,13 @@ x = 0, PID = 8782
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-with multiprocessing.Pool(processes=4) as pool:
-    result = pool.map(pi_mc, seed_array)
+<span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pi_mc</span><span class="p">,</span> <span class="n">seed_array</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12529,7 +12529,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>516 ms ± 443 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>430 ms ± 1.07 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12537,6 +12537,15 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 </div>
 
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While the serial execution scales up linearly (~4x longer than one loop), the parallel execution doesn't quite reach the single loop performance. There is some overhead in setting up the threads that needs to be considered.</p>
+
+</div>
+</div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12550,7 +12559,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python image library functions</span>
@@ -12567,7 +12576,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Read image</span>
@@ -12586,7 +12595,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12605,7 +12614,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
@@ -12621,7 +12630,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12649,7 +12658,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">image_flipper</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
@@ -12673,7 +12682,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./data/*jpg&#39;</span><span class="p">)</span>
@@ -12706,7 +12715,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -12729,7 +12738,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> ./data/*pdf
@@ -12884,7 +12893,7 @@ Job: the line from your job file
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
@@ -13379,7 +13388,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load CUPY module</span>
@@ -13402,20 +13411,20 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-# Create 2D numpy arrays
-a = np.random.random(16000000)
-a = a.reshape(4000,4000)
+<span class="c1"># Create 2D numpy arrays</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
 
-b = np.random.random(16000000)
-b = b.reshape(4000,4000)
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
 
-# Matrix Mult
-out = np.matmul(a,b)
+<span class="c1"># Matrix Mult</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13432,7 +13441,7 @@ out = np.matmul(a,b)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.28 s ± 709 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.88 s ± 1.48 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13452,24 +13461,24 @@ out = np.matmul(a,b)
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-# Create 2D numpy arrays
-a = np.random.random(16000000)
-a = a.reshape(4000,4000)
+<span class="c1"># Create 2D numpy arrays</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
 
-b = np.random.random(16000000)
-b = b.reshape(4000,4000)
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
 
-# Move to GPU
-g = cp.asarray(a)
-h = cp.asarray(b)
+<span class="c1"># Move to GPU</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-# Matrix Mult
-out = cp.matmul(g,h)
+<span class="c1"># Matrix Mult</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13486,7 +13495,7 @@ out = cp.matmul(g,h)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>403 ms ± 18.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>316 ms ± 60.8 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13530,15 +13539,15 @@ out = cp.matmul(g,h)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A relatively new tool called <a href="http://docs.dask.org/en/latest/"><code>Dask</code></a> is designed to take numpy arrays and perform tasks on different pieces of the array using parallel processing.</p>
-<p>This is like our scatter-gather example from before, but <code>Dask</code> handles all the hard work!</p>
-<p>Let's try to re-implement that example with Dask.</p>
+<p>The installation is (again) simple using <code>conda</code>.</p>
+<p>You can run Dask on your local machine or within a running job on the cluster:</p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="k">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">progress</span>
@@ -13553,47 +13562,12 @@ out = cp.matmul(g,h)
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">),</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">))</span>
 <span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[25]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>dask.array&lt;random_sample, shape=(50000, 50000), dtype=float64, chunksize=(2000, 2000)&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5000</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">z</span>
 </pre></div>
 
 </div>
@@ -13612,7 +13586,7 @@ out = cp.matmul(g,h)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>dask.array&lt;mean_agg-aggregate, shape=(25000,), dtype=float64, chunksize=(1000,)&gt;</pre>
+<pre>dask.array&lt;random_sample, shape=(50000, 50000), dtype=float64, chunksize=(2000, 2000)&gt;</pre>
 </div>
 
 </div>
@@ -13620,13 +13594,15 @@ out = cp.matmul(g,h)
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5000</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">z</span>
 </pre></div>
 
 </div>
@@ -13645,10 +13621,201 @@ out = cp.matmul(g,h)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([1.00010141, 0.9997027 , 1.00111197, ..., 1.00132896, 0.99764586,
-       0.99555248])</pre>
+<pre>dask.array&lt;mean_agg-aggregate, shape=(25000,), dtype=float64, chunksize=(1000,)&gt;</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0.99877209, 1.00287975, 0.99967229, ..., 1.00123099, 0.99943338,
+       1.00194856])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">client</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Dask.Distributed-on-the-Cluster">Dask.Distributed on the Cluster<a class="anchor-link" href="#Dask.Distributed-on-the-Cluster">&#182;</a></h1><p><code>Dask.Distributed</code> is a utility to launch workers using SLURM on a cluster.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load in Dask utilities</span>
+<span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="k">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">dask_jobqueue</span> <span class="k">import</span> <span class="n">SLURMCluster</span>
+<span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
+<span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+
+<span class="c1"># Load other modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">time</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Define single unit of the Dask Distributed "Cluster":</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">SLURMCluster</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;scavenge&#39;</span><span class="p">,</span> <span class="n">cores</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s2">&quot;10GB&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/hep/heeger/tl397/project/conda/gpu/lib/python3.7/site-packages/distributed/bokeh/core.py:57: UserWarning: 
+Port 8787 is already in use. 
+Perhaps you already have a cluster running?
+Hosting the diagnostics dashboard on a random port instead.
+  warnings.warn(&#39;\n&#39; + msg)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scale up the <code>cluster</code> to have 5 members and initialize the <code>client</code> to connect to the <code>cluster</code>:</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="NYC-Taxi-Cab-Data">NYC Taxi Cab Data<a class="anchor-link" href="#NYC-Taxi-Cab-Data">&#182;</a></h2><ul>
+<li>Get the list of NYC taxi cab data <a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page">link</a></li>
+<li>Each month of data is ~1GB text file, we've grabbed all of 2017</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/home/hep/heeger/tl397/scratch60/taxi/*2017*csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;{len(file_list)} files selected&quot;</span><span class="p">)</span>
+
+<span class="c1"># Prep Dask to load the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>12 files selected
+</pre>
+</div>
 </div>
 
 </div>
@@ -13659,8 +13826,148 @@ out = cp.matmul(g,h)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dask.Distributed-on-the-Cluster">Dask.Distributed on the Cluster<a class="anchor-link" href="#Dask.Distributed-on-the-Cluster">&#182;</a></h1><p><code>Dask.Distributed</code> is a utility to launch workers using SLURM on a cluster.</p>
-<p><em>DEMO TIME!</em></p>
+<h2 id="Example-1:-Tip-Percentage">Example 1: Tip Percentage<a class="anchor-link" href="#Example-1:-Tip-Percentage">&#182;</a></h2><p>What is the distribution of tips (as a fraction of the total fare) for the full year?</p>
+<p>We will use the <code>DaskArray Histogram</code> function to visualize this:</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip_percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;fare_amount&#39;</span><span class="p">]</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">tip_percent</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">h</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tip (%)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/hep/heeger/tl397/project/conda/gpu/lib/python3.7/site-packages/dask/core.py:119: RuntimeWarning: divide by zero encountered in true_divide
+  return func(*args2)
+/home/hep/heeger/tl397/project/conda/gpu/lib/python3.7/site-packages/dask/core.py:119: RuntimeWarning: invalid value encountered in true_divide
+  return func(*args2)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-2:-Fare-rate-distribution">Example 2: Fare rate distribution<a class="anchor-link" href="#Example-2:-Fare-rate-distribution">&#182;</a></h2><p>What is the distribution of fare rates (dollars/mile)?</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fare_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fare_amount&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;trip_distance&#39;</span><span class="p">])</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">fare_rate</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">h</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fare Rate ($/mi)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYgAAAEKCAYAAAAIO8L1AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4yLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvOIA7rQAAIABJREFUeJzt3X+QHGd95/H3B4FifklkscMpKytaSo6PPSAiXryIH3c2YCLfWShQHLJE7uBKZYnjnEC4kJgfVeDkoEjdHeEMPpACjqAK2XJyOJZAxEfAxpATG8nEYGt1LusskNfaQiIiWggEY/t7f0z3uj2amZ2ZnZ7unvm8qlTe6Z3pedqW+9vP832e76OIwMzMrN6Tim6AmZmVkwOEmZk15ABhZmYNOUCYmVlDDhBmZtaQA4SZmTXkAGFmZg05QJiZWUMOEGZm1tCTi27AYpx77rmxevXqopthZlYpd9111w8i4ryF3lfpALF69WoOHTpUdDPMzCpF0vfaeV9pAoSkVwBvotam8Yh4acFNMjMbarnmICTdIOmkpHvrjq+XdJ+ko5KuAYiIr0fEW4EvAJ/Js11mZrawvJPUu4D12QOSlgDXA5cD48BmSeOZt2wBbsy5XWZmtoBcA0RE3Amcrjt8MXA0Ih6IiIeBm4CNAJJWAWciYq7ZOSVtk3RI0qFTp07l1XQzs6FXxDTXUeDBzOuZ5BjAVuDPWn04InZGxERETJx33oJJeDMz61IRSWo1OBYAEfH+tk4gbQA2rFmzppftMjOzjCJ6EDPA+ZnXK4ETnZwgIvZFxLbly5f3tGFmZva4IgLEQeACSWOSlgJXAns7OYGkDZJ2njlzJpcG5mn31HE27TjA7qnjRTfFzKylvKe53ggcAC6UNCNpa0Q8AlwN3AYcAW6OiMOdnLfKPYhb736IqWOnufXuh4puiplZS7nmICJic5Pj+4H93Z53EHIQ07NzbNpxgI1rR9kyuaro5piZnaWSxfqq1oNoNKw0vmIZ07Nz7kmYWWmVptRGJ6rSg9g9dXx+SClrcmyEPdvXsWnHAaaOnWb31HH3IsysdNyDyMnuqeO855Z7mDp2msmxkYbv2bi2tvzDvQgzK6NK9iDKrL7X8KHXvYAtk6vYtOPAWe/dMrmKW+9+6An5CKgFDOcmzKxolQwQZR5iSm/4k2Mjbd3k06Awdez0WUNRDhBmViQPMfXQ7qnjTB07zfiKZezZvu6sG/z07BzTs08sM7VlchV7tq/jQ697AZNjI/PDUWmvwuslzKwolexBlEk6pATM9wDSXkFW9lij32+ZXDUfUNJzpsHEPQkzK4Iioug2dCwzxHTV/fffX2hbNu04wPTsHOMrlgH0NHeQznJKexXOS5hZL0i6KyImFnpfJXsQEbEP2DcxMXFV0W0B5oeU8pIdlnKAMLN+qWSAGDZp72Tq2On52VDuTZhZ3hwgupTNE6Q38F5LcxUb147O5zncmzCzfqlkgCjDNNdscGiUdO6FbOI6DRB5BSMzs3qe5roIzaazmpkNgkoGCDMzy18lh5jMCWszy58DRIU5YW1meXKAqDAnrM0sT5XMQVR5T+pe2Lh2dL4YoJlZXirZgyjbSup+yK6JaDT9dSHZmlHOWZhZOyoZIIZRNijUa2dXumzxv/R8ZmatVHKIyR5Xvytduv91o1Lh4yuWOW9hZm1zD6Li0l3pUu4pmFmvOEAMiHSDoTxrQ5nZcPEQ0wDYuHZ0PijkWRvKzIZLaXoQkp4E/BGwDDgUEZ8puEmV0SiB3e7sJjOzZnLtQUi6QdJJSffWHV8v6T5JRyVdkxzeCIwCPwdm8myXmZktLO8hpl3A+uwBSUuA64HLgXFgs6Rx4ELgQES8E/iPObfLzMwWkGuAiIg7gdN1hy8GjkbEAxHxMHATtd7DDPDD5D2P5tmuYZGujzAz60YRSepR4MHM65nk2OeB35D0MeDOZh+WtE3SIUmHTp06lW9LK6x+fYSZWaeKSFKrwbGIiJ8AWxf6cETslDQLbFi6dOlFPW/dgKhfH2Fm1qkiehAzwPmZ1yuBE52coOgd5XZPHWfqWP3ImZnZYCkiQBwELpA0JmkpcCWwt5MTFF3NNVv0zsxsUOU9zfVG4ABwoaQZSVsj4hHgauA24Ahwc0Qc7uS8RfcgACbHRlzGwswGWq45iIjY3OT4fmB/t+eVtAHYsGbNmm5PMTTSEhxTx04zOTZSdHPMrEIqWWqjDD2IKkhLcGSL95mZtauSAaLoHERVbJlcxZ7t61y8z8y6UppaTJ0Yxh3l8pbdcQ6865yZVbQHYYuXbiyUrrTO7iMxPTvnNRRmVs0A4SGmxbv17oeYOnb6CYFgfMUyD0mZ2bxKBggnqc3M8lfJAGG95ZXhZtZIJZPUXgexONlpr9Ozc/PBwSvDzSyrkgHCs5i6lw0CP3n4UZ62dMn8cc9aMrOsSgYI616j7UnbkU6DdSAxGx4OENZUNiiks56AjgNEdo2FA4xZdVQyQDgH0Zl0WKnTHEM2KNTr5KafXWMBnQcYMytGJQOEcxCd6XZYqZVOb/peW2FWPZUMEEVJn5qnZ+d8w8M3fbNB53UQHcgGB08JNbNB5x5Eh9JyFGZmg849CDMza6iSAcLF+szM8lfJAOFiffmbnp3zTnRmQ845CDtLNgHvIn5mw8sBws6SXTexaceBs36fVn+dHBvpd9PMrI8qOcRkxcquoDazweUehHUkzUtMjo2wZXJV7luTuo6TWXEcIKwj6erp+jxFOhTV65u46ziZFac0AULSJcAfAYeBmyLijkIbZGeZHBtpukgwz5u4S3qYFSPXHISkGySdlHRv3fH1ku6TdFTSNcnhAH4MnAPM5Nku673xFcsYX7GMqWOn2T11vOjmmFkP5J2k3gWszx6QtAS4HrgcGAc2SxoHvh4RlwN/AFybc7ssB+mwU955CTPrj1wDRETcCdRPpL8YOBoRD0TEw8BNwMaIeCz5/Q+BX8izXZaPLZOrPPXVbIAUkYMYBR7MvJ4BJiW9HvgN4FnAx5t9WNI2YBvAqlVOWJqZ5aWIAKEGxyIiPg98fqEPR8ROSbPAhqVLl17U89bZWdIEdJ7JYk9nNSufIhbKzQDnZ16vBE50cgLXYuqfjWtH5xPQjRbGbVw7yuTYyBN+Nz07x6YdBzpKVqfTWadn53qaw9g9dbzjtphZTRE9iIPABZLGgIeAK4EtnZzAe1L3z0Lbldb/Pg0Uaa+jk55AHj2U7L7a7pWYdSbvaa43AgeACyXNSNoaEY8AVwO3AUeAmyPicCfndQ+ivLZMrmLP9nVeu2A2AHLtQUTE5ibH9wP7uz2vexBmZvmrZLE+9yDMmnPexXqlkgHCO8qZNZfmXbxg0RarkgHCPYhqSGczDeOmQ+lTvJ/krcpKU6zPBkv9bKZh4yq0Nggq2YPwEFP5eTbT4wUMzaqqkj2IiNgH7JuYmLiq6LZYd7Irp6HW0/DN1KxcKtmDsOpKNxd6zy33PCE30WyltpkVp5I9CK+DqLbp2bn58hz1Y/OeeWNWHpXsQXgWU7WNr1jGnu3ruk7cep6/WX9UsgfRT+lYuYc/ysP1lcz6YygDxLX7DjN9ojYFcaHS0unNaOrYaZ55zpOdSO2DNE+R/uxNiMyKMZQBItVJxdH0JuWeRGfSf1/Zf2/t/Dssw/qJbO/RPRUbRpUMEItNUr9/w78AmH9KXcjk2Ah7tq/r6ruGXX058HZvtGlPbaFV2HluNOShLBt2lQwQXgdhKa9YLg/vCjh4Og4Qkn4ROD8ivpNDe8w65rxQOThYD562AoSkO4DXJu+/Gzgl6WsR8c4c22b2BGnyugz5CWvMwXqwtLsOYnlEzAGvB/4sIi4CXp1fs8wac0kOs/5pN0A8WdIK4I3AF3Jsj1lL6SK7RlNfp46d9uI5sx5qN0BcS20P6aMRcVDSc4H782tWa67mavXSqbMu1WHD4Np9h7l23+Hcv6fdADEbES+MiLcBRMQDwEfya1ZrLrVh9bZMrvKCOhsa0yfm5hf75qndAPGxNo+ZmdmAaDmLSdI64KXAeZKyM5aWAUvybJhZ3jxv36y1haa5LgWekbzvmZnjc8Ab8mqUWb1GJTsWK523/6N/esQrps0aaBkgIuJrwNck7YqI7/WpTWbAE4NCfcmOXkk3KnrPLfdw690POUBUlHuD+Wh3JfUvSNoJrM5+JiJe2cvGSHo6cCfw/ojwdNohl1dQaPQ9nv1UbV7FnY92A8SfA58EPgU82u7JJd0AXAGcjIjnZ46vB/4HtTzGpyLiw8mv/gC4ud3zm9Wbnp1j044DfoocQl5A2XvtBohHIuITXZx/F/Bx4LPpAUlLgOuBy4AZ4KCkvcAvA9PAOV18j9n8kFQnZdw75RLgNkzaDRD7JL0NuAX4WXowIlrWYo6IOyWtrjt8MbUFdw8ASLoJ2EgtGf50YBz4qaT9EfFYm+0zmx+SareMezdcAtyGSbsB4s3JP9+VORbAc7v4zlHgwczrGWAyIq4GkPQW4AfNgoOkbcA2gFWr8vsfNH1SdO2f/upktlLaU/B/H7N8tBUgImKsh9+pRl+R+a5dC7RlJ7ATYGJiIlq9dzGywcG7yPVPu4npTneogyfOdIHOtjPNPjD0g4eyrAzaLff97xsdj4jPNjq+gBng/MzrlcCJTk6w2B3l2pUWhrPyWSiQNCrclw36zXaqy96YO/1sL3koy8qg3VIbL878eQXwAWr7Q3TjIHCBpDFJS4Ergb1dnisXu6eO9+UmYPloVbgvDfofet0LmBwbaRgIpo6dbvlZ13yyYdFWgIiI3878uQp4EbVV1i1JuhE4AFwoaUbS1oh4BLiaWnXYI8DNEdFRWcJeFutr9qQJvV21a/3TTuG+LZOr2LN9nZ/ObdF2Tx1n044DA1lqvts9qX8CXLDQmyJic5Pj+4H9XX53z4aYNq4dnX9arL9RTI6N+OZhxuDkQ/JabT3Iw4Ft9SAk7ZO0N/nzReA+4NZ8m9Zcr3oQ6ZNmurhqEJ8ArGZ6ds5blXap1bBbL+X9JJ7mkaZn57xyvk3t9iD+W+bnR4DvRcRMDu3pu3QYaerY6fn/CTy1dfCk/z2HfdiwXzWL0v3DO/mefjyJ+//rzrQ7zfVrkp5DLUkNBe4mB72dxZTOhsn+j+OprYNlcmykMrPR8p5O28+aRa6NVH3tTnN9I/BfgTuorWP4mKR3RcRf5Ni2piJiH7BvYmLiql6ds1+F4ay8Or0pL3ZsvtHTfP102jxqS/XrKdpP69XX7hDTe4EXR8RJAEnnAX8NFBIg+rUOwoZHtsfYzhTn6dm5J7yvm5t3s6f5dDptfW/CDzDWb+0GiCelwSHx97S/hqLn8uhB2HDL9iAXquXUaTBppdVTdj9qS9XzvgqW1W6A+CtJtwE3Jq83sYhpqmZVVh9MBqnEuPdVsKyF9qReAzwnIt4l6fXAy6nlIA4An+tD+8xKrR8lxvvNuQNLLTRM9FHgRwAR8fmIeGdE/C613sNH825cM5I2SNp55syZoppgBjy+IrvTm6rLuZTPIK+I7tZCAWJ1RHyn/mBEHKK2/Wghellqw6wILudSPv1aEFglCwWIVru7PbWXDTEbFO32DlzOxcpuoQBxUNJZM4UkbQXuyqdJZtXWqneQDmO47IdVwUKzmN4B3CLpTTweECaoVXJ9XZ4Na8XrIKzs0t5B/XBFs42oGlUVzuqmdIXZYrUMEBHxfeClki4Fnp8c/mJEfDX3lrXgdRDWT73e2rR+I6psVeF22gE8oTyMA4blpd1aTLcDt+fcFrNSyrvQX6OeRqt2pAa5zLSVQ7f7QZiVXi+e/KtU6M+s1xwgbCBln/YHbSppunLbiW7LmwOEDaTFVuftdd6hV7LBLq34apaXSgYIz2KyPHXb+1hoJlIv1Ae+xRbyc6LbWqlkgPAsJstTN72PdmcidSMNUt0OlWUrtE4dO83k2Mj875zotlYqGSDMyqadmUjpCuvsDbrdcy/m5t1shzrnMGwhDhBmfVJk/aU0l5L2Fnq5p0U/eJ+KYjhAmPVRq/pL/UyMd7JBUhkUuU/FMOdpHCDMcpaWyUhLbDSS17Tcboe1Ojl/s/xGrxU1o2yY8zSlCRCSnge8HTgX+EpEfKLgJpn1TKP6S1mLzTM0kx2WaZUjSddWdHqTb5bfsMGQ677Skm6QdFLSvXXH10u6T9JRSdcARMSRiHgr8EZqBQHNBkZaf6mIJ9CFyopvXDvK+IplXd/ox1csK916EeuNXAMEsAtYnz0gaQlwPXA5MA5sljSe/O61wDeAr+TcLrOBkT79d7sGo9td8TqVljqvwq5t3l2uJtchpoi4U9LqusMXA0cj4gEASTcBG4HpiNgL7JX0RWB3nm0zGwRV2hO7yERzp7J5h2GWdw+ikVHgwczrGWBU0iWSrpO0g9qe1w1J2ibpkKRDp06dyrutZqXWr6f/XkmHo/qx6rxd3sSpuSIChBoci4i4IyJ+JyK2R8T1zT4cETsjYiIiJs4777wcm2lmeUh7PWXZ+zm7iZM9URGzmGaA8zOvVwInOjmBazGZna1MT+WtZFedZ9cY1Ov3FNo929f1bU1IVRb+FREgDgIXSBoDHgKuBLZ0cgLXYrKyKqoKbJ61oPLUaqy/jFNoe3Vjr0o+JtcAIelG4BLgXEkzwPsj4tOSrgZuA5YAN0TE4Q7P6x6ElU6Re1C0uytdLxSxOK4sCeNe3tirMKSV9yymzU2O76dFItqsivJa7NatvHozZXyy76cq3Nh7pYgk9aJFxL6I2LZ8+fKim2JWWumMoXZ7MxvXjjI5NtLW+6uwOK4qaxnKnDsqTakNM+udbvbSzvaAqpbLaKQKNZSyuaMytrGSAcI5CKuKxW72U2bZa+tnQEmLH6bfXcYba7v6mTvqhoeYzHKULmSr8k0sK60OC82vrdFQVfZznX5PI9Ozc0zPzpX65joIKhkgJG2QtPPMmTNFN8VsqLSz6VGjwNHpZkkLvb8KOZBBUMkA4R6EWec6SUK3slB12F59rtvvsd6pZA7CzDpXtmm4Vn6V7EGYWf7KPP2yjBZbdr2MKhkgnIMwy1c/CuqlieZBkW66NEiJ80oGCOcgzPK1ZXJVriU00l3sik40dzq7qpl03UnR19NrzkGYWd9l8yG9rqCarpNop3fS6eyqTmQr1VY19+MAYWYDJ93foZ3eQa9nS6UBKv3udKV0FQNFJYeYnIMws1bS/R3yHCZrZXp2jsmxEV4wupzJsZHK5iYq2YPwfhBm1m+dVMdNA1SqXxsR9VolexBmVi69WoSXh3T66WJnTHVaHbdeFacNV7IHYWblUtZFeNmbeXpzT6u8pkGjnR5BfXXcToeLyl61tRkHCDMbWI0CV3pzT4NDP3o9Za/a2owDhJk1VcRCtvqx/k7KindSXr0+T9AP6XBX3lu19kolA4T3gzBrrJfbjGZvsotZTNZpm+oDQ6NeQHaoKDuuX9ahLnj8eqq0erySAcKzmMzOlr2h92LYpBeL2Tpt00I74dUHgHRcvwrStmfXSJRdJQOEmZ2tjE/PebapquP6zZRx5bUDhJm1pZfDV8OsWZ6kjHtoO0CY2YJ6PXxVZnnnCMrY02vGAcLMFlSlm9piLDYx38ksqipwgDAzSyw2MT9ogbRUpTYk/aakP5V0q6TXFN0eM7NmOikrXlW5BwhJN0g6KeneuuPrJd0n6aikawAi4i8j4irgLcCmvNtmZuVQ1d3lpo6dzmU19u6p42zacaDwLUz7McS0C/g48Nn0gKQlwPXAZcAMcFDS3oiYTt7yvuT3ZjbgqpgAz+Yaej2kND07N5//eOY5tVt0UcNWuQeIiLhT0uq6wxcDRyPiAQBJNwEbJR0BPgx8KSK+1eh8krYB2wBWrRqcsT6zYdXvcfteJJLzbHN2JXm2sGB6rJ//ropKUo8CD2ZezwCTwG8DrwaWS1oTEZ+s/2BE7AR2AkxMTEQf2mpmA6TMieRmVWPT4bd05Xi7VWgXq6gAoQbHIiKuA65b8MOuxWRmfVCWxYHp908dO93XKrRFBYgZ4PzM65XAiXY/7FpMZpa3suZG+lmFtqgAcRC4QNIY8BBwJbCl3Q+7B2FmeSvzUFS/9GOa643AAeBCSTOStkbEI8DVwG3AEeDmiDjc7jkjYl9EbFu+fHk+jTYz66OyTvPtxyymzU2O7wf2d3NO9yDMbFCUdSgLKlpqwzkIMxsUZR7KKlWpjXZJ2iBp55kzZ4puipnZwKpkgHAOwswsf5UMEGZmlr9KBggPMZnZMNi4dpTJsZHCkteVDBAeYjKzYbBlchV7tq8rLIldyQBhZmb5q2SA8BCTmVn+KhkgPMRkZpa/SgYIMzPLnwOEmVVaWesYDYJKltpwLSYzg3LXMRoElQwQrsVkZlDuOkaDwENMZmbWkAOEmZk15ABhZmYNOUCYmVlDlQwQXkltZpa/SgYIr6Q2M8tfJQOEmZnlzwHCzMwacoAwM7OGHCDMzKwhBwgzM2uoNAFC0nMlfVrSXxTdFjMzyzlASLpB0klJ99YdXy/pPklHJV0DEBEPRMTWPNtjZlZVG9eOMjk20teqtXlXc90FfBz4bHpA0hLgeuAyYAY4KGlvREzn3BYzs8oqonJtrj2IiLgTOF13+GLgaNJjeBi4CdiYZzvMzKxzReQgRoEHM69ngFFJz5b0SeBFkt7d7MOStkk6JOnQqVOn8m6rmdnQKmLDIDU4FhHx98BbF/pwROyUNAtsWLp06UU9b52ZmQHF9CBmgPMzr1cCJzo5gWsxmZnlr4gAcRC4QNKYpKXAlcDeTk7gaq5mZvnLe5rrjcAB4EJJM5K2RsQjwNXAbcAR4OaIONzJed2DMDPLX645iIjY3OT4fmB/t+eVtAHYsGbNmm5PYWZmCyjNSupOuAdhZpa/ImYxLVragwDmJN3f5WnOBX7Qu1ZVwjBeMwzndfuah0O31/wr7bxJEdHFuatP0qGImCi6Hf00jNcMw3ndvubhkPc1V3KIyczM8ucAYWZmDQ1zgNhZdAMKMIzXDMN53b7m4ZDrNQ9tDsLMzFob5h6EmZm1MJQBotGGRYOm0WZNkkYkfVnS/ck/f7HINvaapPMl3S7piKTDkt6eHB/Y65Z0jqS/lfTt5JqvTY6PSZpKrnlPUtZmoEhaIunvJH0heT0M1/xdSfdIulvSoeRYbn+/hy5AZDYsuhwYBzZLGi+2VbnYBayvO3YN8JWIuAD4SvJ6kDwC/OeIeB7wEuA/Jf9tB/m6fwa8MiJ+DVgLrJf0EuCPgT9JrvmHwCDu1vh2auV6UsNwzQCXRsTazPTW3P5+D12AYEg2LGqyWdNG4DPJz58BfrOvjcpZRMxGxLeSn39E7eYxygBfd9T8OHn5lORPAK8E0v3dB+qaASStBP4N8KnktRjwa24ht7/fwxggGm5YVFBb+u05ETELtZsp8EsFtyc3klYDLwKmGPDrToZa7gZOAl8G/h/wD0lhTBjMv+MfBX4feCx5/WwG/5qhFvz/t6S7JG1LjuX297uSpTYWqeGGRX1vheVG0jOA/wW8IyLmag+XgysiHgXWSnoWcAvwvEZv62+r8iPpCuBkRNwl6ZL0cIO3Dsw1Z7wsIk5I+iXgy5L+b55fNow9iEVvWFRh35e0AiD558mC29Nzkp5CLTh8LiI+nxwe+OsGiIh/AO6gln95lqT0AXDQ/o6/DHitpO9SGyJ+JbUexSBfMwARcSL550lqDwMXk+Pf72EMEIvesKjC9gJvTn5+M3BrgW3puWQc+tPAkYj4SOZXA3vdks5Leg5Ieirwamq5l9uBNyRvG6hrjoh3R8TKiFhN7f/fr0bEmxjgawaQ9HRJz0x/Bl4D3EuOf7+HcqGcpH9N7YljCXBDRHyw4Cb1XLJZ0yXUqj1+H3g/8JfAzcAq4DjwbyOiPpFdWZJeDnwduIfHx6bfQy0PMZDXLemF1BKTS6g98N0cEX8o6bnUnq5HgL8DfisiflZcS/ORDDH9XkRcMejXnFzfLcnLJwO7I+KDkp5NTn+/hzJAmJnZwoZxiMnMzNrgAGFmZg05QJiZWUMOEGZm1pADhJmZNeQAYWZmDTlAWGVJejQpe5z+WZ3Dd9yRlIb/tqSDkta28Zl3SHpaF9/1UUn/su7YB5q89652y1lLmpB0XfLzFWlJcLOFeB2EVZakH0fEM7r43JKkflE7772D2kKsQ5L+A7AlIi5b4DPfBSYi4gcdtGkE2B8RL0levxz4E2plYY4D10TEV5PfrQaui4jXtnv+zPcI+Ba1mj4/6fTzNlzcg7CBImm1pK9L+lby56XJ8UuSzYR2U1tpjaTfSjbbuVvSjmSvkFYOkKkQKukTkg7VbdTzO8AvA7dLuj059hpJB5L2/HlSTLDeG4C/yrz+CPBu4JPAZcDRzO8uT98r6ceS/jjpUfy1pIuTXs8Dkl6bufYvQK08OLV6TVcs+C/Thp4DhFXZUzPDS2kJgpPAZRHx68Am4LrM+y8G3hsR45Kel/z+ZRGxFngUeNMC37eeWrmS1HuTTVteCPwrSS+MiOuoFYm7NCIulXQu8D7g1UmbDgHvbHDulwF3ZV4/DPwzgIg4ExHH69qRBpOnA3dExEXAj4D/Qi2gvA74wybXcQh4xQLXajaU5b5tcPw0ublnPQX4eJIreBT41czv/jYijiU/vwq4CDiYlAN/Ks2rYH4uKY62BPj1zPE3JjX5nwysoLZD4XfqPvuS5PjfJN+zlFpPpN4K4FTm9TZqO6S9TNKFwLsj4rtJ3mFlRDyQvO9hHg8W9wA/i4ifS7oHWN3kek5S6+WYteQAYYPmd6kVJ/w1aj3kf8r87h8zPwv4TES8u41zvgn4NvBhatvVvl7SGPB7wIsj4oeSdgHnNPisgC9HxOYFvuOn2c9HxDSwQdIHgYeoVal9FbUn/29kPvfzeDyR+Bi1LUiJiMcypa/rnZN8n1lLHmKyQbMcmI2Ix4B/R+2pv5GvAG9INl5JN37/lWYnjYifUxsqekkyPLWMWsA5I+k51PICqR8Bz0x+/ia1XsCa5HueJinbq0kdAdakLyQ9P/nx59SSyun51gNfatbONv0qtTLRZi05QNig+Z/AmyV9k9qN8B8bvSl5Qn8fte0bv0Ntq84VrU4cET8F/jspLBg4AAAAtUlEQVS1WU3fplZS+jBwA/A3mbfuBL4k6faIOAW8Bbgx+Z5vAv+8wem/SK08e+ptkv4PsJVaovr3k+OXAF9r1c42XJp8n1lLnuZqVhKSvgFckewMlx77QER8IPl5JfCnEXF5k1O08x3PobaPwKsW214bfA4QZiUhaZJa4v07mWOXRMQdPfyOF1PLW9zdq3Pa4HKAMDOzhpyDMDOzhhwgzMysIQcIMzNryAHCzMwacoAwM7OG/j9MSP5naavHzAAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dask-Conclusions"><code>Dask</code> Conclusions<a class="anchor-link" href="#Dask-Conclusions">&#182;</a></h2><ul>
+<li><code>Dask</code> is a really interesting development in the abstraction of parallelism that enables large-scale data science</li>
+<li>We have shown how to load huge amounts of data into a <code>Dask</code> <code>DataFrame</code> and perform high-level operations on the data</li>
+<li>Further Dask reading: <a href="http://docs.dask.org/en/latest/">http://docs.dask.org/en/latest/</a></li>
+</ul>
 
 </div>
 </div>
