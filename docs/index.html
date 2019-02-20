@@ -11908,7 +11908,7 @@ a.anchor-link {
 <h1 id="Parallel-Programming-with-Python">Parallel Programming with Python<a class="anchor-link" href="#Parallel-Programming-with-Python">&#182;</a></h1><p><em>Thomas Langford, Ph.D.</em></p>
 <p><em>Yale Center for Research Computing</em></p>
 <p><em>Yale Wright Laboratory</em></p>
-<p><em>{{print(date.strftime(date.today(), "%B %d, %Y"))}}</em></p>
+<p><em>February 11, 2019</em></p>
 
 </div>
 </div>
@@ -12510,10 +12510,10 @@ x = 1, PID = 695
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 
-<span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pi_mc</span><span class="p">,</span> <span class="n">seed_array</span><span class="p">)</span>
+with multiprocessing.Pool(processes=4) as pool:
+    result = pool.map(pi_mc, seed_array)
 </pre></div>
 
 </div>
@@ -13379,17 +13379,17 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 
-<span class="c1"># Create 2D numpy arrays</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+# Create 2D numpy arrays
+a = np.random.random(16000000)
+a = a.reshape(4000,4000)
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+b = np.random.random(16000000)
+b = b.reshape(4000,4000)
 
-<span class="c1"># Matrix Mult</span>
-<span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+# Matrix Mult
+out = np.matmul(a,b)
 </pre></div>
 
 </div>
@@ -13429,21 +13429,21 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
 
-<span class="c1"># Create 2D numpy arrays</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+# Create 2D numpy arrays
+a = np.random.random(16000000)
+a = a.reshape(4000,4000)
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">16000000</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+b = np.random.random(16000000)
+b = b.reshape(4000,4000)
 
-<span class="c1"># Move to GPU</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+# Move to GPU
+g = cp.asarray(a)
+h = cp.asarray(b)
 
-<span class="c1"># Matrix Mult</span>
-<span class="n">out</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+# Matrix Mult
+out = cp.matmul(g,h)
 </pre></div>
 
 </div>
