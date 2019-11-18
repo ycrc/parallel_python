@@ -11,3 +11,4 @@ dependencies:
   - mpi4py==3.0.3
   - cupy==6.5.0
   - jupyter==1.0.0
+  - rise
