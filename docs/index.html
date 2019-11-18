@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +7,7 @@
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
 
 <title>ParallelPython slides</title>
 
@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -255,7 +255,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6800,15 +6799,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6865,6 +6864,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6880,6 +6892,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6902,31 +6918,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7411,6 +7427,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7423,6 +7440,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8060,7 +8078,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8164,7 +8183,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8290,6 +8309,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8303,6 +8323,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8470,6 +8492,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8750,6 +9423,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8775,6 +9452,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8806,13 +9487,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8847,8 +9531,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8964,6 +9654,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8984,6 +9677,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -9000,34 +9706,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9047,15 +9761,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9111,7 +9823,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9121,6 +9833,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9136,6 +9851,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9164,6 +9887,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9189,18 +9920,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9218,6 +9963,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9234,6 +9985,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9253,6 +10010,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9270,6 +10033,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9284,8 +10053,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9332,9 +10104,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9342,6 +10111,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9384,6 +10159,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9398,6 +10179,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9414,6 +10201,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9428,6 +10221,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9473,14 +10272,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9559,12 +10476,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9577,27 +10502,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9793,7 +10730,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9803,11 +10742,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10061,6 +11013,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10099,7 +11054,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10259,39 +11214,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10305,14 +11256,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10320,24 +11280,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10364,6 +11336,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10418,8 +11399,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10556,6 +11546,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10688,6 +11700,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10713,16 +11871,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10744,11 +11914,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10756,6 +11956,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10765,6 +11976,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10783,11 +11998,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10804,6 +12031,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10814,6 +12045,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10831,6 +12066,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10841,6 +12082,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10871,6 +12116,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10885,6 +12136,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10901,6 +12158,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10915,6 +12178,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10931,6 +12200,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10945,6 +12220,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11335,27 +12616,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11399,6 +12699,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11418,6 +12721,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11568,6 +12875,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11576,6 +12887,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11587,10 +12905,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11599,6 +12926,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11606,6 +12937,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11730,45 +13067,6 @@ ul.typeahead-list > li > a {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
     </style>
 
 
@@ -11902,23 +13200,21 @@ a.anchor-link {
 <div class="slides">
 <section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Parallel-Programming-with-Python">Parallel Programming with Python<a class="anchor-link" href="#Parallel-Programming-with-Python">&#182;</a></h1><p><em>Thomas Langford, Ph.D.</em></p>
 <p><em>Yale Center for Research Computing</em></p>
 <p><em>Yale Wright Laboratory</em></p>
-<p><em>February 20, 2019</em></p>
+<p><em>November 18, 2019</em></p>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Tools-and-Requirements">Tools and Requirements<a class="anchor-link" href="#Tools-and-Requirements">&#182;</a></h1><ul>
-<li>Language: Python 3.6</li>
+<li>Language: Python 3.7</li>
 <li>Modules: <code>numpy</code>, <code>multiprocessing</code>, <code>PIL</code> (for imamge processing), <code>mpi4py</code>, <code>matplotlib</code></li>
 <li>Jupyter notebook</li>
 </ul>
@@ -11927,8 +13223,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Comment:-Python-2-versus-3">Comment: Python 2 versus 3<a class="anchor-link" href="#Comment:-Python-2-versus-3">&#182;</a></h1><ul>
 <li>Major modules will be dropping Python2 support in 2019</li>
@@ -11941,8 +13236,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="How-to-Follow-Along">How to Follow Along<a class="anchor-link" href="#How-to-Follow-Along">&#182;</a></h1><h2 id="Clone-from-GitHub">Clone from GitHub<a class="anchor-link" href="#Clone-from-GitHub">&#182;</a></h2><p>Navigate to the GitHub repository: <a href="https://github.com/ycrc/parallel_python">https://github.com/ycrc/parallel_python</a></p>
 <p><img src="parallel_python_qr.pdf" alt="qr"></p>
@@ -11952,8 +13246,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="MyBinder">MyBinder<a class="anchor-link" href="#MyBinder">&#182;</a></h2><p>Launches a live AWS container with the required tools installed and ready to go:</p>
 <p><a href="https://mybinder.org/v2/gh/ycrc/parallel_python/master">https://mybinder.org/v2/gh/ycrc/parallel_python/master</a></p>
@@ -11962,8 +13255,7 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Outline-and-Overview">Outline and Overview<a class="anchor-link" href="#Outline-and-Overview">&#182;</a></h1><ul>
 <li>Introduction to parallel concepts</li>
@@ -11976,16 +13268,14 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Introduction-to-parallel-concepts">Introduction to parallel concepts<a class="anchor-link" href="#Introduction-to-parallel-concepts">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Serial-Execution">Serial Execution<a class="anchor-link" href="#Serial-Execution">&#182;</a></h2><p>Typical programs operate lines sequentially:</p>
 
@@ -12011,7 +13301,7 @@ a.anchor-link {
         <span class="nb">print</span><span class="p">(</span><span class="n">bar</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12021,7 +13311,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12040,8 +13330,7 @@ a.anchor-link {
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-map-function">The <code>map</code> function<a class="anchor-link" href="#The-map-function">&#182;</a></h2><p>A key tool that we will utilize later is called <code>map</code>. This lets us apply a function to each element in a list or array:</p>
 
@@ -12068,7 +13357,7 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">output</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12081,7 +13370,7 @@ a.anchor-link {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_map</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12091,7 +13380,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -12107,8 +13396,7 @@ a.anchor-link {
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Python has a helpfully provided a <code>map</code> function in the standard library:</p>
 
@@ -12125,7 +13413,7 @@ a.anchor-link {
 <span class="c1"># NB: in python3 `map` is a generator, so we need to cast it to a list for this comparison</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12135,7 +13423,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12151,8 +13439,7 @@ a.anchor-link {
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The built-in <code>map</code> function is much more flexible and featured than ours, so it's best to use that one instead.</p>
 
@@ -12160,8 +13447,7 @@ a.anchor-link {
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Parallel-Workers">Parallel Workers<a class="anchor-link" href="#Parallel-Workers">&#182;</a></h2><p>In the example we showed before, no step of the <code>map</code> call depend on the other steps.</p>
 <p>Rather than waiting for the function to loop over each value, we could create multiple instances of the function <code>bar</code>  and apply it to each value simultaneously.</p>
@@ -12171,8 +13457,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Mutiprocessing-module">The <code>Mutiprocessing</code> module<a class="anchor-link" href="#The-Mutiprocessing-module">&#182;</a></h2><p>The <code>multiprocessing</code> module has a number of functions to help simplify parallel processing.</p>
 <p>One such tool is the <code>Pool</code> class. It allows us to set up a group of processes to excecute tasks in parallel. This is called a pool of worker processes.</p>
@@ -12197,7 +13482,7 @@ a.anchor-link {
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12207,7 +13492,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12221,8 +13506,7 @@ a.anchor-link {
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The difference here is that each element of this list is being handled by a different process.</p>
 
@@ -12230,8 +13514,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To show how this is actually being handled, let's create a new function:</p>
 
@@ -12248,14 +13531,13 @@ a.anchor-link {
     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;x = </span><span class="si">{x}</span><span class="s2">, PID = {os.getpid()}&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we can map this function on the <code>foo</code> array from before. First with the built-in <code>map</code> function:</p>
 
@@ -12270,7 +13552,7 @@ a.anchor-link {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">parallel_test</span><span class="p">,</span> <span class="n">foo</span><span class="p">));</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12280,16 +13562,16 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 447764
-x = 1, PID = 447764
-x = 2, PID = 447764
-x = 3, PID = 447764
-x = 4, PID = 447764
-x = 5, PID = 447764
+<pre>x = 0, PID = 147779
+x = 1, PID = 147779
+x = 2, PID = 147779
+x = 3, PID = 147779
+x = 4, PID = 147779
+x = 5, PID = 147779
 </pre>
 </div>
 </div>
@@ -12299,8 +13581,7 @@ x = 5, PID = 447764
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We see that each step is being handled by the same process and are excecuted in order.</p>
 
@@ -12308,8 +13589,7 @@ x = 5, PID = 447764
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we try the same process using <code>multiprocessing</code>:</p>
 
@@ -12325,7 +13605,7 @@ x = 5, PID = 447764
     <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">parallel_test</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12335,16 +13615,16 @@ x = 5, PID = 447764
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 4, PID = 447802
-x = 5, PID = 447803
-x = 1, PID = 447798
-x = 3, PID = 447801
-x = 2, PID = 447800
-x = 0, PID = 447799
+<pre>x = 4, PID = 147810
+x = 3, PID = 147809
+x = 2, PID = 147808
+x = 5, PID = 147811
+x = 1, PID = 147807
+x = 0, PID = 147806
 </pre>
 </div>
 </div>
@@ -12354,8 +13634,7 @@ x = 0, PID = 447799
 
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Two things are worth noting:</p>
 <ol>
@@ -12367,8 +13646,7 @@ x = 0, PID = 447799
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Key-Take-aways">Key Take-aways<a class="anchor-link" href="#Key-Take-aways">&#182;</a></h2><ol>
 <li>The <code>map</code> function is designed to apply the same function to each item in an iterator</li>
@@ -12380,16 +13658,14 @@ x = 0, PID = 447799
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Embarassingly-parallel-problems">Embarassingly parallel problems<a class="anchor-link" href="#Embarassingly-parallel-problems">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Many problems can be simply converted to parallel execution with the <code>multiprocessing</code> module.</p>
 
@@ -12397,8 +13673,7 @@ x = 0, PID = 447799
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example-1:-Monte-Carlo-Pi-Calculation">Example 1: Monte Carlo Pi Calculation<a class="anchor-link" href="#Example-1:-Monte-Carlo-Pi-Calculation">&#182;</a></h2><ul>
 <li>Run multiple instances of the same simulation with different random number generator seeds</li>
@@ -12428,14 +13703,13 @@ x = 0, PID = 447799
     <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">counter</span><span class="o">/</span><span class="n">num_trials</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Serial-vs-Parallel">Serial vs Parallel<a class="anchor-link" href="#Serial-vs-Parallel">&#182;</a></h3>
 </div>
@@ -12449,7 +13723,7 @@ x = 0, PID = 447799
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pi_mc(1)
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12459,11 +13733,11 @@ x = 0, PID = 447799
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>300 ms ± 905 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>338 ms ± 979 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12481,7 +13755,7 @@ x = 0, PID = 447799
 <span class="o">%</span><span class="k">timeit</span> list(map(pi_mc, seed_array))
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12491,11 +13765,11 @@ x = 0, PID = 447799
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.22 s ± 15.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.35 s ± 4.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12509,13 +13783,13 @@ x = 0, PID = 447799
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-with multiprocessing.Pool(processes=4) as pool:
-    result = pool.map(pi_mc, seed_array)
+<span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pi_mc</span><span class="p">,</span> <span class="n">seed_array</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12525,11 +13799,11 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>731 ms ± 2.09 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>426 ms ± 1.55 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -12539,8 +13813,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>While the serial execution scales up linearly (~4x longer than one loop), the parallel execution doesn't quite reach the single loop performance. There is some overhead in setting up the threads that needs to be considered.</p>
 
@@ -12548,8 +13821,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example-2:-Processing-multiple-input-files">Example 2: Processing multiple input files<a class="anchor-link" href="#Example-2:-Processing-multiple-input-files">&#182;</a></h2><p>Say we have a number of input files, like <code>.jpg</code> images, that we want to perform the same actions on, like rotate by 180 degrees and convert to a different format.</p>
 <p>We can define a function that takes a file as input and performs these actions, then map it on a list of files.</p>
@@ -12569,7 +13841,7 @@ with multiprocessing.Pool(processes=4) as pool:
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12585,7 +13857,7 @@ with multiprocessing.Pool(processes=4) as pool:
 <span class="n">im</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12595,7 +13867,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -12620,7 +13892,7 @@ with multiprocessing.Pool(processes=4) as pool:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12630,7 +13902,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -12648,8 +13920,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's define a function that takes a file name as input, opens the file, rotates it upside down, and then saves the output as a PDF:</p>
 
@@ -12675,7 +13946,7 @@ with multiprocessing.Pool(processes=4) as pool:
     <span class="n">im_flipped</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">base_name</span> <span class="o">+</span> <span class="s2">&quot;_flipped.pdf&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12690,7 +13961,7 @@ with multiprocessing.Pool(processes=4) as pool:
 <span class="nb">print</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12700,7 +13971,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12722,14 +13993,13 @@ with multiprocessing.Pool(processes=4) as pool:
     <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">image_flipper</span><span class="p">,</span> <span class="n">file_list</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We have created a set of PDF files with new file names and inverted images.</p>
 
@@ -12744,7 +14014,7 @@ with multiprocessing.Pool(processes=4) as pool:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> ./data/*pdf
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12754,7 +14024,7 @@ with multiprocessing.Pool(processes=4) as pool:
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12772,16 +14042,14 @@ with multiprocessing.Pool(processes=4) as pool:
 
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Embarassingly-Parallel-Processing-on-the-Clusters">Embarassingly Parallel Processing on the Clusters<a class="anchor-link" href="#Embarassingly-Parallel-Processing-on-the-Clusters">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can employ these tools and techniques to run parallel workers on the large-scale computing clusters maintained by YCRC.</p>
 <p>We highly recommend utilizing a tool called <code>Dead Simple Queue</code>.</p>
@@ -12790,8 +14058,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Dead-Simple-Queue">Dead Simple Queue<a class="anchor-link" href="#Dead-Simple-Queue">&#182;</a></h1><p>Similar to the <code>map</code> functionality discussed earlier is the Dead Simple Queue (<code>dSQ</code>) module available on each cluster.</p>
 
@@ -12804,8 +14071,7 @@ with multiprocessing.Pool(processes=4) as pool:
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
 <pre><code>dSQ --help
@@ -12824,8 +14090,7 @@ list of the jobss that didn't run or failed, use dSQAutopsy</code></pre>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The basic idea is similar to <code>map</code>: create a list of parameters and pass them to a single function for processing.</p>
 <p>However, instead of doing this from within <code>python</code>, we leverage the SLURM job scheduler to divy jobs to workers.</p>
@@ -12835,8 +14100,7 @@ list of the jobss that didn't run or failed, use dSQAutopsy</code></pre>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="dSQ-Output">dSQ Output<a class="anchor-link" href="#dSQ-Output">&#182;</a></h2><p>You can monitor the status of your jobs in Slurm by using <code>squeue -u &lt;netid&gt;</code>.</p>
 <p>dSQ creates a file named <code>job_&lt;jobid&gt;_status.tsv</code>, which will report the success or failure of each job as it finishes. Note this file will not contain information for any jobs that were canceled (e.g. by the user with scancel) before they began. This file contains details about the completed jobs in the following tab-separated columns:</p>
@@ -12855,8 +14119,7 @@ Job: the line from your job file
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="dSQ-Example-1:-Flipping-Images">dSQ Example 1: Flipping Images<a class="anchor-link" href="#dSQ-Example-1:-Flipping-Images">&#182;</a></h1><p>We can extend the example from before to be deployed on the clusters.</p>
 <p>Our python script (<code>image_flipper.py</code>) now looks like this:</p>
@@ -12883,8 +14146,7 @@ Job: the line from your job file
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Then we need to create the <code>jobfile.txt</code>:</p>
 
@@ -12900,7 +14162,7 @@ Job: the line from your job file
     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;python image_flipper.py </span><span class="si">{file_name}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12910,7 +14172,7 @@ Job: the line from your job file
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12933,8 +14195,7 @@ python image_flipper.py ./data/london_bridge.jpg
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This can then be saved (<code>jf.txt</code>) passed to dSQ:</p>
 
@@ -12959,8 +14220,7 @@ python image_flipper.py ./data/london_bridge.jpg
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can either save this output as a sbatch submission script (and then run it: <code>sbatch run.sh</code>), or we can add the <code>--submit</code> flag to the dSQ command which will automatically submit the job array:</p>
 
@@ -12978,16 +14238,14 @@ python image_flipper.py ./data/london_bridge.jpg
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Not-so-embarassingly-Parallel-Problems">Not-so-embarassingly Parallel Problems<a class="anchor-link" href="#Not-so-embarassingly-Parallel-Problems">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are also many problems that cannot be so easily split up. Many problems need to have communication between different steps and we would like a way to send messages between processes.</p>
 <p>Examples of this include simulations of galaxy formation and electic field simulations, analysis of a single large dataset, or complex <code>search</code> or <code>sort</code> algorithms.</p>
@@ -12996,8 +14254,7 @@ python image_flipper.py ./data/london_bridge.jpg
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="mpi4py"><code>mpi4py</code><a class="anchor-link" href="#mpi4py">&#182;</a></h1><p>There is a standard protocol, called <code>MPI</code>, that defines how messages are passed between processes, including one-to-one and broadcast communications.</p>
 <p>The Python module for this is called <code>mpi4py</code>:</p>
@@ -13011,8 +14268,7 @@ python image_flipper.py ./data/london_bridge.jpg
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="First,-a-few-definitions">First, a few definitions<a class="anchor-link" href="#First,-a-few-definitions">&#182;</a></h2><p><code>COMM</code>: The communication "world" defined by MPI</p>
 <p><code>RANK</code>: an ID number given to each internal process to define communcation</p>
@@ -13025,8 +14281,7 @@ python image_flipper.py ./data/london_bridge.jpg
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Installing-mpi4py">Installing mpi4py<a class="anchor-link" href="#Installing-mpi4py">&#182;</a></h2><p>By far the easiest way to install mpi4py is using Anaconda, which will also install dependences (including <code>MPI</code>).</p>
 <p>On your personal machine, run the following:</p>
@@ -13044,8 +14299,7 @@ conda create --name mpi python=3.6 mpi4py numpy scipy </code></pre>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="MPI-Example-1:-RANK">MPI Example 1: RANK<a class="anchor-link" href="#MPI-Example-1:-RANK">&#182;</a></h2><p><code>mpi4py</code> doesn't run well in a notebook, so we will make a file (<code>mpi_simple.py</code>) containing the following:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
@@ -13068,8 +14322,7 @@ conda create --name mpi python=3.6 mpi4py numpy scipy </code></pre>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We then execute this code (named <code>mpi_simple.py</code>) by running the following on the command line:</p>
 
@@ -13079,8 +14332,7 @@ conda create --name mpi python=3.6 mpi4py numpy scipy </code></pre>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Which outputs the following:</p>
 
@@ -13093,8 +14345,7 @@ rank: 3 has PID: 89137</code></pre>
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
 <pre><code>mpirun -n 4 python mpi_simple.py
@@ -13108,8 +14359,7 @@ rank: 3 has PID: 89137</code></pre>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Point-to-Point-Communicators">Point to Point Communicators<a class="anchor-link" href="#Point-to-Point-Communicators">&#182;</a></h2><p>The most basic communication operators are "<code>send</code>" and "<code>recv</code>". These can be a bit tricky since they are "blocking" commands and can cause the program to hang.</p>
 
@@ -13127,8 +14377,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MPI-Example-2:-send-and-recv">MPI Example 2: <code>send</code> and <code>recv</code><a class="anchor-link" href="#MPI-Example-2:-send-and-recv">&#182;</a></h1><p>We now we create a file (<code>mpi_comm.py</code>) that contains the following:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
@@ -13148,8 +14397,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When we run this on the command line (<code>mpirun -n 4 python mpi_comm.py</code>) we get the following:</p>
 
@@ -13159,8 +14407,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <code>RANK=0</code> process sends the message, and the <code>RANK=1</code> process receives it. The other two processes are effectively bystanders in this example.</p>
 
@@ -13168,8 +14415,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MPI-Example-3:-Broadcast">MPI Example 3: Broadcast<a class="anchor-link" href="#MPI-Example-3:-Broadcast">&#182;</a></h1><p>Now we will try a slightly more complicated example that involves sending messages between processes.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Import MPI</span>
@@ -13200,8 +14446,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We then execute this code (named <code>mpi_message.py</code>) by running the following on the command line:</p>
 
@@ -13211,8 +14456,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Which outputs the following:</p>
 
@@ -13225,8 +14469,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MPI-Example-4:-Scatter-and-Gather">MPI Example 4: Scatter and Gather<a class="anchor-link" href="#MPI-Example-4:-Scatter-and-Gather">&#182;</a></h1><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
 <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
@@ -13265,8 +14508,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again we execute this on the command line (<code>mpirun -n 4 python mpi/mpi_scatter.py</code>)</p>
 
@@ -13274,8 +14516,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Which prints: <code>Full Average: 10.00002060397186</code></p>
 
@@ -13283,8 +14524,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Key-Take-aways">Key Take-aways<a class="anchor-link" href="#Key-Take-aways">&#182;</a></h1><ol>
 <li><code>MPI</code> is a powerful tool to set up communication worlds and send data and messages between workers</li>
@@ -13296,16 +14536,14 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="GPU-Parallelism">GPU Parallelism<a class="anchor-link" href="#GPU-Parallelism">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="CPU-vs-GPU">CPU vs GPU<a class="anchor-link" href="#CPU-vs-GPU">&#182;</a></h2><ul>
 <li><p>CPU (Central Processing Unit)</p>
@@ -13328,8 +14566,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Vectorized-Functions">Vectorized Functions<a class="anchor-link" href="#Vectorized-Functions">&#182;</a></h2><ul>
 <li>Vectorization: Applying the same function to every element of an array</li>
@@ -13341,8 +14578,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="GPUs-on-the-Clusters">GPUs on the Clusters<a class="anchor-link" href="#GPUs-on-the-Clusters">&#182;</a></h2><ul>
 <li>We have a collection of GPUs available on Farnam and Grace</li>
@@ -13358,8 +14594,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="PyCUDA">PyCUDA<a class="anchor-link" href="#PyCUDA">&#182;</a></h2><p><em><a href="https://documen.tician.de/pycuda/">https://documen.tician.de/pycuda/</a></em></p>
 <ul>
@@ -13372,8 +14607,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Cupy">Cupy<a class="anchor-link" href="#Cupy">&#182;</a></h2><p><em><a href="https://docs-cupy.chainer.org/en/stable/">https://docs-cupy.chainer.org/en/stable/</a></em></p>
 <ul>
@@ -13395,14 +14629,13 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First, let's define a test routine with <code>numpy</code></p>
 
@@ -13414,20 +14647,20 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-# Create 2D numpy arrays
-a = np.random.random(16000000)
-a = a.reshape(4000,4000)
+<span class="c1"># Create 2D numpy arrays</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">25000000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
 
-b = np.random.random(16000000)
-b = b.reshape(4000,4000)
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">25000000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
 
-# Matrix Mult
-out = np.matmul(a,b)
+<span class="c1"># Matrix Mult</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13437,11 +14670,11 @@ out = np.matmul(a,b)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.88 s ± 707 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>6.5 s ± 2.09 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13451,8 +14684,7 @@ out = np.matmul(a,b)
 
 </div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, let's perform the same code but running the multiplication on the GPU</p>
 
@@ -13464,24 +14696,24 @@ out = np.matmul(a,b)
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
 
-# Create 2D numpy arrays
-a = np.random.random(16000000)
-a = a.reshape(4000,4000)
+<span class="c1"># Create 2D numpy arrays</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">25000000</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
 
-b = np.random.random(16000000)
-b = b.reshape(4000,4000)
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">25000000</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
 
-# Move to GPU
-g = cp.asarray(a)
-h = cp.asarray(b)
+<span class="c1"># Move to GPU</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-# Matrix Mult
-out = cp.matmul(g,h)
+<span class="c1"># Matrix Mult</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13491,11 +14723,11 @@ out = cp.matmul(g,h)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>318 ms ± 787 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>473 ms ± 432 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13505,140 +14737,98 @@ out = cp.matmul(g,h)
 
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Considerablly faster matrix multiplication without any complicated parallel work!</p>
 
 </div>
 </div>
-</div></div></section><section>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GPU-Summary">GPU Summary<a class="anchor-link" href="#GPU-Summary">&#182;</a></h2><ul>
-<li>There are a ton of exciting projects that are starting to utilize GPUs. </li>
-<li>Having python connection to these tools enable rapid work with machine learning or other computationally intensive tasks</li>
-<li>Make use of the GPUs in the clusters to get started with this kind of tool</li>
+<h2 id="Example:-NYC-Taxi-Cab-Data">Example: NYC Taxi Cab Data<a class="anchor-link" href="#Example:-NYC-Taxi-Cab-Data">&#182;</a></h2><ul>
+<li>Get the list of NYC taxi cab data <a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page">link</a></li>
+<li>Each month of data is ~1GB text file, we've grabbed all of 2017</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dask">Dask<a class="anchor-link" href="#Dask">&#182;</a></h1>
-</div>
-</div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A relatively new tool called <a href="http://docs.dask.org/en/latest/"><code>Dask</code></a> is designed to take numpy arrays and perform tasks on different pieces of the array using parallel processing.</p>
-<p>The installation is (again) simple using <code>conda</code>.</p>
-<p>You can run Dask on your local machine or within a running job on the cluster:</p>
+<h3 id="Load-data-using-Pandas">Load data using Pandas<a class="anchor-link" href="#Load-data-using-Pandas">&#182;</a></h3><p>Pandas has very friendly tools for reading data, we will use the <code>read_csv</code> method to read our Taxi Cab data before converting it to numpy arrays</p>
 
 </div>
 </div>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="k">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">progress</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">threads_per_worker</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-                <span class="n">n_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">memory_limit</span><span class="o">=</span><span class="s1">&#39;5GB&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../taxi/yellow_tripdata_2017-04.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
-</div></section><section>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">),</span> <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">))</span>
-<span class="n">x</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">])</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;trip_distance&#39;</span><span class="p">])</span>
 </pre></div>
 
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>dask.array&lt;random_sample, shape=(50000, 50000), dtype=float64, chunksize=(2000, 2000)&gt;</pre>
-</div>
-
-</div>
-
+    </div>
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Move-data-to-GPU">Move data to GPU<a class="anchor-link" href="#Move-data-to-GPU">&#182;</a></h3><p>Cupy has built-in tools to move data to and from GPUs, <code>cp.asarray()</code> and <code>cp.asnumpy</code>. We will use these to analyze data from the Taxi Cab dataset.</p>
+
+</div>
+</div>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5000</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">z</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tip</span><span class="p">)</span>
+<span class="n">gpu_dist</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
 </pre></div>
 
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>dask.array&lt;mean_agg-aggregate, shape=(25000,), dtype=float64, chunksize=(1000,)&gt;</pre>
-</div>
-
-</div>
-
+    </div>
 </div>
 </div>
 
-</div></div><div class="fragment">
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Comparison-of-CPU-and-GPU-performance">Comparison of CPU and GPU performance<a class="anchor-link" href="#Comparison-of-CPU-and-GPU-performance">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">tip</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13648,16 +14838,27 @@ out = cp.matmul(g,h)
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt"></div>
 
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([0.99763134, 1.00073683, 0.99687485, ..., 1.00041844, 0.99896855,
-       1.0005904 ])</pre>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/ipykernel_launcher.py:1: RuntimeWarning: divide by zero encountered in true_divide
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+</pre>
+</div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.12 ms ± 20.4 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre>
+</div>
 </div>
 
 </div>
@@ -13669,63 +14870,53 @@ out = cp.matmul(g,h)
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">client</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
+<span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip</span><span class="p">,</span> <span class="n">gpu_dist</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>80.2 µs ± 12.5 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+</pre>
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dask.Distributed-on-the-Cluster">Dask.Distributed on the Cluster<a class="anchor-link" href="#Dask.Distributed-on-the-Cluster">&#182;</a></h1><p><code>Dask.Distributed</code> is a utility to launch workers using SLURM on a cluster.</p>
+</div>
 
 </div>
 </div>
+
 </div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Visualizing-Results">Visualizing Results<a class="anchor-link" href="#Visualizing-Results">&#182;</a></h2><p>Data have to be pulled off the GPU to be able to visualize them.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load in Dask utilities</span>
-<span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="k">import</span> <span class="n">Client</span>
-<span class="kn">from</span> <span class="nn">dask_jobqueue</span> <span class="k">import</span> <span class="n">SLURMCluster</span>
-<span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
-<span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
-
-<span class="c1"># Load other modules</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">time</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip</span><span class="p">,</span> <span class="n">gpu_dist</span><span class="p">)</span>
+<span class="n">tpm</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">gpu_tip_per_mile</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tpm</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tip Efficiency (Dollar/Mile)&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rides&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Define single unit of the Dask Distributed "Cluster":</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cluster</span> <span class="o">=</span> <span class="n">SLURMCluster</span><span class="p">(</span><span class="n">queue</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="s1">&#39;hpcprog&#39;</span><span class="p">,</span> <span class="n">cores</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="s2">&quot;10GB&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
+    </div>
 </div>
 </div>
 
@@ -13735,147 +14926,1532 @@ out = cp.matmul(g,h)
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/hep/heeger/tl397/project/conda/gpu/lib/python3.7/site-packages/distributed/bokeh/core.py:57: UserWarning: 
-Port 8787 is already in use. 
-Perhaps you already have a cluster running?
-Hosting the diagnostics dashboard on a random port instead.
-  warnings.warn(&#39;\n&#39; + msg)
+<pre>/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/numpy/lib/histograms.py:829: RuntimeWarning: invalid value encountered in greater_equal
+  keep = (tmp_a &gt;= first_edge)
+/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/numpy/lib/histograms.py:830: RuntimeWarning: invalid value encountered in less_equal
+  keep &amp;= (tmp_a &lt;= last_edge)
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Scale up the <code>cluster</code> to have 5 members and initialize the <code>client</code> to connect to the <code>cluster</code>:</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cluster</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="NYC-Taxi-Cab-Data">NYC Taxi Cab Data<a class="anchor-link" href="#NYC-Taxi-Cab-Data">&#182;</a></h2><ul>
-<li>Get the list of NYC taxi cab data <a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page">link</a></li>
-<li>Each month of data is ~1GB text file, we've grabbed all of 2017</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/home/hep/heeger/tl397/scratch60/taxi/*2017*csv&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;{len(file_list)} files selected&quot;</span><span class="p">)</span>
-
-<span class="c1"># Prep Dask to load the data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
 <div class="output_area">
 
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>12 files selected
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-1:-Tip-Percentage">Example 1: Tip Percentage<a class="anchor-link" href="#Example-1:-Tip-Percentage">&#182;</a></h2><p>What is the distribution of tips (as a fraction of the total fare) for the full year?</p>
-<p>We will use the <code>DaskArray Histogram</code> function to visualize this:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip_percent</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;fare_amount&#39;</span><span class="p">]</span>
-<span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">tip_percent</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">h</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tip (%)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
+<div class="output_svg output_subarea ">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="262.19625pt" version="1.1" viewBox="0 0 387.478125 262.19625" width="387.478125pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 262.19625 
+L 387.478125 262.19625 
+L 387.478125 0 
+L 0 0 
+z
+" style="fill:none;"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 45.478125 224.64 
+L 380.278125 224.64 
+L 380.278125 7.2 
+L 45.478125 7.2 
+z
+" style="fill:#ffffff;"/>
+   </g>
+   <g id="patch_3">
+    <path clip-path="url(#p8e577835b2)" d="M 60.696307 263.19625 
+L 60.696307 80.791196 
+L 62.218125 80.791196 
+L 62.218125 69.324152 
+L 63.739943 69.324152 
+L 63.739943 60.678229 
+L 65.261761 60.678229 
+L 65.261761 50.022442 
+L 66.78358 50.022442 
+L 66.78358 46.025279 
+L 68.305398 46.025279 
+L 68.305398 42.713501 
+L 69.827216 42.713501 
+L 69.827216 38.695336 
+L 71.349034 38.695336 
+L 71.349034 36.993978 
+L 72.870852 36.993978 
+L 72.870852 32.91214 
+L 74.39267 32.91214 
+L 74.39267 28.192869 
+L 75.914489 28.192869 
+L 75.914489 25.959675 
+L 77.436307 25.959675 
+L 77.436307 22.944969 
+L 78.958125 22.944969 
+L 78.958125 20.136121 
+L 80.479943 20.136121 
+L 80.479943 18.849 
+L 82.001761 18.849 
+L 82.001761 18.111793 
+L 83.52358 18.111793 
+L 83.52358 19.016177 
+L 85.045398 19.016177 
+L 85.045398 17.200826 
+L 86.567216 17.200826 
+L 86.567216 17.652431 
+L 88.089034 17.652431 
+L 88.089034 17.083636 
+L 89.610852 17.083636 
+L 89.610852 19.438114 
+L 91.13267 19.438114 
+L 91.13267 17.639887 
+L 92.654489 17.639887 
+L 92.654489 20.931783 
+L 94.176307 20.931783 
+L 94.176307 21.163986 
+L 97.219943 21.137459 
+L 97.219943 24.35718 
+L 98.741761 24.35718 
+L 98.741761 25.702966 
+L 100.26358 25.702966 
+L 100.26358 25.212616 
+L 101.785398 25.212616 
+L 101.785398 29.967149 
+L 103.307216 29.967149 
+L 103.307216 30.593266 
+L 104.829034 30.593266 
+L 104.829034 30.451257 
+L 106.350852 30.451257 
+L 106.350852 35.623216 
+L 107.87267 35.623216 
+L 107.87267 32.192191 
+L 109.394489 32.192191 
+L 109.394489 37.349829 
+L 110.916307 37.349829 
+L 110.916307 41.44516 
+L 112.438125 41.44516 
+L 112.438125 39.567753 
+L 113.959943 39.567753 
+L 113.959943 46.817243 
+L 115.481761 46.817243 
+L 115.481761 41.852773 
+L 117.00358 41.852773 
+L 117.00358 48.064099 
+L 118.525398 48.064099 
+L 118.525398 48.53453 
+L 120.047216 48.53453 
+L 120.047216 51.191411 
+L 121.569034 51.191411 
+L 121.569034 48.20296 
+L 123.090852 48.20296 
+L 123.090852 58.468596 
+L 124.61267 58.468596 
+L 124.61267 56.534784 
+L 126.134489 56.534784 
+L 126.134489 60.589978 
+L 127.656307 60.589978 
+L 127.656307 60.461714 
+L 129.178125 60.461714 
+L 129.178125 63.850028 
+L 130.699943 63.850028 
+L 130.699943 64.54353 
+L 132.221761 64.54353 
+L 132.221761 67.772001 
+L 133.74358 67.772001 
+L 133.74358 56.844906 
+L 135.265398 56.844906 
+L 135.265398 77.690166 
+L 136.787216 77.690166 
+L 136.787216 73.013914 
+L 138.309034 73.013914 
+L 138.309034 68.976442 
+L 139.830852 68.976442 
+L 139.830852 78.976405 
+L 141.35267 78.976405 
+L 141.35267 84.34604 
+L 142.874489 84.34604 
+L 142.874489 84.208003 
+L 144.396307 84.208003 
+L 144.396307 71.034804 
+L 145.918125 71.034804 
+L 145.918125 77.173141 
+L 147.439943 77.173141 
+L 147.439943 91.331236 
+L 148.961761 91.331236 
+L 148.961761 84.884486 
+L 150.48358 84.884486 
+L 150.48358 95.945699 
+L 152.005398 95.945699 
+L 152.005398 84.299918 
+L 153.527216 84.299918 
+L 153.527216 81.356674 
+L 155.049034 81.356674 
+L 155.049034 101.448511 
+L 156.570852 101.448511 
+L 156.570852 98.406699 
+L 158.09267 98.406699 
+L 158.09267 101.843278 
+L 159.614489 101.843278 
+L 159.614489 78.509609 
+L 161.136307 78.509609 
+L 161.136307 95.284788 
+L 162.658125 95.284788 
+L 162.658125 105.058592 
+L 164.179943 105.058592 
+L 164.179943 90.362479 
+L 165.701761 90.362479 
+L 165.701761 117.438274 
+L 167.22358 117.438274 
+L 167.22358 104.857854 
+L 168.745398 104.857854 
+L 168.745398 106.891408 
+L 170.267216 106.891408 
+L 170.267216 107.340179 
+L 171.789034 107.340179 
+L 171.789034 104.139113 
+L 173.310852 104.139113 
+L 173.310852 118.086197 
+L 174.83267 118.086197 
+L 174.83267 108.671243 
+L 176.354489 108.671243 
+L 176.354489 106.165814 
+L 177.876307 106.165814 
+L 177.876307 126.954928 
+L 179.398125 126.954928 
+L 179.398125 93.39059 
+L 180.919943 93.39059 
+L 180.919943 136.780875 
+L 182.441761 136.780875 
+L 182.441761 128.025426 
+L 183.96358 128.025426 
+L 183.96358 128.470759 
+L 185.485398 128.470759 
+L 185.485398 109.163755 
+L 187.007216 109.163755 
+L 187.007216 105.46642 
+L 188.529034 105.46642 
+L 188.529034 113.424038 
+L 190.050852 113.424038 
+L 190.050852 124.604034 
+L 191.57267 124.604034 
+L 191.57267 132.458339 
+L 193.094489 132.458339 
+L 193.094489 130.612076 
+L 194.616307 130.612076 
+L 194.616307 129.158562 
+L 196.138125 129.158562 
+L 196.138125 124.976567 
+L 197.659943 124.976567 
+L 197.659943 143.298712 
+L 199.181761 143.298712 
+L 199.181761 128.697324 
+L 200.70358 128.697324 
+L 200.70358 124.789405 
+L 202.225398 124.789405 
+L 202.225398 119.170178 
+L 203.747216 119.170178 
+L 203.747216 133.893892 
+L 205.269034 133.893892 
+L 205.269034 134.194225 
+L 206.790852 134.194225 
+L 206.790852 141.897782 
+L 208.31267 141.897782 
+L 208.31267 151.643451 
+L 209.834489 151.643451 
+L 209.834489 94.450211 
+L 211.356307 94.450211 
+L 211.356307 168.306496 
+L 212.878125 168.306496 
+L 212.878125 147.025168 
+L 215.921761 147.025168 
+L 215.921761 134.194225 
+L 217.44358 134.194225 
+L 217.44358 157.719343 
+L 218.965398 157.719343 
+L 218.965398 120.616454 
+L 220.487216 120.616454 
+L 220.487216 150.91238 
+L 223.530852 150.91238 
+L 223.530852 154.879473 
+L 225.05267 154.879473 
+L 225.05267 147.621248 
+L 226.574489 147.621248 
+L 226.574489 142.353593 
+L 228.096307 142.353593 
+L 228.096307 135.124217 
+L 229.618125 135.124217 
+L 229.618125 162.298454 
+L 231.139943 162.298454 
+L 231.139943 140.174771 
+L 232.661761 140.174771 
+L 232.661761 147.025168 
+L 234.18358 147.025168 
+L 234.18358 143.298712 
+L 235.705398 143.298712 
+L 235.705398 156.725735 
+L 237.227216 156.725735 
+L 237.227216 149.528141 
+L 238.749034 149.528141 
+L 238.749034 180.048013 
+L 240.270852 180.048013 
+L 240.270852 187.902318 
+L 241.79267 187.902318 
+L 241.79267 120.318431 
+L 243.314489 120.318431 
+L 243.314489 162.298454 
+L 246.358125 162.298454 
+L 246.358125 156.725735 
+L 247.879943 156.725735 
+L 247.879943 170.152759 
+L 249.401761 170.152759 
+L 249.401761 127.806542 
+L 250.92358 127.806542 
+L 250.92358 168.306496 
+L 252.445398 168.306496 
+L 252.445398 172.193708 
+L 255.489034 172.193708 
+L 255.489034 162.298454 
+L 257.010852 162.298454 
+L 257.010852 153.193966 
+L 258.53267 153.193966 
+L 258.53267 187.902318 
+L 260.054489 187.902318 
+L 260.054489 193.475036 
+L 261.576307 193.475036 
+L 261.576307 120.616454 
+L 263.098125 120.616454 
+L 263.098125 168.306496 
+L 264.619943 168.306496 
+L 264.619943 170.152759 
+L 266.141761 170.152759 
+L 266.141761 161.048271 
+L 267.66358 161.048271 
+L 267.66358 168.306496 
+L 269.185398 168.306496 
+L 269.185398 183.579782 
+L 270.707216 183.579782 
+L 270.707216 163.634921 
+L 272.229034 163.634921 
+L 272.229034 149.528141 
+L 273.750852 149.528141 
+L 273.750852 166.62099 
+L 275.27267 166.62099 
+L 275.27267 174.475294 
+L 276.794489 174.475294 
+L 276.794489 144.29232 
+L 278.316307 144.29232 
+L 278.316307 183.579782 
+L 279.838125 183.579782 
+L 279.838125 172.193708 
+L 281.359943 172.193708 
+L 281.359943 170.152759 
+L 282.881761 170.152759 
+L 282.881761 183.579782 
+L 284.40358 183.579782 
+L 284.40358 174.475294 
+L 285.925398 174.475294 
+L 285.925398 183.579782 
+L 287.447216 183.579782 
+L 287.447216 130.115354 
+L 288.969034 130.115354 
+L 288.969034 177.061944 
+L 290.490852 177.061944 
+L 290.490852 174.475294 
+L 293.534489 174.475294 
+L 293.534489 165.070474 
+L 295.056307 165.070474 
+L 295.056307 158.766685 
+L 296.578125 158.766685 
+L 296.578125 165.070474 
+L 298.099943 165.070474 
+L 298.099943 187.902318 
+L 299.621761 187.902318 
+L 299.621761 170.152759 
+L 301.14358 170.152759 
+L 301.14358 193.475036 
+L 302.665398 193.475036 
+L 302.665398 150.207898 
+L 304.187216 150.207898 
+L 304.187216 174.475294 
+L 305.709034 174.475294 
+L 305.709034 187.902318 
+L 307.230852 187.902318 
+L 307.230852 193.475036 
+L 308.75267 193.475036 
+L 308.75267 187.902318 
+L 311.796307 187.902318 
+L 311.796307 177.061944 
+L 313.318125 177.061944 
+L 313.318125 145.339661 
+L 314.839943 145.339661 
+L 314.839943 201.329341 
+L 316.361761 201.329341 
+L 316.361761 177.061944 
+L 317.88358 177.061944 
+L 317.88358 140.59137 
+L 319.405398 140.59137 
+L 319.405398 201.329341 
+L 320.927216 201.329341 
+L 320.927216 168.306496 
+L 322.449034 168.306496 
+L 322.449034 201.329341 
+L 323.970852 201.329341 
+L 323.970852 187.902318 
+L 325.49267 187.902318 
+L 325.49267 183.579782 
+L 327.014489 183.579782 
+L 327.014489 180.048013 
+L 328.536307 180.048013 
+L 328.536307 193.475036 
+L 330.058125 193.475036 
+L 330.058125 214.756364 
+L 333.101761 214.756364 
+L 333.101761 168.306496 
+L 334.62358 168.306496 
+L 334.62358 214.756364 
+L 336.145398 214.756364 
+L 336.145398 166.62099 
+L 337.667216 166.62099 
+L 337.667216 214.756364 
+L 339.189034 214.756364 
+L 339.189034 193.475036 
+L 340.710852 193.475036 
+L 340.710852 177.061944 
+L 342.23267 177.061944 
+L 342.23267 193.475036 
+L 343.754489 193.475036 
+L 343.754489 201.329341 
+L 345.276307 201.329341 
+L 345.276307 187.902318 
+L 346.798125 187.902318 
+L 346.798125 180.048013 
+L 348.319943 180.048013 
+L 348.319943 151.643451 
+L 349.841761 151.643451 
+L 349.841761 180.048013 
+L 351.36358 180.048013 
+L 351.36358 193.475036 
+L 352.885398 193.475036 
+L 352.885398 201.329341 
+L 354.407216 201.329341 
+L 354.407216 214.756364 
+L 355.929034 214.756364 
+L 355.929034 187.902318 
+L 357.450852 187.902318 
+L 357.450852 201.329341 
+L 358.97267 201.329341 
+L 358.97267 193.475036 
+L 360.494489 193.475036 
+L 360.494489 214.756364 
+L 362.016307 214.756364 
+L 362.016307 201.329341 
+L 363.538125 201.329341 
+L 363.538125 121.382209 
+L 365.059943 121.382209 
+L 365.059943 263.19625 
+L 365.059943 263.19625 
+" style="fill:none;stroke:#1f77b4;stroke-linejoin:miter;"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path d="M 0 0 
+L 0 3.5 
+" id="mead4014e5a" style="stroke:#000000;stroke-width:0.8;"/>
+      </defs>
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#mead4014e5a" y="224.64"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 0 -->
+      <defs>
+       <path d="M 31.78125 66.40625 
+Q 24.171875 66.40625 20.328125 58.90625 
+Q 16.5 51.421875 16.5 36.375 
+Q 16.5 21.390625 20.328125 13.890625 
+Q 24.171875 6.390625 31.78125 6.390625 
+Q 39.453125 6.390625 43.28125 13.890625 
+Q 47.125 21.390625 47.125 36.375 
+Q 47.125 51.421875 43.28125 58.90625 
+Q 39.453125 66.40625 31.78125 66.40625 
+z
+M 31.78125 74.21875 
+Q 44.046875 74.21875 50.515625 64.515625 
+Q 56.984375 54.828125 56.984375 36.375 
+Q 56.984375 17.96875 50.515625 8.265625 
+Q 44.046875 -1.421875 31.78125 -1.421875 
+Q 19.53125 -1.421875 13.0625 8.265625 
+Q 6.59375 17.96875 6.59375 36.375 
+Q 6.59375 54.828125 13.0625 64.515625 
+Q 19.53125 74.21875 31.78125 74.21875 
+z
+" id="DejaVuSans-48"/>
+      </defs>
+      <g transform="translate(54.440677 239.238437)scale(0.1 -0.1)">
+       <use xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#mead4014e5a" y="224.64"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 2 -->
+      <defs>
+       <path d="M 19.1875 8.296875 
+L 53.609375 8.296875 
+L 53.609375 0 
+L 7.328125 0 
+L 7.328125 8.296875 
+Q 12.9375 14.109375 22.625 23.890625 
+Q 32.328125 33.6875 34.8125 36.53125 
+Q 39.546875 41.84375 41.421875 45.53125 
+Q 43.3125 49.21875 43.3125 52.78125 
+Q 43.3125 58.59375 39.234375 62.25 
+Q 35.15625 65.921875 28.609375 65.921875 
+Q 23.96875 65.921875 18.8125 64.3125 
+Q 13.671875 62.703125 7.8125 59.421875 
+L 7.8125 69.390625 
+Q 13.765625 71.78125 18.9375 73 
+Q 24.125 74.21875 28.421875 74.21875 
+Q 39.75 74.21875 46.484375 68.546875 
+Q 53.21875 62.890625 53.21875 53.421875 
+Q 53.21875 48.921875 51.53125 44.890625 
+Q 49.859375 40.875 45.40625 35.40625 
+Q 44.1875 33.984375 37.640625 27.21875 
+Q 31.109375 20.453125 19.1875 8.296875 
+z
+" id="DejaVuSans-50"/>
+      </defs>
+      <g transform="translate(115.92828 239.238437)scale(0.1 -0.1)">
+       <use xlink:href="#DejaVuSans-50"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#mead4014e5a" y="224.64"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 4 -->
+      <defs>
+       <path d="M 37.796875 64.3125 
+L 12.890625 25.390625 
+L 37.796875 25.390625 
+z
+M 35.203125 72.90625 
+L 47.609375 72.90625 
+L 47.609375 25.390625 
+L 58.015625 25.390625 
+L 58.015625 17.1875 
+L 47.609375 17.1875 
+L 47.609375 0 
+L 37.796875 0 
+L 37.796875 17.1875 
+L 4.890625 17.1875 
+L 4.890625 26.703125 
+z
+" id="DejaVuSans-52"/>
+      </defs>
+      <g transform="translate(177.415883 239.238437)scale(0.1 -0.1)">
+       <use xlink:href="#DejaVuSans-52"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#mead4014e5a" y="224.64"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 6 -->
+      <defs>
+       <path d="M 33.015625 40.375 
+Q 26.375 40.375 22.484375 35.828125 
+Q 18.609375 31.296875 18.609375 23.390625 
+Q 18.609375 15.53125 22.484375 10.953125 
+Q 26.375 6.390625 33.015625 6.390625 
+Q 39.65625 6.390625 43.53125 10.953125 
+Q 47.40625 15.53125 47.40625 23.390625 
+Q 47.40625 31.296875 43.53125 35.828125 
+Q 39.65625 40.375 33.015625 40.375 
+z
+M 52.59375 71.296875 
+L 52.59375 62.3125 
+Q 48.875 64.0625 45.09375 64.984375 
+Q 41.3125 65.921875 37.59375 65.921875 
+Q 27.828125 65.921875 22.671875 59.328125 
+Q 17.53125 52.734375 16.796875 39.40625 
+Q 19.671875 43.65625 24.015625 45.921875 
+Q 28.375 48.1875 33.59375 48.1875 
+Q 44.578125 48.1875 50.953125 41.515625 
+Q 57.328125 34.859375 57.328125 23.390625 
+Q 57.328125 12.15625 50.6875 5.359375 
+Q 44.046875 -1.421875 33.015625 -1.421875 
+Q 20.359375 -1.421875 13.671875 8.265625 
+Q 6.984375 17.96875 6.984375 36.375 
+Q 6.984375 53.65625 15.1875 63.9375 
+Q 23.390625 74.21875 37.203125 74.21875 
+Q 40.921875 74.21875 44.703125 73.484375 
+Q 48.484375 72.75 52.59375 71.296875 
+z
+" id="DejaVuSans-54"/>
+      </defs>
+      <g transform="translate(238.903487 239.238437)scale(0.1 -0.1)">
+       <use xlink:href="#DejaVuSans-54"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#mead4014e5a" y="224.64"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 8 -->
+      <defs>
+       <path d="M 31.78125 34.625 
+Q 24.75 34.625 20.71875 30.859375 
+Q 16.703125 27.09375 16.703125 20.515625 
+Q 16.703125 13.921875 20.71875 10.15625 
+Q 24.75 6.390625 31.78125 6.390625 
+Q 38.8125 6.390625 42.859375 10.171875 
+Q 46.921875 13.96875 46.921875 20.515625 
+Q 46.921875 27.09375 42.890625 30.859375 
+Q 38.875 34.625 31.78125 34.625 
+z
+M 21.921875 38.8125 
+Q 15.578125 40.375 12.03125 44.71875 
+Q 8.5 49.078125 8.5 55.328125 
+Q 8.5 64.0625 14.71875 69.140625 
+Q 20.953125 74.21875 31.78125 74.21875 
+Q 42.671875 74.21875 48.875 69.140625 
+Q 55.078125 64.0625 55.078125 55.328125 
+Q 55.078125 49.078125 51.53125 44.71875 
+Q 48 40.375 41.703125 38.8125 
+Q 48.828125 37.15625 52.796875 32.3125 
+Q 56.78125 27.484375 56.78125 20.515625 
+Q 56.78125 9.90625 50.3125 4.234375 
+Q 43.84375 -1.421875 31.78125 -1.421875 
+Q 19.734375 -1.421875 13.25 4.234375 
+Q 6.78125 9.90625 6.78125 20.515625 
+Q 6.78125 27.484375 10.78125 32.3125 
+Q 14.796875 37.15625 21.921875 38.8125 
+z
+M 18.3125 54.390625 
+Q 18.3125 48.734375 21.84375 45.5625 
+Q 25.390625 42.390625 31.78125 42.390625 
+Q 38.140625 42.390625 41.71875 45.5625 
+Q 45.3125 48.734375 45.3125 54.390625 
+Q 45.3125 60.0625 41.71875 63.234375 
+Q 38.140625 66.40625 31.78125 66.40625 
+Q 25.390625 66.40625 21.84375 63.234375 
+Q 18.3125 60.0625 18.3125 54.390625 
+z
+" id="DejaVuSans-56"/>
+      </defs>
+      <g transform="translate(300.39109 239.238437)scale(0.1 -0.1)">
+       <use xlink:href="#DejaVuSans-56"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#mead4014e5a" y="224.64"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 10 -->
+      <defs>
+       <path d="M 12.40625 8.296875 
+L 28.515625 8.296875 
+L 28.515625 63.921875 
+L 10.984375 60.40625 
+L 10.984375 69.390625 
+L 28.421875 72.90625 
+L 38.28125 72.90625 
+L 38.28125 8.296875 
+L 54.390625 8.296875 
+L 54.390625 0 
+L 12.40625 0 
+z
+" id="DejaVuSans-49"/>
+      </defs>
+      <g transform="translate(358.697443 239.238437)scale(0.1 -0.1)">
+       <use xlink:href="#DejaVuSans-49"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_7">
+     <!-- Tip Efficiency (Dollar/Mile) -->
+     <defs>
+      <path d="M -0.296875 72.90625 
+L 61.375 72.90625 
+L 61.375 64.59375 
+L 35.5 64.59375 
+L 35.5 0 
+L 25.59375 0 
+L 25.59375 64.59375 
+L -0.296875 64.59375 
+z
+" id="DejaVuSans-84"/>
+      <path d="M 9.421875 54.6875 
+L 18.40625 54.6875 
+L 18.40625 0 
+L 9.421875 0 
+z
+M 9.421875 75.984375 
+L 18.40625 75.984375 
+L 18.40625 64.59375 
+L 9.421875 64.59375 
+z
+" id="DejaVuSans-105"/>
+      <path d="M 18.109375 8.203125 
+L 18.109375 -20.796875 
+L 9.078125 -20.796875 
+L 9.078125 54.6875 
+L 18.109375 54.6875 
+L 18.109375 46.390625 
+Q 20.953125 51.265625 25.265625 53.625 
+Q 29.59375 56 35.59375 56 
+Q 45.5625 56 51.78125 48.09375 
+Q 58.015625 40.1875 58.015625 27.296875 
+Q 58.015625 14.40625 51.78125 6.484375 
+Q 45.5625 -1.421875 35.59375 -1.421875 
+Q 29.59375 -1.421875 25.265625 0.953125 
+Q 20.953125 3.328125 18.109375 8.203125 
+z
+M 48.6875 27.296875 
+Q 48.6875 37.203125 44.609375 42.84375 
+Q 40.53125 48.484375 33.40625 48.484375 
+Q 26.265625 48.484375 22.1875 42.84375 
+Q 18.109375 37.203125 18.109375 27.296875 
+Q 18.109375 17.390625 22.1875 11.75 
+Q 26.265625 6.109375 33.40625 6.109375 
+Q 40.53125 6.109375 44.609375 11.75 
+Q 48.6875 17.390625 48.6875 27.296875 
+z
+" id="DejaVuSans-112"/>
+      <path id="DejaVuSans-32"/>
+      <path d="M 9.8125 72.90625 
+L 55.90625 72.90625 
+L 55.90625 64.59375 
+L 19.671875 64.59375 
+L 19.671875 43.015625 
+L 54.390625 43.015625 
+L 54.390625 34.71875 
+L 19.671875 34.71875 
+L 19.671875 8.296875 
+L 56.78125 8.296875 
+L 56.78125 0 
+L 9.8125 0 
+z
+" id="DejaVuSans-69"/>
+      <path d="M 37.109375 75.984375 
+L 37.109375 68.5 
+L 28.515625 68.5 
+Q 23.6875 68.5 21.796875 66.546875 
+Q 19.921875 64.59375 19.921875 59.515625 
+L 19.921875 54.6875 
+L 34.71875 54.6875 
+L 34.71875 47.703125 
+L 19.921875 47.703125 
+L 19.921875 0 
+L 10.890625 0 
+L 10.890625 47.703125 
+L 2.296875 47.703125 
+L 2.296875 54.6875 
+L 10.890625 54.6875 
+L 10.890625 58.5 
+Q 10.890625 67.625 15.140625 71.796875 
+Q 19.390625 75.984375 28.609375 75.984375 
+z
+" id="DejaVuSans-102"/>
+      <path d="M 48.78125 52.59375 
+L 48.78125 44.1875 
+Q 44.96875 46.296875 41.140625 47.34375 
+Q 37.3125 48.390625 33.40625 48.390625 
+Q 24.65625 48.390625 19.8125 42.84375 
+Q 14.984375 37.3125 14.984375 27.296875 
+Q 14.984375 17.28125 19.8125 11.734375 
+Q 24.65625 6.203125 33.40625 6.203125 
+Q 37.3125 6.203125 41.140625 7.25 
+Q 44.96875 8.296875 48.78125 10.40625 
+L 48.78125 2.09375 
+Q 45.015625 0.34375 40.984375 -0.53125 
+Q 36.96875 -1.421875 32.421875 -1.421875 
+Q 20.0625 -1.421875 12.78125 6.34375 
+Q 5.515625 14.109375 5.515625 27.296875 
+Q 5.515625 40.671875 12.859375 48.328125 
+Q 20.21875 56 33.015625 56 
+Q 37.15625 56 41.109375 55.140625 
+Q 45.0625 54.296875 48.78125 52.59375 
+z
+" id="DejaVuSans-99"/>
+      <path d="M 56.203125 29.59375 
+L 56.203125 25.203125 
+L 14.890625 25.203125 
+Q 15.484375 15.921875 20.484375 11.0625 
+Q 25.484375 6.203125 34.421875 6.203125 
+Q 39.59375 6.203125 44.453125 7.46875 
+Q 49.3125 8.734375 54.109375 11.28125 
+L 54.109375 2.78125 
+Q 49.265625 0.734375 44.1875 -0.34375 
+Q 39.109375 -1.421875 33.890625 -1.421875 
+Q 20.796875 -1.421875 13.15625 6.1875 
+Q 5.515625 13.8125 5.515625 26.8125 
+Q 5.515625 40.234375 12.765625 48.109375 
+Q 20.015625 56 32.328125 56 
+Q 43.359375 56 49.78125 48.890625 
+Q 56.203125 41.796875 56.203125 29.59375 
+z
+M 47.21875 32.234375 
+Q 47.125 39.59375 43.09375 43.984375 
+Q 39.0625 48.390625 32.421875 48.390625 
+Q 24.90625 48.390625 20.390625 44.140625 
+Q 15.875 39.890625 15.1875 32.171875 
+z
+" id="DejaVuSans-101"/>
+      <path d="M 54.890625 33.015625 
+L 54.890625 0 
+L 45.90625 0 
+L 45.90625 32.71875 
+Q 45.90625 40.484375 42.875 44.328125 
+Q 39.84375 48.1875 33.796875 48.1875 
+Q 26.515625 48.1875 22.3125 43.546875 
+Q 18.109375 38.921875 18.109375 30.90625 
+L 18.109375 0 
+L 9.078125 0 
+L 9.078125 54.6875 
+L 18.109375 54.6875 
+L 18.109375 46.1875 
+Q 21.34375 51.125 25.703125 53.5625 
+Q 30.078125 56 35.796875 56 
+Q 45.21875 56 50.046875 50.171875 
+Q 54.890625 44.34375 54.890625 33.015625 
+z
+" id="DejaVuSans-110"/>
+      <path d="M 32.171875 -5.078125 
+Q 28.375 -14.84375 24.75 -17.8125 
+Q 21.140625 -20.796875 15.09375 -20.796875 
+L 7.90625 -20.796875 
+L 7.90625 -13.28125 
+L 13.1875 -13.28125 
+Q 16.890625 -13.28125 18.9375 -11.515625 
+Q 21 -9.765625 23.484375 -3.21875 
+L 25.09375 0.875 
+L 2.984375 54.6875 
+L 12.5 54.6875 
+L 29.59375 11.921875 
+L 46.6875 54.6875 
+L 56.203125 54.6875 
+z
+" id="DejaVuSans-121"/>
+      <path d="M 31 75.875 
+Q 24.46875 64.65625 21.28125 53.65625 
+Q 18.109375 42.671875 18.109375 31.390625 
+Q 18.109375 20.125 21.3125 9.0625 
+Q 24.515625 -2 31 -13.1875 
+L 23.1875 -13.1875 
+Q 15.875 -1.703125 12.234375 9.375 
+Q 8.59375 20.453125 8.59375 31.390625 
+Q 8.59375 42.28125 12.203125 53.3125 
+Q 15.828125 64.359375 23.1875 75.875 
+z
+" id="DejaVuSans-40"/>
+      <path d="M 19.671875 64.796875 
+L 19.671875 8.109375 
+L 31.59375 8.109375 
+Q 46.6875 8.109375 53.6875 14.9375 
+Q 60.6875 21.78125 60.6875 36.53125 
+Q 60.6875 51.171875 53.6875 57.984375 
+Q 46.6875 64.796875 31.59375 64.796875 
+z
+M 9.8125 72.90625 
+L 30.078125 72.90625 
+Q 51.265625 72.90625 61.171875 64.09375 
+Q 71.09375 55.28125 71.09375 36.53125 
+Q 71.09375 17.671875 61.125 8.828125 
+Q 51.171875 0 30.078125 0 
+L 9.8125 0 
+z
+" id="DejaVuSans-68"/>
+      <path d="M 30.609375 48.390625 
+Q 23.390625 48.390625 19.1875 42.75 
+Q 14.984375 37.109375 14.984375 27.296875 
+Q 14.984375 17.484375 19.15625 11.84375 
+Q 23.34375 6.203125 30.609375 6.203125 
+Q 37.796875 6.203125 41.984375 11.859375 
+Q 46.1875 17.53125 46.1875 27.296875 
+Q 46.1875 37.015625 41.984375 42.703125 
+Q 37.796875 48.390625 30.609375 48.390625 
+z
+M 30.609375 56 
+Q 42.328125 56 49.015625 48.375 
+Q 55.71875 40.765625 55.71875 27.296875 
+Q 55.71875 13.875 49.015625 6.21875 
+Q 42.328125 -1.421875 30.609375 -1.421875 
+Q 18.84375 -1.421875 12.171875 6.21875 
+Q 5.515625 13.875 5.515625 27.296875 
+Q 5.515625 40.765625 12.171875 48.375 
+Q 18.84375 56 30.609375 56 
+z
+" id="DejaVuSans-111"/>
+      <path d="M 9.421875 75.984375 
+L 18.40625 75.984375 
+L 18.40625 0 
+L 9.421875 0 
+z
+" id="DejaVuSans-108"/>
+      <path d="M 34.28125 27.484375 
+Q 23.390625 27.484375 19.1875 25 
+Q 14.984375 22.515625 14.984375 16.5 
+Q 14.984375 11.71875 18.140625 8.90625 
+Q 21.296875 6.109375 26.703125 6.109375 
+Q 34.1875 6.109375 38.703125 11.40625 
+Q 43.21875 16.703125 43.21875 25.484375 
+L 43.21875 27.484375 
+z
+M 52.203125 31.203125 
+L 52.203125 0 
+L 43.21875 0 
+L 43.21875 8.296875 
+Q 40.140625 3.328125 35.546875 0.953125 
+Q 30.953125 -1.421875 24.3125 -1.421875 
+Q 15.921875 -1.421875 10.953125 3.296875 
+Q 6 8.015625 6 15.921875 
+Q 6 25.140625 12.171875 29.828125 
+Q 18.359375 34.515625 30.609375 34.515625 
+L 43.21875 34.515625 
+L 43.21875 35.40625 
+Q 43.21875 41.609375 39.140625 45 
+Q 35.0625 48.390625 27.6875 48.390625 
+Q 23 48.390625 18.546875 47.265625 
+Q 14.109375 46.140625 10.015625 43.890625 
+L 10.015625 52.203125 
+Q 14.9375 54.109375 19.578125 55.046875 
+Q 24.21875 56 28.609375 56 
+Q 40.484375 56 46.34375 49.84375 
+Q 52.203125 43.703125 52.203125 31.203125 
+z
+" id="DejaVuSans-97"/>
+      <path d="M 41.109375 46.296875 
+Q 39.59375 47.171875 37.8125 47.578125 
+Q 36.03125 48 33.890625 48 
+Q 26.265625 48 22.1875 43.046875 
+Q 18.109375 38.09375 18.109375 28.8125 
+L 18.109375 0 
+L 9.078125 0 
+L 9.078125 54.6875 
+L 18.109375 54.6875 
+L 18.109375 46.1875 
+Q 20.953125 51.171875 25.484375 53.578125 
+Q 30.03125 56 36.53125 56 
+Q 37.453125 56 38.578125 55.875 
+Q 39.703125 55.765625 41.0625 55.515625 
+z
+" id="DejaVuSans-114"/>
+      <path d="M 25.390625 72.90625 
+L 33.6875 72.90625 
+L 8.296875 -9.28125 
+L 0 -9.28125 
+z
+" id="DejaVuSans-47"/>
+      <path d="M 9.8125 72.90625 
+L 24.515625 72.90625 
+L 43.109375 23.296875 
+L 61.8125 72.90625 
+L 76.515625 72.90625 
+L 76.515625 0 
+L 66.890625 0 
+L 66.890625 64.015625 
+L 48.09375 14.015625 
+L 38.1875 14.015625 
+L 19.390625 64.015625 
+L 19.390625 0 
+L 9.8125 0 
+z
+" id="DejaVuSans-77"/>
+      <path d="M 8.015625 75.875 
+L 15.828125 75.875 
+Q 23.140625 64.359375 26.78125 53.3125 
+Q 30.421875 42.28125 30.421875 31.390625 
+Q 30.421875 20.453125 26.78125 9.375 
+Q 23.140625 -1.703125 15.828125 -13.1875 
+L 8.015625 -13.1875 
+Q 14.5 -2 17.703125 9.0625 
+Q 20.90625 20.125 20.90625 31.390625 
+Q 20.90625 42.671875 17.703125 53.65625 
+Q 14.5 64.65625 8.015625 75.875 
+z
+" id="DejaVuSans-41"/>
+     </defs>
+     <g transform="translate(147.3625 252.916562)scale(0.1 -0.1)">
+      <use xlink:href="#DejaVuSans-84"/>
+      <use x="61.037109" xlink:href="#DejaVuSans-105"/>
+      <use x="88.820312" xlink:href="#DejaVuSans-112"/>
+      <use x="152.296875" xlink:href="#DejaVuSans-32"/>
+      <use x="184.083984" xlink:href="#DejaVuSans-69"/>
+      <use x="247.267578" xlink:href="#DejaVuSans-102"/>
+      <use x="282.472656" xlink:href="#DejaVuSans-102"/>
+      <use x="317.677734" xlink:href="#DejaVuSans-105"/>
+      <use x="345.460938" xlink:href="#DejaVuSans-99"/>
+      <use x="400.441406" xlink:href="#DejaVuSans-105"/>
+      <use x="428.224609" xlink:href="#DejaVuSans-101"/>
+      <use x="489.748047" xlink:href="#DejaVuSans-110"/>
+      <use x="553.126953" xlink:href="#DejaVuSans-99"/>
+      <use x="608.107422" xlink:href="#DejaVuSans-121"/>
+      <use x="667.287109" xlink:href="#DejaVuSans-32"/>
+      <use x="699.074219" xlink:href="#DejaVuSans-40"/>
+      <use x="738.087891" xlink:href="#DejaVuSans-68"/>
+      <use x="815.089844" xlink:href="#DejaVuSans-111"/>
+      <use x="876.271484" xlink:href="#DejaVuSans-108"/>
+      <use x="904.054688" xlink:href="#DejaVuSans-108"/>
+      <use x="931.837891" xlink:href="#DejaVuSans-97"/>
+      <use x="993.117188" xlink:href="#DejaVuSans-114"/>
+      <use x="1034.230469" xlink:href="#DejaVuSans-47"/>
+      <use x="1067.921875" xlink:href="#DejaVuSans-77"/>
+      <use x="1154.201172" xlink:href="#DejaVuSans-105"/>
+      <use x="1181.984375" xlink:href="#DejaVuSans-108"/>
+      <use x="1209.767578" xlink:href="#DejaVuSans-101"/>
+      <use x="1271.291016" xlink:href="#DejaVuSans-41"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path d="M 0 0 
+L -3.5 0 
+" id="m638b0479d0" style="stroke:#000000;stroke-width:0.8;"/>
+      </defs>
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="214.756364"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- $\mathdefault{10^{0}}$ -->
+      <g transform="translate(20.878125 218.555582)scale(0.1 -0.1)">
+       <use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"/>
+       <use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"/>
+       <use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="170.152759"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- $\mathdefault{10^{1}}$ -->
+      <g transform="translate(20.878125 173.951977)scale(0.1 -0.1)">
+       <use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"/>
+       <use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"/>
+       <use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="125.549153"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- $\mathdefault{10^{2}}$ -->
+      <g transform="translate(20.878125 129.348372)scale(0.1 -0.1)">
+       <use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"/>
+       <use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"/>
+       <use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="80.945548"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- $\mathdefault{10^{3}}$ -->
+      <defs>
+       <path d="M 40.578125 39.3125 
+Q 47.65625 37.796875 51.625 33 
+Q 55.609375 28.21875 55.609375 21.1875 
+Q 55.609375 10.40625 48.1875 4.484375 
+Q 40.765625 -1.421875 27.09375 -1.421875 
+Q 22.515625 -1.421875 17.65625 -0.515625 
+Q 12.796875 0.390625 7.625 2.203125 
+L 7.625 11.71875 
+Q 11.71875 9.328125 16.59375 8.109375 
+Q 21.484375 6.890625 26.8125 6.890625 
+Q 36.078125 6.890625 40.9375 10.546875 
+Q 45.796875 14.203125 45.796875 21.1875 
+Q 45.796875 27.640625 41.28125 31.265625 
+Q 36.765625 34.90625 28.71875 34.90625 
+L 20.21875 34.90625 
+L 20.21875 43.015625 
+L 29.109375 43.015625 
+Q 36.375 43.015625 40.234375 45.921875 
+Q 44.09375 48.828125 44.09375 54.296875 
+Q 44.09375 59.90625 40.109375 62.90625 
+Q 36.140625 65.921875 28.71875 65.921875 
+Q 24.65625 65.921875 20.015625 65.03125 
+Q 15.375 64.15625 9.8125 62.3125 
+L 9.8125 71.09375 
+Q 15.4375 72.65625 20.34375 73.4375 
+Q 25.25 74.21875 29.59375 74.21875 
+Q 40.828125 74.21875 47.359375 69.109375 
+Q 53.90625 64.015625 53.90625 55.328125 
+Q 53.90625 49.265625 50.4375 45.09375 
+Q 46.96875 40.921875 40.578125 39.3125 
+z
+" id="DejaVuSans-51"/>
+      </defs>
+      <g transform="translate(20.878125 84.744767)scale(0.1 -0.1)">
+       <use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"/>
+       <use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"/>
+       <use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-51"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="36.341943"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- $\mathdefault{10^{4}}$ -->
+      <g transform="translate(20.878125 40.141162)scale(0.1 -0.1)">
+       <use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"/>
+       <use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"/>
+       <use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-52"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12">
+      <defs>
+       <path d="M 0 0 
+L -2 0 
+" id="m07424b366d" style="stroke:#000000;stroke-width:0.6;"/>
+      </defs>
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="221.665549"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_13">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="219.0789"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_14">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="216.797313"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_15">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="201.329341"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_16">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="193.475036"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_17">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="187.902318"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_18">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="183.579782"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_19">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="180.048013"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_20">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="177.061944"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_21">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="174.475294"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_22">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="172.193708"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_23">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="156.725735"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_24">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="148.871431"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_25">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="143.298712"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_26">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="138.976176"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_27">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="135.444407"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_28">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="132.458339"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_29">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="129.871689"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_30">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="127.590102"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_31">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="112.12213"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_32">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="104.267825"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_27">
+     <g id="line2d_33">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="98.695107"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_28">
+     <g id="line2d_34">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="94.372571"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_29">
+     <g id="line2d_35">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="90.840802"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_30">
+     <g id="line2d_36">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="87.854734"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_31">
+     <g id="line2d_37">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="85.268084"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_32">
+     <g id="line2d_38">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="82.986497"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_33">
+     <g id="line2d_39">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="67.518525"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_34">
+     <g id="line2d_40">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="59.66422"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_35">
+     <g id="line2d_41">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="54.091502"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_36">
+     <g id="line2d_42">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="49.768966"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_37">
+     <g id="line2d_43">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="46.237197"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_38">
+     <g id="line2d_44">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="43.251129"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_39">
+     <g id="line2d_45">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="40.664479"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_40">
+     <g id="line2d_46">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="38.382892"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_41">
+     <g id="line2d_47">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="22.91492"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_42">
+     <g id="line2d_48">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="15.060615"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_43">
+     <g id="line2d_49">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="9.487897"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_13">
+     <!-- Rides -->
+     <defs>
+      <path d="M 44.390625 34.1875 
+Q 47.5625 33.109375 50.5625 29.59375 
+Q 53.5625 26.078125 56.59375 19.921875 
+L 66.609375 0 
+L 56 0 
+L 46.6875 18.703125 
+Q 43.0625 26.03125 39.671875 28.421875 
+Q 36.28125 30.8125 30.421875 30.8125 
+L 19.671875 30.8125 
+L 19.671875 0 
+L 9.8125 0 
+L 9.8125 72.90625 
+L 32.078125 72.90625 
+Q 44.578125 72.90625 50.734375 67.671875 
+Q 56.890625 62.453125 56.890625 51.90625 
+Q 56.890625 45.015625 53.6875 40.46875 
+Q 50.484375 35.9375 44.390625 34.1875 
+z
+M 19.671875 64.796875 
+L 19.671875 38.921875 
+L 32.078125 38.921875 
+Q 39.203125 38.921875 42.84375 42.21875 
+Q 46.484375 45.515625 46.484375 51.90625 
+Q 46.484375 58.296875 42.84375 61.546875 
+Q 39.203125 64.796875 32.078125 64.796875 
+z
+" id="DejaVuSans-82"/>
+      <path d="M 45.40625 46.390625 
+L 45.40625 75.984375 
+L 54.390625 75.984375 
+L 54.390625 0 
+L 45.40625 0 
+L 45.40625 8.203125 
+Q 42.578125 3.328125 38.25 0.953125 
+Q 33.9375 -1.421875 27.875 -1.421875 
+Q 17.96875 -1.421875 11.734375 6.484375 
+Q 5.515625 14.40625 5.515625 27.296875 
+Q 5.515625 40.1875 11.734375 48.09375 
+Q 17.96875 56 27.875 56 
+Q 33.9375 56 38.25 53.625 
+Q 42.578125 51.265625 45.40625 46.390625 
+z
+M 14.796875 27.296875 
+Q 14.796875 17.390625 18.875 11.75 
+Q 22.953125 6.109375 30.078125 6.109375 
+Q 37.203125 6.109375 41.296875 11.75 
+Q 45.40625 17.390625 45.40625 27.296875 
+Q 45.40625 37.203125 41.296875 42.84375 
+Q 37.203125 48.484375 30.078125 48.484375 
+Q 22.953125 48.484375 18.875 42.84375 
+Q 14.796875 37.203125 14.796875 27.296875 
+z
+" id="DejaVuSans-100"/>
+      <path d="M 44.28125 53.078125 
+L 44.28125 44.578125 
+Q 40.484375 46.53125 36.375 47.5 
+Q 32.28125 48.484375 27.875 48.484375 
+Q 21.1875 48.484375 17.84375 46.4375 
+Q 14.5 44.390625 14.5 40.28125 
+Q 14.5 37.15625 16.890625 35.375 
+Q 19.28125 33.59375 26.515625 31.984375 
+L 29.59375 31.296875 
+Q 39.15625 29.25 43.1875 25.515625 
+Q 47.21875 21.78125 47.21875 15.09375 
+Q 47.21875 7.46875 41.1875 3.015625 
+Q 35.15625 -1.421875 24.609375 -1.421875 
+Q 20.21875 -1.421875 15.453125 -0.5625 
+Q 10.6875 0.296875 5.421875 2 
+L 5.421875 11.28125 
+Q 10.40625 8.6875 15.234375 7.390625 
+Q 20.0625 6.109375 24.8125 6.109375 
+Q 31.15625 6.109375 34.5625 8.28125 
+Q 37.984375 10.453125 37.984375 14.40625 
+Q 37.984375 18.0625 35.515625 20.015625 
+Q 33.0625 21.96875 24.703125 23.78125 
+L 21.578125 24.515625 
+Q 13.234375 26.265625 9.515625 29.90625 
+Q 5.8125 33.546875 5.8125 39.890625 
+Q 5.8125 47.609375 11.28125 51.796875 
+Q 16.75 56 26.8125 56 
+Q 31.78125 56 36.171875 55.265625 
+Q 40.578125 54.546875 44.28125 53.078125 
+z
+" id="DejaVuSans-115"/>
+     </defs>
+     <g transform="translate(14.798438 129.63875)rotate(-90)scale(0.1 -0.1)">
+      <use xlink:href="#DejaVuSans-82"/>
+      <use x="69.482422" xlink:href="#DejaVuSans-105"/>
+      <use x="97.265625" xlink:href="#DejaVuSans-100"/>
+      <use x="160.742188" xlink:href="#DejaVuSans-101"/>
+      <use x="222.265625" xlink:href="#DejaVuSans-115"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_4">
+    <path d="M 45.478125 224.64 
+L 45.478125 7.2 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 380.278125 224.64 
+L 380.278125 7.2 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 45.478125 224.64 
+L 380.278125 224.64 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 45.478125 7.2 
+L 380.278125 7.2 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8e577835b2">
+   <rect height="217.44" width="334.8" x="45.478125" y="7.2"/>
+  </clipPath>
+ </defs>
+</svg>
 
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
 </div>
 
 </div>
@@ -13885,96 +16461,19 @@ Hosting the diagnostics dashboard on a random port instead.
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-2:-Fare-rate-distribution">Example 2: Fare rate distribution<a class="anchor-link" href="#Example-2:-Fare-rate-distribution">&#182;</a></h2><p>What is the distribution of fare rates (dollars/mile)?</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fare_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fare_amount&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;trip_distance&#39;</span><span class="p">])</span>
-<span class="n">h</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">fare_rate</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">h</span><span class="o">.</span><span class="n">compute</span><span class="p">(),</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fare Rate ($/mi)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/hep/heeger/tl397/project/conda/gpu/lib/python3.7/site-packages/dask/core.py:119: RuntimeWarning: divide by zero encountered in true_divide
-  return func(*args2)
-/home/hep/heeger/tl397/project/conda/gpu/lib/python3.7/site-packages/dask/core.py:119: RuntimeWarning: invalid value encountered in true_divide
-  return func(*args2)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dask-Conclusions"><code>Dask</code> Conclusions<a class="anchor-link" href="#Dask-Conclusions">&#182;</a></h2><ul>
-<li><code>Dask</code> is a really interesting development in the abstraction of parallelism that enables large-scale data science</li>
-<li>We have shown how to load huge amounts of data into a <code>Dask</code> <code>DataFrame</code> and perform high-level operations on the data</li>
-<li>Further Dask reading: <a href="http://docs.dask.org/en/latest/">http://docs.dask.org/en/latest/</a></li>
+<h2 id="GPU-Summary">GPU Summary<a class="anchor-link" href="#GPU-Summary">&#182;</a></h2><ul>
+<li>There are a ton of exciting projects that are starting to utilize GPUs. </li>
+<li>Having python connection to these tools enable rapid work with machine learning or other computationally intensive tasks</li>
+<li>Make use of the GPUs in the clusters to get started with this kind of tool</li>
 </ul>
 
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Outlook-and-Further-Reading">Outlook and Further Reading<a class="anchor-link" href="#Outlook-and-Further-Reading">&#182;</a></h1><p>Parallel processing is a vast topic with numerous posibilities of study. This tutorial is designed to give a flavor of some of the tools available in Python for small, medium, and large-scale parallel programming.</p>
 <p>There are some fantastic tutorials available for further study. I recommend the following:</p>
@@ -13997,10 +16496,11 @@ Hosting the diagnostics dashboard on a random port instead.
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Thanks!">Thanks!<a class="anchor-link" href="#Thanks!">&#182;</a></h1>
+<h1 id="Thanks!">Thanks!<a class="anchor-link" href="#Thanks!">&#182;</a></h1><p>Please fill out a survey before you leave!
+<img src="survey.png" alt="qr"></p>
+
 </div>
 </div>
 </div></section></section>
