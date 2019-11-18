@@ -6,4 +6,4 @@ dask==2.8.0
 distributed==2.8.0
 mpi4py==3.0.3
 cupy==6.5.0
-
+jupyter==1.0.0
