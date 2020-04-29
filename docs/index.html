@@ -13205,7 +13205,7 @@ a.anchor-link {
 <h1 id="Parallel-Programming-with-Python">Parallel Programming with Python<a class="anchor-link" href="#Parallel-Programming-with-Python">&#182;</a></h1><p><em>Thomas Langford, Ph.D.</em></p>
 <p><em>Yale Center for Research Computing</em></p>
 <p><em>Yale Wright Laboratory</em></p>
-<p><em>November 18, 2019</em></p>
+<p><em>April 29, 2020</em></p>
 
 </div>
 </div>
@@ -13214,8 +13214,8 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Tools-and-Requirements">Tools and Requirements<a class="anchor-link" href="#Tools-and-Requirements">&#182;</a></h1><ul>
-<li>Language: Python 3.7</li>
-<li>Modules: <code>numpy</code>, <code>multiprocessing</code>, <code>PIL</code> (for imamge processing), <code>mpi4py</code>, <code>matplotlib</code></li>
+<li>Language: Python 3.8</li>
+<li>Modules: <code>pandas</code>, <code>numpy</code>, <code>multiprocessing</code>, <code>PIL</code> (for imamge processing), <code>mpi4py</code>, <code>matplotlib</code>, <code>cupy</code> (for GPU parallelism)</li>
 <li>Jupyter notebook</li>
 </ul>
 
@@ -13226,7 +13226,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Comment:-Python-2-versus-3">Comment: Python 2 versus 3<a class="anchor-link" href="#Comment:-Python-2-versus-3">&#182;</a></h1><ul>
-<li>Major modules will be dropping Python2 support in 2019</li>
+<li>Major modules dropped Python2 support in 2019</li>
 <li>Worth transitioning to get new features</li>
 <li>This tutorial uses Python3</li>
 <li>see <a href="https://wiki.python.org/moin/Python2orPython3">https://wiki.python.org/moin/Python2orPython3</a></li>
@@ -13284,7 +13284,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define an array of numbers</span>
@@ -13339,7 +13339,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># (Very) inefficient way to define a map function</span>
@@ -13364,7 +13364,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_map</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
@@ -13380,7 +13380,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13405,7 +13405,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">foo</span><span class="p">))</span>
@@ -13423,7 +13423,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13468,7 +13468,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
@@ -13523,12 +13523,12 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parallel_test</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># print the index of the job and it&#39;s process ID number</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;x = </span><span class="si">{x}</span><span class="s2">, PID = {os.getpid()}&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, PID = </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13546,7 +13546,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">parallel_test</span><span class="p">,</span> <span class="n">foo</span><span class="p">));</span>
@@ -13566,12 +13566,12 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 147779
-x = 1, PID = 147779
-x = 2, PID = 147779
-x = 3, PID = 147779
-x = 4, PID = 147779
-x = 5, PID = 147779
+<pre>x = 0, PID = 122203
+x = 1, PID = 122203
+x = 2, PID = 122203
+x = 3, PID = 122203
+x = 4, PID = 122203
+x = 5, PID = 122203
 </pre>
 </div>
 </div>
@@ -13598,7 +13598,7 @@ x = 5, PID = 147779
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -13619,12 +13619,12 @@ x = 5, PID = 147779
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 4, PID = 147810
-x = 3, PID = 147809
-x = 2, PID = 147808
-x = 5, PID = 147811
-x = 1, PID = 147807
-x = 0, PID = 147806
+<pre>x = 0, PID = 122244
+x = 4, PID = 122248
+x = 1, PID = 122245
+x = 2, PID = 122246
+x = 3, PID = 122247
+x = 5, PID = 122249
 </pre>
 </div>
 </div>
@@ -13685,7 +13685,7 @@ x = 0, PID = 147806
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pi_mc</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
@@ -13717,7 +13717,7 @@ x = 0, PID = 147806
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pi_mc(1)
@@ -13737,7 +13737,7 @@ x = 0, PID = 147806
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>338 ms ± 979 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>308 ms ± 80.5 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13748,7 +13748,7 @@ x = 0, PID = 147806
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
@@ -13769,7 +13769,7 @@ x = 0, PID = 147806
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.35 s ± 4.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.25 s ± 20.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13780,7 +13780,7 @@ x = 0, PID = 147806
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -13803,7 +13803,7 @@ x = 0, PID = 147806
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>426 ms ± 1.55 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>361 ms ± 1.28 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13831,13 +13831,13 @@ x = 0, PID = 147806
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python image library functions</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
-<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="k">import</span> <span class="n">imshow</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">imshow</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
@@ -13848,7 +13848,7 @@ x = 0, PID = 147806
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Read image</span>
@@ -13867,7 +13867,7 @@ x = 0, PID = 147806
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13886,7 +13886,7 @@ x = 0, PID = 147806
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
@@ -13902,7 +13902,7 @@ x = 0, PID = 147806
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13929,7 +13929,7 @@ x = 0, PID = 147806
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">image_flipper</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
@@ -13953,12 +13953,13 @@ x = 0, PID = 147806
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./data/*jpg&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13975,7 +13976,16 @@ x = 0, PID = 147806
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;./data/waterloo.jpg&#39;, &#39;./data/victoria.jpg&#39;, &#39;./data/paddington.jpg&#39;, &#39;./data/charing_cross.jpg&#39;, &#39;./data/euston.jpg&#39;, &#39;./data/kings_cross.jpg&#39;, &#39;./data/fenchurch.jpg&#39;, &#39;./data/liverpool_street.jpg&#39;, &#39;./data/st_pancras.jpg&#39;, &#39;./data/london_bridge.jpg&#39;]
+<pre>./data/waterloo.jpg
+./data/victoria.jpg
+./data/paddington.jpg
+./data/charing_cross.jpg
+./data/euston.jpg
+./data/kings_cross.jpg
+./data/fenchurch.jpg
+./data/liverpool_street.jpg
+./data/st_pancras.jpg
+./data/london_bridge.jpg
 </pre>
 </div>
 </div>
@@ -13986,7 +13996,7 @@ x = 0, PID = 147806
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -14008,7 +14018,7 @@ x = 0, PID = 147806
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> ./data/*pdf
@@ -14155,11 +14165,11 @@ Job: the line from your job file
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;python image_flipper.py </span><span class="si">{file_name}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;python image_flipper.py </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14315,7 +14325,7 @@ conda create --name mpi python=3.6 mpi4py numpy scipy </code></pre>
 
 <span class="n">PID</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;rank: {rank} has PID: {PID}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s1"> has PID: </span><span class="si">{</span><span class="n">PID</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14390,7 +14400,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
     <span class="n">comm</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;rank {rank}: {s}&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rank </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14428,9 +14438,9 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 
 <span class="c1"># Create some data in the RANK_0 worker</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">2.72</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3j</span><span class="p">],</span> <span class="s1">&#39;key2&#39;</span> <span class="p">:</span> <span class="p">(</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">)}</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mf">2.72</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">],</span> <span class="s1">&#39;key2&#39;</span> <span class="p">:</span> <span class="p">(</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;xyz&#39;</span><span class="p">)}</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="c1"># Broadcast the data from RANK_0 to all workers</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">bcast</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -14439,7 +14449,7 @@ comm.recv(source=MPI.ANY_SOURCE, tag=MPI.ANY_TAG, status=None)
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span>
 
 <span class="c1"># Print the resulting data</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Rank: {rank}, data: {data}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">, data: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14473,7 +14483,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MPI-Example-4:-Scatter-and-Gather">MPI Example 4: Scatter and Gather<a class="anchor-link" href="#MPI-Example-4:-Scatter-and-Gather">&#182;</a></h1><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
 <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># set up MPI world</span>
 <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
@@ -14482,7 +14492,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 <span class="c1"># generate a large array of data on RANK_0</span>
 <span class="n">numData</span> <span class="o">=</span> <span class="mi">100000000</span> <span class="c1"># 100milion values each</span>
-<span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">numData</span><span class="p">)</span>
 
@@ -14493,7 +14503,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <span class="n">comm</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">partial</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># prepare the reduced array to recieve the processed data</span>
-<span class="n">reduced</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">reduced</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">reduced</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
 
@@ -14501,7 +14511,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 <span class="n">comm</span><span class="o">.</span><span class="n">Gather</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">partial</span><span class="p">),</span> <span class="n">reduced</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Full Average:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reduced</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Full Average:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">reduced</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -14622,7 +14632,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load CUPY module</span>
@@ -14644,7 +14654,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14674,7 +14684,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>6.5 s ± 2.09 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>3.5 s ± 465 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -14693,7 +14703,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14727,7 +14737,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>473 ms ± 432 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>463 ms ± 33.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -14765,10 +14775,11 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../taxi/yellow_tripdata_2017-04.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">january</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../taxi/yellow_tripdata_2017-01.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="n">july</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../taxi/yellow_tripdata_2017-07.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14778,11 +14789,14 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">])</span>
-<span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;trip_distance&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip_jan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">january</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">])</span>
+<span class="n">distance_jan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">january</span><span class="p">[</span><span class="s1">&#39;trip_distance&#39;</span><span class="p">])</span>
+
+<span class="n">tip_jul</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">july</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">])</span>
+<span class="n">distance_jul</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">july</span><span class="p">[</span><span class="s1">&#39;trip_distance&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -14800,11 +14814,14 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tip</span><span class="p">)</span>
-<span class="n">gpu_dist</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_jan</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tip_jan</span><span class="p">)</span>
+<span class="n">gpu_dist_jan</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">distance_jan</span><span class="p">)</span>
+
+<span class="n">gpu_tip_jul</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tip_jul</span><span class="p">)</span>
+<span class="n">gpu_dist_jul</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">distance_jul</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14821,11 +14838,11 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
-<span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">tip</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">tip_jan</span><span class="p">,</span> <span class="n">distance_jan</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14841,22 +14858,8 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/ipykernel_launcher.py:1: RuntimeWarning: divide by zero encountered in true_divide
-  &#34;&#34;&#34;Entry point for launching an IPython kernel.
-/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/ipykernel_launcher.py:1: RuntimeWarning: invalid value encountered in true_divide
-  &#34;&#34;&#34;Entry point for launching an IPython kernel.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.12 ms ± 20.4 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>1.42 ms ± 3.84 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -14867,11 +14870,11 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
-<span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip</span><span class="p">,</span> <span class="n">gpu_dist</span><span class="p">)</span>
+<span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip_jan</span><span class="p">,</span> <span class="n">gpu_dist_jan</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14888,7 +14891,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>80.2 µs ± 12.5 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<pre>32.3 µs ± 2.48 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre>
 </div>
 </div>
@@ -14907,13 +14910,22 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip</span><span class="p">,</span> <span class="n">gpu_dist</span><span class="p">)</span>
-<span class="n">tpm</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">gpu_tip_per_mile</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tpm</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tip Efficiency (Dollar/Mile)&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rides&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip_jan</span><span class="p">,</span> <span class="n">gpu_dist_jan</span><span class="p">)</span>
+<span class="n">tpm</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">gpu_tip_per_mile</span><span class="p">)[(</span><span class="n">tip_jan</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">distance_jan</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tpm</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;January&#39;</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;January Average: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">tpm</span><span class="p">[(</span><span class="n">tpm</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">tpm</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip_jul</span><span class="p">,</span> <span class="n">gpu_dist_jul</span><span class="p">)</span>
+<span class="n">tpm</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asnumpy</span><span class="p">(</span><span class="n">gpu_tip_per_mile</span><span class="p">)[(</span><span class="n">tip_jul</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">distance_jul</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">tpm</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;July&#39;</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;July Average: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">tpm</span><span class="p">[(</span><span class="n">tpm</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">tpm</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tip Efficiency (Dollar/Mile)&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rides&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -14929,11 +14941,9 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/numpy/lib/histograms.py:829: RuntimeWarning: invalid value encountered in greater_equal
-  keep = (tmp_a &gt;= first_edge)
-/gpfs/loomis/project/hpcprog/tl397/conda_envs/parallel/lib/python3.7/site-packages/numpy/lib/histograms.py:830: RuntimeWarning: invalid value encountered in less_equal
-  keep &amp;= (tmp_a &lt;= last_edge)
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>January Average: 1.004
+July Average: 0.962
 </pre>
 </div>
 </div>
@@ -14974,394 +14984,728 @@ z
 " style="fill:#ffffff;"/>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#p8e577835b2)" d="M 60.696307 263.19625 
-L 60.696307 80.791196 
-L 62.218125 80.791196 
-L 62.218125 69.324152 
-L 63.739943 69.324152 
-L 63.739943 60.678229 
-L 65.261761 60.678229 
-L 65.261761 50.022442 
-L 66.78358 50.022442 
-L 66.78358 46.025279 
-L 68.305398 46.025279 
-L 68.305398 42.713501 
-L 69.827216 42.713501 
-L 69.827216 38.695336 
-L 71.349034 38.695336 
-L 71.349034 36.993978 
-L 72.870852 36.993978 
-L 72.870852 32.91214 
-L 74.39267 32.91214 
-L 74.39267 28.192869 
-L 75.914489 28.192869 
-L 75.914489 25.959675 
-L 77.436307 25.959675 
-L 77.436307 22.944969 
-L 78.958125 22.944969 
-L 78.958125 20.136121 
-L 80.479943 20.136121 
-L 80.479943 18.849 
-L 82.001761 18.849 
-L 82.001761 18.111793 
-L 83.52358 18.111793 
-L 83.52358 19.016177 
-L 85.045398 19.016177 
-L 85.045398 17.200826 
-L 86.567216 17.200826 
-L 86.567216 17.652431 
-L 88.089034 17.652431 
-L 88.089034 17.083636 
-L 89.610852 17.083636 
-L 89.610852 19.438114 
-L 91.13267 19.438114 
-L 91.13267 17.639887 
-L 92.654489 17.639887 
-L 92.654489 20.931783 
-L 94.176307 20.931783 
-L 94.176307 21.163986 
-L 97.219943 21.137459 
-L 97.219943 24.35718 
-L 98.741761 24.35718 
-L 98.741761 25.702966 
-L 100.26358 25.702966 
-L 100.26358 25.212616 
-L 101.785398 25.212616 
-L 101.785398 29.967149 
-L 103.307216 29.967149 
-L 103.307216 30.593266 
-L 104.829034 30.593266 
-L 104.829034 30.451257 
-L 106.350852 30.451257 
-L 106.350852 35.623216 
-L 107.87267 35.623216 
-L 107.87267 32.192191 
-L 109.394489 32.192191 
-L 109.394489 37.349829 
-L 110.916307 37.349829 
-L 110.916307 41.44516 
-L 112.438125 41.44516 
-L 112.438125 39.567753 
-L 113.959943 39.567753 
-L 113.959943 46.817243 
-L 115.481761 46.817243 
-L 115.481761 41.852773 
-L 117.00358 41.852773 
-L 117.00358 48.064099 
-L 118.525398 48.064099 
-L 118.525398 48.53453 
-L 120.047216 48.53453 
-L 120.047216 51.191411 
-L 121.569034 51.191411 
-L 121.569034 48.20296 
-L 123.090852 48.20296 
-L 123.090852 58.468596 
-L 124.61267 58.468596 
-L 124.61267 56.534784 
-L 126.134489 56.534784 
-L 126.134489 60.589978 
-L 127.656307 60.589978 
-L 127.656307 60.461714 
-L 129.178125 60.461714 
-L 129.178125 63.850028 
-L 130.699943 63.850028 
-L 130.699943 64.54353 
-L 132.221761 64.54353 
-L 132.221761 67.772001 
-L 133.74358 67.772001 
-L 133.74358 56.844906 
-L 135.265398 56.844906 
-L 135.265398 77.690166 
-L 136.787216 77.690166 
-L 136.787216 73.013914 
-L 138.309034 73.013914 
-L 138.309034 68.976442 
-L 139.830852 68.976442 
-L 139.830852 78.976405 
-L 141.35267 78.976405 
-L 141.35267 84.34604 
-L 142.874489 84.34604 
-L 142.874489 84.208003 
-L 144.396307 84.208003 
-L 144.396307 71.034804 
-L 145.918125 71.034804 
-L 145.918125 77.173141 
-L 147.439943 77.173141 
-L 147.439943 91.331236 
-L 148.961761 91.331236 
-L 148.961761 84.884486 
-L 150.48358 84.884486 
-L 150.48358 95.945699 
-L 152.005398 95.945699 
-L 152.005398 84.299918 
-L 153.527216 84.299918 
-L 153.527216 81.356674 
-L 155.049034 81.356674 
-L 155.049034 101.448511 
-L 156.570852 101.448511 
-L 156.570852 98.406699 
-L 158.09267 98.406699 
-L 158.09267 101.843278 
-L 159.614489 101.843278 
-L 159.614489 78.509609 
-L 161.136307 78.509609 
-L 161.136307 95.284788 
-L 162.658125 95.284788 
-L 162.658125 105.058592 
-L 164.179943 105.058592 
-L 164.179943 90.362479 
-L 165.701761 90.362479 
-L 165.701761 117.438274 
-L 167.22358 117.438274 
-L 167.22358 104.857854 
-L 168.745398 104.857854 
-L 168.745398 106.891408 
-L 170.267216 106.891408 
-L 170.267216 107.340179 
-L 171.789034 107.340179 
-L 171.789034 104.139113 
-L 173.310852 104.139113 
-L 173.310852 118.086197 
-L 174.83267 118.086197 
-L 174.83267 108.671243 
-L 176.354489 108.671243 
-L 176.354489 106.165814 
-L 177.876307 106.165814 
-L 177.876307 126.954928 
-L 179.398125 126.954928 
-L 179.398125 93.39059 
-L 180.919943 93.39059 
-L 180.919943 136.780875 
-L 182.441761 136.780875 
-L 182.441761 128.025426 
-L 183.96358 128.025426 
-L 183.96358 128.470759 
-L 185.485398 128.470759 
-L 185.485398 109.163755 
-L 187.007216 109.163755 
-L 187.007216 105.46642 
-L 188.529034 105.46642 
-L 188.529034 113.424038 
-L 190.050852 113.424038 
-L 190.050852 124.604034 
-L 191.57267 124.604034 
-L 191.57267 132.458339 
-L 193.094489 132.458339 
-L 193.094489 130.612076 
-L 194.616307 130.612076 
-L 194.616307 129.158562 
-L 196.138125 129.158562 
-L 196.138125 124.976567 
-L 197.659943 124.976567 
-L 197.659943 143.298712 
-L 199.181761 143.298712 
-L 199.181761 128.697324 
-L 200.70358 128.697324 
-L 200.70358 124.789405 
-L 202.225398 124.789405 
-L 202.225398 119.170178 
-L 203.747216 119.170178 
-L 203.747216 133.893892 
-L 205.269034 133.893892 
-L 205.269034 134.194225 
-L 206.790852 134.194225 
-L 206.790852 141.897782 
-L 208.31267 141.897782 
-L 208.31267 151.643451 
-L 209.834489 151.643451 
-L 209.834489 94.450211 
-L 211.356307 94.450211 
-L 211.356307 168.306496 
-L 212.878125 168.306496 
-L 212.878125 147.025168 
-L 215.921761 147.025168 
-L 215.921761 134.194225 
-L 217.44358 134.194225 
-L 217.44358 157.719343 
-L 218.965398 157.719343 
-L 218.965398 120.616454 
-L 220.487216 120.616454 
-L 220.487216 150.91238 
-L 223.530852 150.91238 
-L 223.530852 154.879473 
-L 225.05267 154.879473 
-L 225.05267 147.621248 
-L 226.574489 147.621248 
-L 226.574489 142.353593 
-L 228.096307 142.353593 
-L 228.096307 135.124217 
-L 229.618125 135.124217 
-L 229.618125 162.298454 
-L 231.139943 162.298454 
-L 231.139943 140.174771 
-L 232.661761 140.174771 
-L 232.661761 147.025168 
-L 234.18358 147.025168 
-L 234.18358 143.298712 
-L 235.705398 143.298712 
-L 235.705398 156.725735 
-L 237.227216 156.725735 
-L 237.227216 149.528141 
-L 238.749034 149.528141 
-L 238.749034 180.048013 
-L 240.270852 180.048013 
-L 240.270852 187.902318 
-L 241.79267 187.902318 
-L 241.79267 120.318431 
-L 243.314489 120.318431 
-L 243.314489 162.298454 
-L 246.358125 162.298454 
-L 246.358125 156.725735 
-L 247.879943 156.725735 
-L 247.879943 170.152759 
-L 249.401761 170.152759 
-L 249.401761 127.806542 
-L 250.92358 127.806542 
-L 250.92358 168.306496 
-L 252.445398 168.306496 
-L 252.445398 172.193708 
-L 255.489034 172.193708 
-L 255.489034 162.298454 
-L 257.010852 162.298454 
-L 257.010852 153.193966 
-L 258.53267 153.193966 
-L 258.53267 187.902318 
-L 260.054489 187.902318 
-L 260.054489 193.475036 
-L 261.576307 193.475036 
-L 261.576307 120.616454 
-L 263.098125 120.616454 
-L 263.098125 168.306496 
-L 264.619943 168.306496 
-L 264.619943 170.152759 
-L 266.141761 170.152759 
-L 266.141761 161.048271 
-L 267.66358 161.048271 
-L 267.66358 168.306496 
-L 269.185398 168.306496 
-L 269.185398 183.579782 
-L 270.707216 183.579782 
-L 270.707216 163.634921 
-L 272.229034 163.634921 
-L 272.229034 149.528141 
-L 273.750852 149.528141 
-L 273.750852 166.62099 
-L 275.27267 166.62099 
-L 275.27267 174.475294 
-L 276.794489 174.475294 
-L 276.794489 144.29232 
-L 278.316307 144.29232 
-L 278.316307 183.579782 
-L 279.838125 183.579782 
-L 279.838125 172.193708 
-L 281.359943 172.193708 
-L 281.359943 170.152759 
-L 282.881761 170.152759 
-L 282.881761 183.579782 
-L 284.40358 183.579782 
-L 284.40358 174.475294 
-L 285.925398 174.475294 
-L 285.925398 183.579782 
-L 287.447216 183.579782 
-L 287.447216 130.115354 
-L 288.969034 130.115354 
-L 288.969034 177.061944 
-L 290.490852 177.061944 
-L 290.490852 174.475294 
-L 293.534489 174.475294 
-L 293.534489 165.070474 
-L 295.056307 165.070474 
-L 295.056307 158.766685 
-L 296.578125 158.766685 
-L 296.578125 165.070474 
-L 298.099943 165.070474 
-L 298.099943 187.902318 
-L 299.621761 187.902318 
-L 299.621761 170.152759 
-L 301.14358 170.152759 
-L 301.14358 193.475036 
-L 302.665398 193.475036 
-L 302.665398 150.207898 
-L 304.187216 150.207898 
-L 304.187216 174.475294 
-L 305.709034 174.475294 
-L 305.709034 187.902318 
-L 307.230852 187.902318 
-L 307.230852 193.475036 
-L 308.75267 193.475036 
-L 308.75267 187.902318 
-L 311.796307 187.902318 
-L 311.796307 177.061944 
-L 313.318125 177.061944 
-L 313.318125 145.339661 
-L 314.839943 145.339661 
-L 314.839943 201.329341 
-L 316.361761 201.329341 
-L 316.361761 177.061944 
-L 317.88358 177.061944 
-L 317.88358 140.59137 
-L 319.405398 140.59137 
-L 319.405398 201.329341 
-L 320.927216 201.329341 
-L 320.927216 168.306496 
-L 322.449034 168.306496 
-L 322.449034 201.329341 
-L 323.970852 201.329341 
-L 323.970852 187.902318 
-L 325.49267 187.902318 
-L 325.49267 183.579782 
-L 327.014489 183.579782 
-L 327.014489 180.048013 
-L 328.536307 180.048013 
-L 328.536307 193.475036 
-L 330.058125 193.475036 
+    <path clip-path="url(#p790ff68a18)" d="M 60.696307 263.19625 
+L 60.696307 83.070758 
+L 62.218125 83.070758 
+L 62.218125 68.681692 
+L 63.739943 68.681692 
+L 63.739943 60.552371 
+L 65.261761 60.552371 
+L 65.261761 49.95858 
+L 66.78358 49.95858 
+L 66.78358 45.577214 
+L 68.305398 45.577214 
+L 68.305398 42.828422 
+L 69.827216 42.828422 
+L 69.827216 38.53549 
+L 71.349034 38.53549 
+L 71.349034 37.793388 
+L 72.870852 37.793388 
+L 72.870852 33.515691 
+L 74.39267 33.515691 
+L 74.39267 28.317265 
+L 75.914489 28.317265 
+L 75.914489 25.388192 
+L 77.436307 25.388192 
+L 77.436307 22.371828 
+L 78.958125 22.371828 
+L 78.958125 19.276128 
+L 80.479943 19.276128 
+L 80.479943 18.560422 
+L 82.001761 18.560422 
+L 82.001761 17.921528 
+L 83.52358 17.921528 
+L 83.52358 19.201028 
+L 85.045398 19.201028 
+L 85.045398 17.083636 
+L 86.567216 17.083636 
+L 86.567216 17.98323 
+L 88.089034 17.98323 
+L 88.089034 19.555699 
+L 89.610852 19.555699 
+L 89.610852 21.553065 
+L 91.13267 21.553065 
+L 91.13267 20.832497 
+L 92.654489 20.832497 
+L 92.654489 23.207137 
+L 95.698125 23.178503 
+L 95.698125 27.718301 
+L 97.219943 27.718301 
+L 97.219943 27.859494 
+L 98.741761 27.859494 
+L 98.741761 32.058705 
+L 100.26358 32.058705 
+L 100.26358 33.99456 
+L 101.785398 33.99456 
+L 101.785398 40.071469 
+L 103.307216 40.071469 
+L 103.307216 41.262044 
+L 104.829034 41.262044 
+L 104.829034 44.303636 
+L 106.350852 44.303636 
+L 106.350852 48.16416 
+L 107.87267 48.16416 
+L 107.87267 49.737022 
+L 109.394489 49.737022 
+L 109.394489 55.440072 
+L 110.916307 55.440072 
+L 110.916307 57.518405 
+L 112.438125 57.518405 
+L 112.438125 59.379842 
+L 113.959943 59.379842 
+L 113.959943 63.601912 
+L 115.481761 63.601912 
+L 115.481761 66.391695 
+L 117.00358 66.391695 
+L 117.00358 70.124169 
+L 118.525398 70.124169 
+L 118.525398 75.083967 
+L 120.047216 75.083967 
+L 120.047216 76.443282 
+L 121.569034 76.443282 
+L 121.569034 78.599273 
+L 123.090852 78.599273 
+L 123.090852 82.587417 
+L 124.61267 82.587417 
+L 124.61267 89.466351 
+L 126.134489 89.466351 
+L 126.134489 90.909573 
+L 127.656307 90.909573 
+L 127.656307 89.497286 
+L 129.178125 89.497286 
+L 129.178125 96.547271 
+L 130.699943 96.547271 
+L 130.699943 100.369876 
+L 132.221761 100.369876 
+L 132.221761 103.348907 
+L 133.74358 103.348907 
+L 133.74358 97.551567 
+L 135.265398 97.551567 
+L 135.265398 109.196319 
+L 136.787216 109.196319 
+L 136.787216 112.946848 
+L 138.309034 112.946848 
+L 138.309034 107.561533 
+L 139.830852 107.561533 
+L 139.830852 114.11908 
+L 141.35267 114.11908 
+L 141.35267 106.053607 
+L 142.874489 106.053607 
+L 142.874489 116.326867 
+L 144.396307 116.326867 
+L 144.396307 118.266264 
+L 145.918125 118.266264 
+L 145.918125 123.904896 
+L 147.439943 123.904896 
+L 147.439943 118.402703 
+L 148.961761 118.402703 
+L 148.961761 132.718591 
+L 150.48358 132.718591 
+L 150.48358 129.317292 
+L 152.005398 129.317292 
+L 152.005398 125.415752 
+L 155.049034 125.415752 
+L 155.049034 137.934313 
+L 156.570852 137.934313 
+L 156.570852 145.083802 
+L 158.09267 145.083802 
+L 158.09267 149.287719 
+L 159.614489 149.287719 
+L 159.614489 124.087456 
+L 161.136307 124.087456 
+L 161.136307 143.527571 
+L 162.658125 143.527571 
+L 162.658125 146.195104 
+L 164.179943 146.195104 
+L 164.179943 147.373798 
+L 167.22358 147.373798 
+L 167.22358 130.051058 
+L 168.745398 130.051058 
+L 168.745398 141.182262 
+L 170.267216 141.182262 
+L 170.267216 145.631514 
+L 171.789034 145.631514 
+L 171.789034 152.967057 
+L 173.310852 152.967057 
+L 173.310852 157.509113 
+L 174.83267 157.509113 
+L 174.83267 136.149345 
+L 176.354489 136.149345 
+L 176.354489 157.509113 
+L 177.876307 157.509113 
+L 177.876307 162.105101 
+L 179.398125 162.105101 
+L 179.398125 152.967057 
+L 180.919943 152.967057 
+L 180.919943 174.326824 
+L 182.441761 174.326824 
+L 182.441761 169.988356 
+L 183.96358 169.988356 
+L 183.96358 172.036828 
+L 185.485398 172.036828 
+L 185.485398 136.149345 
+L 187.007216 136.149345 
+L 187.007216 166.44357 
+L 188.529034 166.44357 
+L 188.529034 169.988356 
+L 191.57267 169.988356 
+L 191.57267 174.326824 
+L 193.094489 174.326824 
+L 193.094489 166.44357 
+L 194.616307 166.44357 
+L 194.616307 164.887339 
+L 196.138125 164.887339 
+L 196.138125 140.318009 
+L 197.659943 140.318009 
+L 197.659943 176.923008 
+L 199.181761 176.923008 
+L 199.181761 179.920083 
+L 200.70358 179.920083 
+L 200.70358 172.036828 
+L 202.225398 172.036828 
+L 202.225398 183.464869 
+L 203.747216 183.464869 
+L 203.747216 166.44357 
+L 205.269034 166.44357 
+L 205.269034 174.326824 
+L 206.790852 174.326824 
+L 206.790852 179.920083 
+L 208.31267 179.920083 
+L 208.31267 183.464869 
+L 209.834489 183.464869 
+L 209.834489 158.560315 
+L 211.356307 158.560315 
+L 211.356307 179.920083 
+L 212.878125 179.920083 
+L 212.878125 174.326824 
+L 214.399943 174.326824 
+L 214.399943 193.396596 
+L 215.921761 193.396596 
+L 215.921761 183.464869 
+L 217.44358 183.464869 
+L 217.44358 193.396596 
+L 218.965398 193.396596 
+L 218.965398 162.105101 
+L 220.487216 162.105101 
+L 220.487216 201.279851 
+L 222.009034 201.279851 
+L 222.009034 179.920083 
+L 223.530852 179.920083 
+L 223.530852 193.396596 
+L 225.05267 193.396596 
+L 225.05267 174.326824 
+L 226.574489 174.326824 
+L 226.574489 193.396596 
+L 228.096307 193.396596 
+L 228.096307 166.44357 
+L 229.618125 166.44357 
+L 229.618125 193.396596 
+L 231.139943 193.396596 
+L 231.139943 201.279851 
+L 232.661761 201.279851 
+L 232.661761 193.396596 
+L 234.18358 193.396596 
+L 234.18358 187.803337 
+L 235.705398 187.803337 
+L 235.705398 201.279851 
+L 237.227216 201.279851 
+L 237.227216 169.988356 
+L 238.749034 169.988356 
+L 238.749034 193.396596 
+L 240.270852 193.396596 
+L 240.270852 214.756364 
+L 241.79267 214.756364 
+L 241.79267 179.920083 
+L 243.314489 179.920083 
+L 243.314489 214.756364 
+L 244.836307 214.756364 
+L 244.836307 193.396596 
+L 246.358125 193.396596 
+L 246.358125 187.803337 
+L 247.879943 187.803337 
+L 247.879943 183.464869 
+L 249.401761 183.464869 
+L 249.401761 172.036828 
+L 250.92358 172.036828 
+L 250.92358 201.279851 
+L 252.445398 201.279851 
+L 252.445398 174.326824 
+L 253.967216 174.326824 
+L 253.967216 187.803337 
+L 255.489034 187.803337 
+L 255.489034 179.920083 
+L 257.010852 179.920083 
+L 257.010852 263.19625 
+M 258.53267 263.19625 
+L 258.53267 174.326824 
+L 260.054489 174.326824 
+L 260.054489 214.756364 
+L 261.576307 214.756364 
+L 261.576307 166.44357 
+L 263.098125 166.44357 
+L 263.098125 193.396596 
+L 266.141761 193.396596 
+L 266.141761 214.756364 
+L 267.66358 214.756364 
+L 267.66358 183.464869 
+L 272.229034 183.464869 
+L 272.229034 263.19625 
+M 273.750852 263.19625 
+L 273.750852 214.756364 
+L 276.794489 214.756364 
+L 276.794489 183.464869 
+L 278.316307 183.464869 
+L 278.316307 187.803337 
+L 279.838125 187.803337 
+L 279.838125 176.923008 
+L 281.359943 176.923008 
+L 281.359943 263.19625 
+M 284.40358 263.19625 
+L 284.40358 214.756364 
+L 287.447216 214.756364 
+L 287.447216 187.803337 
+L 288.969034 187.803337 
+L 288.969034 193.396596 
+L 290.490852 193.396596 
+L 290.490852 201.279851 
+L 292.01267 201.279851 
+L 292.01267 214.756364 
+L 293.534489 214.756364 
+L 293.534489 169.988356 
+L 295.056307 169.988356 
+L 295.056307 214.756364 
+L 298.099943 214.756364 
+L 298.099943 263.19625 
+M 299.621761 263.19625 
+L 299.621761 193.396596 
+L 301.14358 193.396596 
+L 301.14358 201.279851 
+L 302.665398 201.279851 
+L 302.665398 183.464869 
+L 304.187216 183.464869 
+L 304.187216 214.756364 
+L 305.709034 214.756364 
+L 305.709034 193.396596 
+L 311.796307 193.396596 
+L 311.796307 201.279851 
+L 313.318125 201.279851 
+L 313.318125 187.803337 
+L 314.839943 187.803337 
+L 314.839943 201.279851 
+L 316.361761 201.279851 
+L 316.361761 263.19625 
+M 322.449034 263.19625 
+L 322.449034 214.756364 
+L 323.970852 214.756364 
+L 323.970852 201.279851 
+L 325.49267 201.279851 
+L 325.49267 263.19625 
+M 327.014489 263.19625 
+L 327.014489 201.279851 
+L 328.536307 201.279851 
+L 328.536307 214.756364 
 L 330.058125 214.756364 
+L 330.058125 263.19625 
+M 331.579943 263.19625 
+L 331.579943 214.756364 
 L 333.101761 214.756364 
-L 333.101761 168.306496 
-L 334.62358 168.306496 
-L 334.62358 214.756364 
-L 336.145398 214.756364 
-L 336.145398 166.62099 
-L 337.667216 166.62099 
+L 333.101761 201.279851 
+L 334.62358 201.279851 
+L 334.62358 263.19625 
+M 336.145398 263.19625 
+L 336.145398 174.326824 
+L 337.667216 174.326824 
 L 337.667216 214.756364 
 L 339.189034 214.756364 
-L 339.189034 193.475036 
-L 340.710852 193.475036 
-L 340.710852 177.061944 
-L 342.23267 177.061944 
-L 342.23267 193.475036 
-L 343.754489 193.475036 
-L 343.754489 201.329341 
-L 345.276307 201.329341 
-L 345.276307 187.902318 
-L 346.798125 187.902318 
-L 346.798125 180.048013 
-L 348.319943 180.048013 
-L 348.319943 151.643451 
-L 349.841761 151.643451 
-L 349.841761 180.048013 
-L 351.36358 180.048013 
-L 351.36358 193.475036 
-L 352.885398 193.475036 
-L 352.885398 201.329341 
-L 354.407216 201.329341 
-L 354.407216 214.756364 
-L 355.929034 214.756364 
-L 355.929034 187.902318 
-L 357.450852 187.902318 
-L 357.450852 201.329341 
-L 358.97267 201.329341 
-L 358.97267 193.475036 
-L 360.494489 193.475036 
-L 360.494489 214.756364 
+L 339.189034 201.279851 
+L 340.710852 201.279851 
+L 340.710852 214.756364 
+L 343.754489 214.756364 
+L 343.754489 263.19625 
+M 348.319943 263.19625 
+L 348.319943 201.279851 
+L 351.36358 201.279851 
+L 351.36358 263.19625 
+M 352.885398 263.19625 
+L 352.885398 214.756364 
+L 357.450852 214.756364 
+L 357.450852 263.19625 
+M 358.97267 263.19625 
+L 358.97267 214.756364 
 L 362.016307 214.756364 
-L 362.016307 201.329341 
-L 363.538125 201.329341 
-L 363.538125 121.382209 
-L 365.059943 121.382209 
+L 362.016307 263.19625 
+M 363.538125 263.19625 
+L 363.538125 187.803337 
+L 365.059943 187.803337 
 L 365.059943 263.19625 
 L 365.059943 263.19625 
 " style="fill:none;stroke:#1f77b4;stroke-linejoin:miter;"/>
+   </g>
+   <g id="patch_4">
+    <path clip-path="url(#p790ff68a18)" d="M 60.696307 263.19625 
+L 60.696307 80.22042 
+L 62.218125 80.22042 
+L 62.218125 68.106583 
+L 63.739943 68.106583 
+L 63.739943 59.340418 
+L 65.261761 59.340418 
+L 65.261761 48.798721 
+L 66.78358 48.798721 
+L 66.78358 44.853512 
+L 68.305398 44.853512 
+L 68.305398 41.843089 
+L 69.827216 41.843089 
+L 69.827216 38.26719 
+L 71.349034 38.26719 
+L 71.349034 37.206408 
+L 72.870852 37.206408 
+L 72.870852 33.848949 
+L 74.39267 33.848949 
+L 74.39267 27.789417 
+L 75.914489 27.789417 
+L 75.914489 25.293398 
+L 77.436307 25.293398 
+L 77.436307 22.371828 
+L 78.958125 22.371828 
+L 78.958125 19.146969 
+L 80.479943 19.146969 
+L 80.479943 18.892017 
+L 82.001761 18.892017 
+L 82.001761 18.52178 
+L 83.52358 18.52178 
+L 83.52358 19.714956 
+L 85.045398 19.714956 
+L 85.045398 17.556908 
+L 86.567216 17.556908 
+L 86.567216 19.171069 
+L 88.089034 19.171069 
+L 88.089034 20.670145 
+L 89.610852 20.670145 
+L 89.610852 23.209184 
+L 91.13267 23.209184 
+L 91.13267 22.308208 
+L 92.654489 22.308208 
+L 92.654489 25.424863 
+L 94.176307 25.424863 
+L 94.176307 25.611579 
+L 95.698125 25.611579 
+L 95.698125 30.82258 
+L 97.219943 30.82258 
+L 97.219943 31.324102 
+L 98.741761 31.324102 
+L 98.741761 35.595103 
+L 100.26358 35.595103 
+L 100.26358 38.134416 
+L 101.785398 38.134416 
+L 101.785398 44.584311 
+L 103.307216 44.584311 
+L 103.307216 46.271839 
+L 104.829034 46.271839 
+L 104.829034 49.478395 
+L 106.350852 49.478395 
+L 106.350852 53.344394 
+L 107.87267 53.344394 
+L 107.87267 54.87372 
+L 109.394489 54.87372 
+L 109.394489 61.02617 
+L 110.916307 61.02617 
+L 110.916307 63.68381 
+L 112.438125 63.68381 
+L 112.438125 64.608217 
+L 113.959943 64.608217 
+L 113.959943 69.583125 
+L 115.481761 69.583125 
+L 115.481761 73.281926 
+L 117.00358 73.281926 
+L 117.00358 77.46638 
+L 118.525398 77.46638 
+L 118.525398 80.29742 
+L 120.047216 80.29742 
+L 120.047216 86.812296 
+L 121.569034 86.812296 
+L 121.569034 88.007852 
+L 123.090852 88.007852 
+L 123.090852 90.319367 
+L 124.61267 90.319367 
+L 124.61267 98.122048 
+L 126.134489 98.122048 
+L 126.134489 102.244619 
+L 127.656307 102.244619 
+L 127.656307 99.367192 
+L 129.178125 99.367192 
+L 129.178125 104.654262 
+L 130.699943 104.654262 
+L 130.699943 110.068326 
+L 132.221761 110.068326 
+L 132.221761 113.154791 
+L 133.74358 113.154791 
+L 133.74358 104.519712 
+L 135.265398 104.519712 
+L 135.265398 122.167804 
+L 136.787216 122.167804 
+L 136.787216 125.026889 
+L 138.309034 125.026889 
+L 138.309034 118.266264 
+L 139.830852 118.266264 
+L 139.830852 128.152723 
+L 141.35267 128.152723 
+L 141.35267 114.789577 
+L 142.874489 114.789577 
+L 142.874489 125.415752 
+L 144.396307 125.415752 
+L 144.396307 131.074584 
+L 145.918125 131.074584 
+L 145.918125 130.556087 
+L 147.439943 130.556087 
+L 147.439943 131.879216 
+L 148.961761 131.879216 
+L 148.961761 149.969982 
+L 150.48358 149.969982 
+L 150.48358 150.67706 
+L 152.005398 150.67706 
+L 152.005398 141.629236 
+L 153.527216 141.629236 
+L 153.527216 129.317292 
+L 155.049034 129.317292 
+L 155.049034 148.628588 
+L 156.570852 148.628588 
+L 156.570852 146.77552 
+L 158.09267 146.77552 
+L 158.09267 147.373798 
+L 159.614489 147.373798 
+L 159.614489 127.053984 
+L 161.136307 127.053984 
+L 161.136307 156.511843 
+L 162.658125 156.511843 
+L 162.658125 151.410826 
+L 164.179943 151.410826 
+L 164.179943 149.969982 
+L 165.701761 149.969982 
+L 165.701761 156.511843 
+L 167.22358 156.511843 
+L 167.22358 135.811206 
+L 168.745398 135.811206 
+L 168.745398 150.67706 
+L 170.267216 150.67706 
+L 170.267216 158.560315 
+L 171.789034 158.560315 
+L 171.789034 166.44357 
+L 173.310852 166.44357 
+L 173.310852 164.887339 
+L 174.83267 164.887339 
+L 174.83267 138.311849 
+L 176.354489 138.311849 
+L 176.354489 166.44357 
+L 177.876307 166.44357 
+L 177.876307 160.850311 
+L 179.398125 160.850311 
+L 179.398125 164.887339 
+L 180.919943 164.887339 
+L 180.919943 166.44357 
+L 182.441761 166.44357 
+L 182.441761 176.923008 
+L 183.96358 176.923008 
+L 183.96358 172.036828 
+L 185.485398 172.036828 
+L 185.485398 140.318009 
+L 187.007216 140.318009 
+L 187.007216 169.988356 
+L 188.529034 169.988356 
+L 188.529034 179.920083 
+L 190.050852 179.920083 
+L 190.050852 169.988356 
+L 191.57267 169.988356 
+L 191.57267 187.803337 
+L 193.094489 187.803337 
+L 193.094489 172.036828 
+L 194.616307 172.036828 
+L 194.616307 187.803337 
+L 196.138125 187.803337 
+L 196.138125 145.083802 
+L 197.659943 145.083802 
+L 197.659943 166.44357 
+L 199.181761 166.44357 
+L 199.181761 169.988356 
+L 200.70358 169.988356 
+L 200.70358 193.396596 
+L 202.225398 193.396596 
+L 202.225398 169.988356 
+L 203.747216 169.988356 
+L 203.747216 166.44357 
+L 205.269034 166.44357 
+L 205.269034 163.446495 
+L 206.790852 163.446495 
+L 206.790852 179.920083 
+L 208.31267 179.920083 
+L 208.31267 168.135288 
+L 209.834489 168.135288 
+L 209.834489 156.511843 
+L 211.356307 156.511843 
+L 211.356307 201.279851 
+L 212.878125 201.279851 
+L 212.878125 176.923008 
+L 214.399943 176.923008 
+L 214.399943 187.803337 
+L 215.921761 187.803337 
+L 215.921761 183.464869 
+L 217.44358 183.464869 
+L 217.44358 187.803337 
+L 218.965398 187.803337 
+L 218.965398 174.326824 
+L 220.487216 174.326824 
+L 220.487216 187.803337 
+L 222.009034 187.803337 
+L 222.009034 176.923008 
+L 223.530852 176.923008 
+L 223.530852 193.396596 
+L 226.574489 193.396596 
+L 226.574489 201.279851 
+L 228.096307 201.279851 
+L 228.096307 163.446495 
+L 229.618125 163.446495 
+L 229.618125 214.756364 
+L 231.139943 214.756364 
+L 231.139943 193.396596 
+L 232.661761 193.396596 
+L 232.661761 176.923008 
+L 234.18358 176.923008 
+L 234.18358 214.756364 
+L 235.705398 214.756364 
+L 235.705398 183.464869 
+L 237.227216 183.464869 
+L 237.227216 176.923008 
+L 238.749034 176.923008 
+L 238.749034 201.279851 
+L 240.270852 201.279851 
+L 240.270852 193.396596 
+L 241.79267 193.396596 
+L 241.79267 176.923008 
+L 243.314489 176.923008 
+L 243.314489 201.279851 
+L 249.401761 201.279851 
+L 249.401761 179.920083 
+L 250.92358 179.920083 
+L 250.92358 176.923008 
+L 252.445398 176.923008 
+L 252.445398 187.803337 
+L 253.967216 187.803337 
+L 253.967216 263.19625 
+M 255.489034 263.19625 
+L 255.489034 187.803337 
+L 257.010852 187.803337 
+L 257.010852 263.19625 
+M 258.53267 263.19625 
+L 258.53267 187.803337 
+L 260.054489 187.803337 
+L 260.054489 214.756364 
+L 261.576307 214.756364 
+L 261.576307 187.803337 
+L 263.098125 187.803337 
+L 263.098125 201.279851 
+L 266.141761 201.279851 
+L 266.141761 193.396596 
+L 267.66358 193.396596 
+L 267.66358 201.279851 
+L 269.185398 201.279851 
+L 269.185398 187.803337 
+L 270.707216 187.803337 
+L 270.707216 201.279851 
+L 272.229034 201.279851 
+L 272.229034 187.803337 
+L 273.750852 187.803337 
+L 273.750852 201.279851 
+L 275.27267 201.279851 
+L 275.27267 193.396596 
+L 276.794489 193.396596 
+L 276.794489 176.923008 
+L 278.316307 176.923008 
+L 278.316307 201.279851 
+L 279.838125 201.279851 
+L 279.838125 193.396596 
+L 281.359943 193.396596 
+L 281.359943 201.279851 
+L 284.40358 201.279851 
+L 284.40358 214.756364 
+L 285.925398 214.756364 
+L 285.925398 201.279851 
+L 287.447216 201.279851 
+L 287.447216 174.326824 
+L 288.969034 174.326824 
+L 288.969034 214.756364 
+L 290.490852 214.756364 
+L 290.490852 201.279851 
+L 292.01267 201.279851 
+L 292.01267 193.396596 
+L 293.534489 193.396596 
+L 293.534489 179.920083 
+L 295.056307 179.920083 
+L 295.056307 201.279851 
+L 301.14358 201.279851 
+L 301.14358 193.396596 
+L 302.665398 193.396596 
+L 302.665398 214.756364 
+L 304.187216 214.756364 
+L 304.187216 263.19625 
+M 308.75267 263.19625 
+L 308.75267 201.279851 
+L 310.274489 201.279851 
+L 310.274489 214.756364 
+L 311.796307 214.756364 
+L 311.796307 201.279851 
+L 313.318125 201.279851 
+L 313.318125 176.923008 
+L 314.839943 176.923008 
+L 314.839943 214.756364 
+L 316.361761 214.756364 
+L 316.361761 201.279851 
+L 319.405398 201.279851 
+L 319.405398 214.756364 
+L 320.927216 214.756364 
+L 320.927216 263.19625 
+M 322.449034 263.19625 
+L 322.449034 214.756364 
+L 323.970852 214.756364 
+L 323.970852 193.396596 
+L 325.49267 193.396596 
+L 325.49267 214.756364 
+L 331.579943 214.756364 
+L 331.579943 193.396596 
+L 333.101761 193.396596 
+L 333.101761 263.19625 
+M 334.62358 263.19625 
+L 334.62358 214.756364 
+L 336.145398 214.756364 
+L 336.145398 179.920083 
+L 337.667216 179.920083 
+L 337.667216 214.756364 
+L 339.189034 214.756364 
+L 339.189034 201.279851 
+L 340.710852 201.279851 
+L 340.710852 214.756364 
+L 343.754489 214.756364 
+L 343.754489 263.19625 
+M 345.276307 263.19625 
+L 345.276307 187.803337 
+L 346.798125 187.803337 
+L 346.798125 263.19625 
+M 348.319943 263.19625 
+L 348.319943 214.756364 
+L 351.36358 214.756364 
+L 351.36358 263.19625 
+M 352.885398 263.19625 
+L 352.885398 187.803337 
+L 354.407216 187.803337 
+L 354.407216 263.19625 
+M 355.929034 263.19625 
+L 355.929034 214.756364 
+L 358.97267 214.756364 
+L 358.97267 263.19625 
+M 363.538125 263.19625 
+L 363.538125 201.279851 
+L 365.059943 201.279851 
+L 365.059943 263.19625 
+L 365.059943 263.19625 
+" style="fill:none;stroke:#ff7f0e;stroke-linejoin:miter;"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
@@ -15369,10 +15713,10 @@ L 365.059943 263.19625
       <defs>
        <path d="M 0 0 
 L 0 3.5 
-" id="mead4014e5a" style="stroke:#000000;stroke-width:0.8;"/>
+" id="mf36ce2f3d4" style="stroke:#000000;stroke-width:0.8;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#mead4014e5a" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#mf36ce2f3d4" y="224.64"/>
       </g>
      </g>
      <g id="text_1">
@@ -15408,7 +15752,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#mead4014e5a" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#mf36ce2f3d4" y="224.64"/>
       </g>
      </g>
      <g id="text_2">
@@ -15447,7 +15791,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#mead4014e5a" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#mf36ce2f3d4" y="224.64"/>
       </g>
      </g>
      <g id="text_3">
@@ -15479,7 +15823,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#mead4014e5a" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#mf36ce2f3d4" y="224.64"/>
       </g>
      </g>
      <g id="text_4">
@@ -15524,7 +15868,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#mead4014e5a" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#mf36ce2f3d4" y="224.64"/>
       </g>
      </g>
      <g id="text_5">
@@ -15578,7 +15922,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#mead4014e5a" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#mf36ce2f3d4" y="224.64"/>
       </g>
      </g>
      <g id="text_6">
@@ -15908,35 +16252,35 @@ Q 14.5 64.65625 8.015625 75.875
 z
 " id="DejaVuSans-41"/>
      </defs>
-     <g transform="translate(147.3625 252.916562)scale(0.1 -0.1)">
+     <g transform="translate(147.516406 252.916562)scale(0.1 -0.1)">
       <use xlink:href="#DejaVuSans-84"/>
-      <use x="61.037109" xlink:href="#DejaVuSans-105"/>
-      <use x="88.820312" xlink:href="#DejaVuSans-112"/>
-      <use x="152.296875" xlink:href="#DejaVuSans-32"/>
-      <use x="184.083984" xlink:href="#DejaVuSans-69"/>
-      <use x="247.267578" xlink:href="#DejaVuSans-102"/>
-      <use x="282.472656" xlink:href="#DejaVuSans-102"/>
-      <use x="317.677734" xlink:href="#DejaVuSans-105"/>
-      <use x="345.460938" xlink:href="#DejaVuSans-99"/>
-      <use x="400.441406" xlink:href="#DejaVuSans-105"/>
-      <use x="428.224609" xlink:href="#DejaVuSans-101"/>
-      <use x="489.748047" xlink:href="#DejaVuSans-110"/>
-      <use x="553.126953" xlink:href="#DejaVuSans-99"/>
-      <use x="608.107422" xlink:href="#DejaVuSans-121"/>
-      <use x="667.287109" xlink:href="#DejaVuSans-32"/>
-      <use x="699.074219" xlink:href="#DejaVuSans-40"/>
-      <use x="738.087891" xlink:href="#DejaVuSans-68"/>
-      <use x="815.089844" xlink:href="#DejaVuSans-111"/>
-      <use x="876.271484" xlink:href="#DejaVuSans-108"/>
-      <use x="904.054688" xlink:href="#DejaVuSans-108"/>
-      <use x="931.837891" xlink:href="#DejaVuSans-97"/>
-      <use x="993.117188" xlink:href="#DejaVuSans-114"/>
-      <use x="1034.230469" xlink:href="#DejaVuSans-47"/>
-      <use x="1067.921875" xlink:href="#DejaVuSans-77"/>
-      <use x="1154.201172" xlink:href="#DejaVuSans-105"/>
-      <use x="1181.984375" xlink:href="#DejaVuSans-108"/>
-      <use x="1209.767578" xlink:href="#DejaVuSans-101"/>
-      <use x="1271.291016" xlink:href="#DejaVuSans-41"/>
+      <use x="57.958984" xlink:href="#DejaVuSans-105"/>
+      <use x="85.742188" xlink:href="#DejaVuSans-112"/>
+      <use x="149.21875" xlink:href="#DejaVuSans-32"/>
+      <use x="181.005859" xlink:href="#DejaVuSans-69"/>
+      <use x="244.189453" xlink:href="#DejaVuSans-102"/>
+      <use x="279.394531" xlink:href="#DejaVuSans-102"/>
+      <use x="314.599609" xlink:href="#DejaVuSans-105"/>
+      <use x="342.382812" xlink:href="#DejaVuSans-99"/>
+      <use x="397.363281" xlink:href="#DejaVuSans-105"/>
+      <use x="425.146484" xlink:href="#DejaVuSans-101"/>
+      <use x="486.669922" xlink:href="#DejaVuSans-110"/>
+      <use x="550.048828" xlink:href="#DejaVuSans-99"/>
+      <use x="605.029297" xlink:href="#DejaVuSans-121"/>
+      <use x="664.208984" xlink:href="#DejaVuSans-32"/>
+      <use x="695.996094" xlink:href="#DejaVuSans-40"/>
+      <use x="735.009766" xlink:href="#DejaVuSans-68"/>
+      <use x="812.011719" xlink:href="#DejaVuSans-111"/>
+      <use x="873.193359" xlink:href="#DejaVuSans-108"/>
+      <use x="900.976562" xlink:href="#DejaVuSans-108"/>
+      <use x="928.759766" xlink:href="#DejaVuSans-97"/>
+      <use x="990.039062" xlink:href="#DejaVuSans-114"/>
+      <use x="1031.152344" xlink:href="#DejaVuSans-47"/>
+      <use x="1064.84375" xlink:href="#DejaVuSans-77"/>
+      <use x="1151.123047" xlink:href="#DejaVuSans-105"/>
+      <use x="1178.90625" xlink:href="#DejaVuSans-108"/>
+      <use x="1206.689453" xlink:href="#DejaVuSans-101"/>
+      <use x="1268.212891" xlink:href="#DejaVuSans-41"/>
      </g>
     </g>
    </g>
@@ -15946,10 +16290,10 @@ z
       <defs>
        <path d="M 0 0 
 L -3.5 0 
-" id="m638b0479d0" style="stroke:#000000;stroke-width:0.8;"/>
+" id="m1fad7dd734" style="stroke:#000000;stroke-width:0.8;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="214.756364"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="214.756364"/>
       </g>
      </g>
      <g id="text_8">
@@ -15964,12 +16308,12 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="170.152759"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="169.988356"/>
       </g>
      </g>
      <g id="text_9">
       <!-- $\mathdefault{10^{1}}$ -->
-      <g transform="translate(20.878125 173.951977)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 173.787575)scale(0.1 -0.1)">
        <use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"/>
        <use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"/>
        <use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-49"/>
@@ -15979,12 +16323,12 @@ L -3.5 0
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="125.549153"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="125.220349"/>
       </g>
      </g>
      <g id="text_10">
       <!-- $\mathdefault{10^{2}}$ -->
-      <g transform="translate(20.878125 129.348372)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 129.019568)scale(0.1 -0.1)">
        <use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"/>
        <use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"/>
        <use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-50"/>
@@ -15994,7 +16338,7 @@ L -3.5 0
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="80.945548"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="80.452341"/>
       </g>
      </g>
      <g id="text_11">
@@ -16033,7 +16377,7 @@ Q 46.96875 40.921875 40.578125 39.3125
 z
 " id="DejaVuSans-51"/>
       </defs>
-      <g transform="translate(20.878125 84.744767)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 84.25156)scale(0.1 -0.1)">
        <use transform="translate(0 0.765625)" xlink:href="#DejaVuSans-49"/>
        <use transform="translate(63.623047 0.765625)" xlink:href="#DejaVuSans-48"/>
        <use transform="translate(128.203125 39.046875)scale(0.7)" xlink:href="#DejaVuSans-51"/>
@@ -16043,12 +16387,12 @@ z
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m638b0479d0" y="36.341943"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="35.684334"/>
       </g>
      </g>
      <g id="text_12">
       <!-- $\mathdefault{10^{4}}$ -->
-      <g transform="translate(20.878125 40.141162)scale(0.1 -0.1)">
+      <g transform="translate(20.878125 39.483553)scale(0.1 -0.1)">
        <use transform="translate(0 0.684375)" xlink:href="#DejaVuSans-49"/>
        <use transform="translate(63.623047 0.684375)" xlink:href="#DejaVuSans-48"/>
        <use transform="translate(128.203125 38.965625)scale(0.7)" xlink:href="#DejaVuSans-52"/>
@@ -16060,269 +16404,269 @@ z
       <defs>
        <path d="M 0 0 
 L -2 0 
-" id="m07424b366d" style="stroke:#000000;stroke-width:0.6;"/>
+" id="m854c11b483" style="stroke:#000000;stroke-width:0.6;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="221.665549"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="221.691016"/>
       </g>
      </g>
     </g>
     <g id="ytick_7">
      <g id="line2d_13">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="219.0789"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="219.094832"/>
       </g>
      </g>
     </g>
     <g id="ytick_8">
      <g id="line2d_14">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="216.797313"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="216.804835"/>
       </g>
      </g>
     </g>
     <g id="ytick_9">
      <g id="line2d_15">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="201.329341"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="201.279851"/>
       </g>
      </g>
     </g>
     <g id="ytick_10">
      <g id="line2d_16">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="193.475036"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="193.396596"/>
       </g>
      </g>
     </g>
     <g id="ytick_11">
      <g id="line2d_17">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="187.902318"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="187.803337"/>
       </g>
      </g>
     </g>
     <g id="ytick_12">
      <g id="line2d_18">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="183.579782"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="183.464869"/>
       </g>
      </g>
     </g>
     <g id="ytick_13">
      <g id="line2d_19">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="180.048013"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="179.920083"/>
       </g>
      </g>
     </g>
     <g id="ytick_14">
      <g id="line2d_20">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="177.061944"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="176.923008"/>
       </g>
      </g>
     </g>
     <g id="ytick_15">
      <g id="line2d_21">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="174.475294"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="174.326824"/>
       </g>
      </g>
     </g>
     <g id="ytick_16">
      <g id="line2d_22">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="172.193708"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="172.036828"/>
       </g>
      </g>
     </g>
     <g id="ytick_17">
      <g id="line2d_23">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="156.725735"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="156.511843"/>
       </g>
      </g>
     </g>
     <g id="ytick_18">
      <g id="line2d_24">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="148.871431"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="148.628588"/>
       </g>
      </g>
     </g>
     <g id="ytick_19">
      <g id="line2d_25">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="143.298712"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="143.03533"/>
       </g>
      </g>
     </g>
     <g id="ytick_20">
      <g id="line2d_26">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="138.976176"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="138.696862"/>
       </g>
      </g>
     </g>
     <g id="ytick_21">
      <g id="line2d_27">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="135.444407"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="135.152075"/>
       </g>
      </g>
     </g>
     <g id="ytick_22">
      <g id="line2d_28">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="132.458339"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="132.155001"/>
       </g>
      </g>
     </g>
     <g id="ytick_23">
      <g id="line2d_29">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="129.871689"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="129.558817"/>
       </g>
      </g>
     </g>
     <g id="ytick_24">
      <g id="line2d_30">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="127.590102"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="127.26882"/>
       </g>
      </g>
     </g>
     <g id="ytick_25">
      <g id="line2d_31">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="112.12213"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="111.743836"/>
       </g>
      </g>
     </g>
     <g id="ytick_26">
      <g id="line2d_32">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="104.267825"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="103.860581"/>
       </g>
      </g>
     </g>
     <g id="ytick_27">
      <g id="line2d_33">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="98.695107"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="98.267323"/>
       </g>
      </g>
     </g>
     <g id="ytick_28">
      <g id="line2d_34">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="94.372571"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="93.928854"/>
       </g>
      </g>
     </g>
     <g id="ytick_29">
      <g id="line2d_35">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="90.840802"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="90.384068"/>
       </g>
      </g>
     </g>
     <g id="ytick_30">
      <g id="line2d_36">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="87.854734"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="87.386993"/>
       </g>
      </g>
     </g>
     <g id="ytick_31">
      <g id="line2d_37">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="85.268084"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="84.79081"/>
       </g>
      </g>
     </g>
     <g id="ytick_32">
      <g id="line2d_38">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="82.986497"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="82.500813"/>
       </g>
      </g>
     </g>
     <g id="ytick_33">
      <g id="line2d_39">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="67.518525"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="66.975828"/>
       </g>
      </g>
     </g>
     <g id="ytick_34">
      <g id="line2d_40">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="59.66422"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="59.092573"/>
       </g>
      </g>
     </g>
     <g id="ytick_35">
      <g id="line2d_41">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="54.091502"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="53.499315"/>
       </g>
      </g>
     </g>
     <g id="ytick_36">
      <g id="line2d_42">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="49.768966"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="49.160847"/>
       </g>
      </g>
     </g>
     <g id="ytick_37">
      <g id="line2d_43">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="46.237197"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="45.61606"/>
       </g>
      </g>
     </g>
     <g id="ytick_38">
      <g id="line2d_44">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="43.251129"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="42.618986"/>
       </g>
      </g>
     </g>
     <g id="ytick_39">
      <g id="line2d_45">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="40.664479"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="40.022802"/>
       </g>
      </g>
     </g>
     <g id="ytick_40">
      <g id="line2d_46">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="38.382892"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="37.732806"/>
       </g>
      </g>
     </g>
     <g id="ytick_41">
      <g id="line2d_47">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="22.91492"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="22.207821"/>
       </g>
      </g>
     </g>
     <g id="ytick_42">
      <g id="line2d_48">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="15.060615"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="14.324566"/>
       </g>
      </g>
     </g>
     <g id="ytick_43">
      <g id="line2d_49">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m07424b366d" y="9.487897"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="8.731308"/>
       </g>
      </g>
     </g>
@@ -16423,30 +16767,117 @@ z
      </g>
     </g>
    </g>
-   <g id="patch_4">
+   <g id="patch_5">
     <path d="M 45.478125 224.64 
 L 45.478125 7.2 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
    </g>
-   <g id="patch_5">
+   <g id="patch_6">
     <path d="M 380.278125 224.64 
 L 380.278125 7.2 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
    </g>
-   <g id="patch_6">
+   <g id="patch_7">
     <path d="M 45.478125 224.64 
 L 380.278125 224.64 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
    </g>
-   <g id="patch_7">
+   <g id="patch_8">
     <path d="M 45.478125 7.2 
 L 380.278125 7.2 
 " style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
    </g>
+   <g id="legend_1">
+    <g id="patch_9">
+     <path d="M 303.367188 44.55625 
+L 373.278125 44.55625 
+Q 375.278125 44.55625 375.278125 42.55625 
+L 375.278125 14.2 
+Q 375.278125 12.2 373.278125 12.2 
+L 303.367188 12.2 
+Q 301.367188 12.2 301.367188 14.2 
+L 301.367188 42.55625 
+Q 301.367188 44.55625 303.367188 44.55625 
+z
+" style="fill:#ffffff;opacity:0.8;stroke:#cccccc;stroke-linejoin:miter;"/>
+    </g>
+    <g id="patch_10">
+     <path d="M 305.367188 23.798437 
+L 325.367188 23.798437 
+L 325.367188 16.798437 
+L 305.367188 16.798437 
+z
+" style="fill:none;stroke:#1f77b4;stroke-linejoin:miter;"/>
+    </g>
+    <g id="text_14">
+     <!-- January -->
+     <defs>
+      <path d="M 9.8125 72.90625 
+L 19.671875 72.90625 
+L 19.671875 5.078125 
+Q 19.671875 -8.109375 14.671875 -14.0625 
+Q 9.671875 -20.015625 -1.421875 -20.015625 
+L -5.171875 -20.015625 
+L -5.171875 -11.71875 
+L -2.09375 -11.71875 
+Q 4.4375 -11.71875 7.125 -8.046875 
+Q 9.8125 -4.390625 9.8125 5.078125 
+z
+" id="DejaVuSans-74"/>
+      <path d="M 8.5 21.578125 
+L 8.5 54.6875 
+L 17.484375 54.6875 
+L 17.484375 21.921875 
+Q 17.484375 14.15625 20.5 10.265625 
+Q 23.53125 6.390625 29.59375 6.390625 
+Q 36.859375 6.390625 41.078125 11.03125 
+Q 45.3125 15.671875 45.3125 23.6875 
+L 45.3125 54.6875 
+L 54.296875 54.6875 
+L 54.296875 0 
+L 45.3125 0 
+L 45.3125 8.40625 
+Q 42.046875 3.421875 37.71875 1 
+Q 33.40625 -1.421875 27.6875 -1.421875 
+Q 18.265625 -1.421875 13.375 4.4375 
+Q 8.5 10.296875 8.5 21.578125 
+z
+M 31.109375 56 
+z
+" id="DejaVuSans-117"/>
+     </defs>
+     <g transform="translate(333.367188 23.798437)scale(0.1 -0.1)">
+      <use xlink:href="#DejaVuSans-74"/>
+      <use x="29.492188" xlink:href="#DejaVuSans-97"/>
+      <use x="90.771484" xlink:href="#DejaVuSans-110"/>
+      <use x="154.150391" xlink:href="#DejaVuSans-117"/>
+      <use x="217.529297" xlink:href="#DejaVuSans-97"/>
+      <use x="278.808594" xlink:href="#DejaVuSans-114"/>
+      <use x="319.921875" xlink:href="#DejaVuSans-121"/>
+     </g>
+    </g>
+    <g id="patch_11">
+     <path d="M 305.367188 38.476562 
+L 325.367188 38.476562 
+L 325.367188 31.476562 
+L 305.367188 31.476562 
+z
+" style="fill:none;stroke:#ff7f0e;stroke-linejoin:miter;"/>
+    </g>
+    <g id="text_15">
+     <!-- July -->
+     <g transform="translate(333.367188 38.476562)scale(0.1 -0.1)">
+      <use xlink:href="#DejaVuSans-74"/>
+      <use x="29.492188" xlink:href="#DejaVuSans-117"/>
+      <use x="92.871094" xlink:href="#DejaVuSans-108"/>
+      <use x="120.654297" xlink:href="#DejaVuSans-121"/>
+     </g>
+    </g>
+   </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p8e577835b2">
+  <clipPath id="p790ff68a18">
    <rect height="217.44" width="334.8" x="45.478125" y="7.2"/>
   </clipPath>
  </defs>
@@ -16498,8 +16929,7 @@ L 380.278125 7.2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Thanks!">Thanks!<a class="anchor-link" href="#Thanks!">&#182;</a></h1><p>Please fill out a survey before you leave!
-<img src="survey.png" alt="qr"></p>
+<h1 id="Thanks!">Thanks!<a class="anchor-link" href="#Thanks!">&#182;</a></h1><p>Please fill out a survey before you leave!</p>
 
 </div>
 </div>
