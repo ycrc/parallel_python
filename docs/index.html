@@ -13284,7 +13284,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define an array of numbers</span>
@@ -13339,7 +13339,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># (Very) inefficient way to define a map function</span>
@@ -13364,7 +13364,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_map</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
@@ -13380,7 +13380,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13405,7 +13405,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">foo</span><span class="p">))</span>
@@ -13423,7 +13423,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13468,7 +13468,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
@@ -13523,7 +13523,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parallel_test</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -13546,7 +13546,7 @@ a.anchor-link {
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">parallel_test</span><span class="p">,</span> <span class="n">foo</span><span class="p">));</span>
@@ -13566,12 +13566,12 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 122203
-x = 1, PID = 122203
-x = 2, PID = 122203
-x = 3, PID = 122203
-x = 4, PID = 122203
-x = 5, PID = 122203
+<pre>x = 0, PID = 129626
+x = 1, PID = 129626
+x = 2, PID = 129626
+x = 3, PID = 129626
+x = 4, PID = 129626
+x = 5, PID = 129626
 </pre>
 </div>
 </div>
@@ -13598,7 +13598,7 @@ x = 5, PID = 122203
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -13619,12 +13619,12 @@ x = 5, PID = 122203
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 122244
-x = 4, PID = 122248
-x = 1, PID = 122245
-x = 2, PID = 122246
-x = 3, PID = 122247
-x = 5, PID = 122249
+<pre>x = 0, PID = 129647
+x = 2, PID = 129649
+x = 3, PID = 129650
+x = 4, PID = 129651
+x = 1, PID = 129648
+x = 5, PID = 129652
 </pre>
 </div>
 </div>
@@ -13685,7 +13685,7 @@ x = 5, PID = 122249
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pi_mc</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
@@ -13717,7 +13717,7 @@ x = 5, PID = 122249
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pi_mc(1)
@@ -13737,7 +13737,7 @@ x = 5, PID = 122249
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>308 ms ± 80.5 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>306 ms ± 4.44 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13748,7 +13748,7 @@ x = 5, PID = 122249
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
@@ -13769,7 +13769,7 @@ x = 5, PID = 122249
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.25 s ± 20.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.21 s ± 1.89 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13780,7 +13780,7 @@ x = 5, PID = 122249
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -13803,7 +13803,7 @@ x = 5, PID = 122249
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>361 ms ± 1.28 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>370 ms ± 1.33 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13831,7 +13831,7 @@ x = 5, PID = 122249
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python image library functions</span>
@@ -13848,7 +13848,7 @@ x = 5, PID = 122249
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Read image</span>
@@ -13867,7 +13867,7 @@ x = 5, PID = 122249
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13886,7 +13886,7 @@ x = 5, PID = 122249
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
@@ -13902,7 +13902,7 @@ x = 5, PID = 122249
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13929,7 +13929,7 @@ x = 5, PID = 122249
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">image_flipper</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
@@ -13953,7 +13953,7 @@ x = 5, PID = 122249
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./data/*jpg&#39;</span><span class="p">)</span>
@@ -13996,7 +13996,7 @@ x = 5, PID = 122249
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -14018,7 +14018,7 @@ x = 5, PID = 122249
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> ./data/*pdf
@@ -14165,7 +14165,7 @@ Job: the line from your job file
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
@@ -14632,7 +14632,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load CUPY module</span>
@@ -14654,7 +14654,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14684,7 +14684,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.5 s ± 465 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>3.53 s ± 906 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -14703,7 +14703,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14737,7 +14737,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>463 ms ± 33.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>452 ms ± 787 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -14775,7 +14775,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">january</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../taxi/yellow_tripdata_2017-01.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
@@ -14789,7 +14789,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip_jan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">january</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">])</span>
@@ -14814,7 +14814,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_jan</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tip_jan</span><span class="p">)</span>
@@ -14838,7 +14838,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14859,7 +14859,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.42 ms ± 3.84 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>1.44 ms ± 4.15 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -14870,7 +14870,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
@@ -14891,7 +14891,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>32.3 µs ± 2.48 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<pre>32.9 µs ± 1.99 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre>
 </div>
 </div>
@@ -14910,7 +14910,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip_jan</span><span class="p">,</span> <span class="n">gpu_dist_jan</span><span class="p">)</span>
@@ -14984,7 +14984,7 @@ z
 " style="fill:#ffffff;"/>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#p790ff68a18)" d="M 60.696307 263.19625 
+    <path clip-path="url(#pe33cec0f1b)" d="M 60.696307 263.19625 
 L 60.696307 83.070758 
 L 62.218125 83.070758 
 L 62.218125 68.681692 
@@ -15342,7 +15342,7 @@ L 365.059943 263.19625
 " style="fill:none;stroke:#1f77b4;stroke-linejoin:miter;"/>
    </g>
    <g id="patch_4">
-    <path clip-path="url(#p790ff68a18)" d="M 60.696307 263.19625 
+    <path clip-path="url(#pe33cec0f1b)" d="M 60.696307 263.19625 
 L 60.696307 80.22042 
 L 62.218125 80.22042 
 L 62.218125 68.106583 
@@ -15713,10 +15713,10 @@ L 365.059943 263.19625
       <defs>
        <path d="M 0 0 
 L 0 3.5 
-" id="mf36ce2f3d4" style="stroke:#000000;stroke-width:0.8;"/>
+" id="m1035080c31" style="stroke:#000000;stroke-width:0.8;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#mf36ce2f3d4" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#m1035080c31" y="224.64"/>
       </g>
      </g>
      <g id="text_1">
@@ -15752,7 +15752,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#mf36ce2f3d4" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#m1035080c31" y="224.64"/>
       </g>
      </g>
      <g id="text_2">
@@ -15791,7 +15791,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#mf36ce2f3d4" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#m1035080c31" y="224.64"/>
       </g>
      </g>
      <g id="text_3">
@@ -15823,7 +15823,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#mf36ce2f3d4" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#m1035080c31" y="224.64"/>
       </g>
      </g>
      <g id="text_4">
@@ -15868,7 +15868,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#mf36ce2f3d4" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#m1035080c31" y="224.64"/>
       </g>
      </g>
      <g id="text_5">
@@ -15922,7 +15922,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#mf36ce2f3d4" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#m1035080c31" y="224.64"/>
       </g>
      </g>
      <g id="text_6">
@@ -16290,10 +16290,10 @@ z
       <defs>
        <path d="M 0 0 
 L -3.5 0 
-" id="m1fad7dd734" style="stroke:#000000;stroke-width:0.8;"/>
+" id="mc63e45f257" style="stroke:#000000;stroke-width:0.8;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="214.756364"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="214.756364"/>
       </g>
      </g>
      <g id="text_8">
@@ -16308,7 +16308,7 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="169.988356"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="169.988356"/>
       </g>
      </g>
      <g id="text_9">
@@ -16323,7 +16323,7 @@ L -3.5 0
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="125.220349"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="125.220349"/>
       </g>
      </g>
      <g id="text_10">
@@ -16338,7 +16338,7 @@ L -3.5 0
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="80.452341"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="80.452341"/>
       </g>
      </g>
      <g id="text_11">
@@ -16387,7 +16387,7 @@ z
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m1fad7dd734" y="35.684334"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="35.684334"/>
       </g>
      </g>
      <g id="text_12">
@@ -16404,269 +16404,269 @@ z
       <defs>
        <path d="M 0 0 
 L -2 0 
-" id="m854c11b483" style="stroke:#000000;stroke-width:0.6;"/>
+" id="m01103323fd" style="stroke:#000000;stroke-width:0.6;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="221.691016"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="221.691016"/>
       </g>
      </g>
     </g>
     <g id="ytick_7">
      <g id="line2d_13">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="219.094832"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="219.094832"/>
       </g>
      </g>
     </g>
     <g id="ytick_8">
      <g id="line2d_14">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="216.804835"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="216.804835"/>
       </g>
      </g>
     </g>
     <g id="ytick_9">
      <g id="line2d_15">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="201.279851"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="201.279851"/>
       </g>
      </g>
     </g>
     <g id="ytick_10">
      <g id="line2d_16">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="193.396596"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="193.396596"/>
       </g>
      </g>
     </g>
     <g id="ytick_11">
      <g id="line2d_17">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="187.803337"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="187.803337"/>
       </g>
      </g>
     </g>
     <g id="ytick_12">
      <g id="line2d_18">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="183.464869"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="183.464869"/>
       </g>
      </g>
     </g>
     <g id="ytick_13">
      <g id="line2d_19">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="179.920083"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="179.920083"/>
       </g>
      </g>
     </g>
     <g id="ytick_14">
      <g id="line2d_20">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="176.923008"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="176.923008"/>
       </g>
      </g>
     </g>
     <g id="ytick_15">
      <g id="line2d_21">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="174.326824"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="174.326824"/>
       </g>
      </g>
     </g>
     <g id="ytick_16">
      <g id="line2d_22">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="172.036828"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="172.036828"/>
       </g>
      </g>
     </g>
     <g id="ytick_17">
      <g id="line2d_23">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="156.511843"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="156.511843"/>
       </g>
      </g>
     </g>
     <g id="ytick_18">
      <g id="line2d_24">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="148.628588"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="148.628588"/>
       </g>
      </g>
     </g>
     <g id="ytick_19">
      <g id="line2d_25">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="143.03533"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="143.03533"/>
       </g>
      </g>
     </g>
     <g id="ytick_20">
      <g id="line2d_26">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="138.696862"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="138.696862"/>
       </g>
      </g>
     </g>
     <g id="ytick_21">
      <g id="line2d_27">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="135.152075"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="135.152075"/>
       </g>
      </g>
     </g>
     <g id="ytick_22">
      <g id="line2d_28">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="132.155001"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="132.155001"/>
       </g>
      </g>
     </g>
     <g id="ytick_23">
      <g id="line2d_29">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="129.558817"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="129.558817"/>
       </g>
      </g>
     </g>
     <g id="ytick_24">
      <g id="line2d_30">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="127.26882"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="127.26882"/>
       </g>
      </g>
     </g>
     <g id="ytick_25">
      <g id="line2d_31">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="111.743836"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="111.743836"/>
       </g>
      </g>
     </g>
     <g id="ytick_26">
      <g id="line2d_32">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="103.860581"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="103.860581"/>
       </g>
      </g>
     </g>
     <g id="ytick_27">
      <g id="line2d_33">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="98.267323"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="98.267323"/>
       </g>
      </g>
     </g>
     <g id="ytick_28">
      <g id="line2d_34">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="93.928854"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="93.928854"/>
       </g>
      </g>
     </g>
     <g id="ytick_29">
      <g id="line2d_35">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="90.384068"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="90.384068"/>
       </g>
      </g>
     </g>
     <g id="ytick_30">
      <g id="line2d_36">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="87.386993"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="87.386993"/>
       </g>
      </g>
     </g>
     <g id="ytick_31">
      <g id="line2d_37">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="84.79081"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="84.79081"/>
       </g>
      </g>
     </g>
     <g id="ytick_32">
      <g id="line2d_38">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="82.500813"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="82.500813"/>
       </g>
      </g>
     </g>
     <g id="ytick_33">
      <g id="line2d_39">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="66.975828"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="66.975828"/>
       </g>
      </g>
     </g>
     <g id="ytick_34">
      <g id="line2d_40">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="59.092573"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="59.092573"/>
       </g>
      </g>
     </g>
     <g id="ytick_35">
      <g id="line2d_41">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="53.499315"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="53.499315"/>
       </g>
      </g>
     </g>
     <g id="ytick_36">
      <g id="line2d_42">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="49.160847"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="49.160847"/>
       </g>
      </g>
     </g>
     <g id="ytick_37">
      <g id="line2d_43">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="45.61606"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="45.61606"/>
       </g>
      </g>
     </g>
     <g id="ytick_38">
      <g id="line2d_44">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="42.618986"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="42.618986"/>
       </g>
      </g>
     </g>
     <g id="ytick_39">
      <g id="line2d_45">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="40.022802"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="40.022802"/>
       </g>
      </g>
     </g>
     <g id="ytick_40">
      <g id="line2d_46">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="37.732806"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="37.732806"/>
       </g>
      </g>
     </g>
     <g id="ytick_41">
      <g id="line2d_47">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="22.207821"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="22.207821"/>
       </g>
      </g>
     </g>
     <g id="ytick_42">
      <g id="line2d_48">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="14.324566"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="14.324566"/>
       </g>
      </g>
     </g>
     <g id="ytick_43">
      <g id="line2d_49">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m854c11b483" y="8.731308"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="8.731308"/>
       </g>
      </g>
     </g>
@@ -16877,7 +16877,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p790ff68a18">
+  <clipPath id="pe33cec0f1b">
    <rect height="217.44" width="334.8" x="45.478125" y="7.2"/>
   </clipPath>
  </defs>
@@ -16921,6 +16921,7 @@ z
 <h2 id="GPU-Parallelism">GPU Parallelism<a class="anchor-link" href="#GPU-Parallelism">&#182;</a></h2><ul>
 <li><a href="https://docs-cupy.chainer.org/en/stable/">CuPy, a Numpy-like API for GPU processing</a></li>
 <li><a href="https://documen.tician.de/pycuda/">PyCUDA, CUDA API for python</a></li>
+<li><a href="https://rapids.ai">RAPIDS, GPU-accelerated data science</a></li>
 </ul>
 
 </div>

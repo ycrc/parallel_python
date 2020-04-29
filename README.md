@@ -4,11 +4,17 @@
 
 This is a tutorial introducing parallel programming concepts and their implementation in Python. 
 
-Topics covered include:
+## Outline and Overview
 
-1. Serial vs Parallel execution
-2. The `multiprocessing` module
-3. Using MPI with `mpi4py`
-4. Migrating parallel workflows to the YCRC clusters with dSQ
+- Introduction to parallel concepts
+- Classes of parallel problems
+- Python implementations of parallel processesing
+- Tools for further exploration
+
+## Modules and tools
+
+- Language: Python 3.8
+- Modules: `pandas`, `numpy`, `multiprocessing`, `PIL` (for imamge processing), `mpi4py`, `matplotlib`, `cupy` (for GPU parallelism)
+- Jupyter notebook
 
 
