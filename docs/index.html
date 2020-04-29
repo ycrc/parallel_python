@@ -13566,12 +13566,12 @@ a.anchor-link {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 129626
-x = 1, PID = 129626
-x = 2, PID = 129626
-x = 3, PID = 129626
-x = 4, PID = 129626
-x = 5, PID = 129626
+<pre>x = 0, PID = 131000
+x = 1, PID = 131000
+x = 2, PID = 131000
+x = 3, PID = 131000
+x = 4, PID = 131000
+x = 5, PID = 131000
 </pre>
 </div>
 </div>
@@ -13619,12 +13619,12 @@ x = 5, PID = 129626
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x = 0, PID = 129647
-x = 2, PID = 129649
-x = 3, PID = 129650
-x = 4, PID = 129651
-x = 1, PID = 129648
-x = 5, PID = 129652
+<pre>x = 1, PID = 131024
+x = 2, PID = 131025
+x = 4, PID = 131027
+x = 5, PID = 131028
+x = 0, PID = 131023
+x = 3, PID = 131026
 </pre>
 </div>
 </div>
@@ -13688,18 +13688,861 @@ x = 5, PID = 129652
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.03</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.03</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">);</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_svg output_subarea ">
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="328.17pt" version="1.1" viewBox="0 0 355.016286 328.17" width="355.016286pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 328.17 
+L 355.016286 328.17 
+L 355.016286 0 
+L 0 0 
+z
+" style="fill:none;"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 59.13 279 
+L 338.13 279 
+L 338.13 7.2 
+L 59.13 7.2 
+z
+" style="fill:#ffffff;"/>
+   </g>
+   <g id="PolyCollection_1">
+    <path clip-path="url(#p1c5d58df42)" d="M 59.13 279 
+L 59.13 15.116505 
+L 61.866099 15.129967 
+L 64.602198 15.170359 
+L 67.338297 15.237691 
+L 70.074395 15.331986 
+L 72.810494 15.453271 
+L 75.546593 15.601585 
+L 78.282692 15.776973 
+L 81.018791 15.979488 
+L 83.75489 16.209195 
+L 86.490989 16.466163 
+L 89.227087 16.750474 
+L 91.963186 17.062216 
+L 94.699285 17.401488 
+L 97.435384 17.768396 
+L 100.171483 18.163057 
+L 102.907582 18.585598 
+L 105.64368 19.036154 
+L 108.379779 19.514871 
+L 111.115878 20.021906 
+L 113.851977 20.557425 
+L 116.588076 21.121606 
+L 119.324175 21.714636 
+L 122.060274 22.336717 
+L 124.796372 22.98806 
+L 127.532471 23.668889 
+L 130.26857 24.37944 
+L 133.004669 25.119962 
+L 135.740768 25.89072 
+L 138.476867 26.69199 
+L 141.212966 27.524064 
+L 143.949064 28.387248 
+L 146.685163 29.281865 
+L 149.421262 30.208255 
+L 152.157361 31.166773 
+L 154.89346 32.157794 
+L 157.629559 33.181711 
+L 160.365658 34.238936 
+L 163.101756 35.329904 
+L 165.837855 36.45507 
+L 168.573954 37.614911 
+L 171.310053 38.809931 
+L 174.046152 40.040656 
+L 176.782251 41.307642 
+L 179.51835 42.611472 
+L 182.254448 43.952758 
+L 184.990547 45.332147 
+L 187.726646 46.750315 
+L 190.462745 48.20798 
+L 193.198844 49.705893 
+L 195.934943 51.244849 
+L 198.671041 52.825686 
+L 201.40714 54.449288 
+L 204.143239 56.11659 
+L 206.879338 57.82858 
+L 209.615437 59.586305 
+L 212.351536 61.390871 
+L 215.087635 63.243456 
+L 217.823733 65.145306 
+L 220.559832 67.097748 
+L 223.295931 69.102194 
+L 226.03203 71.160149 
+L 228.768129 73.273218 
+L 231.504228 75.443118 
+L 234.240327 77.671686 
+L 236.976425 79.960892 
+L 239.712524 82.312856 
+L 242.448623 84.729854 
+L 245.184722 87.214347 
+L 247.920821 89.768993 
+L 250.65692 92.396672 
+L 253.393019 95.100517 
+L 256.129117 97.883936 
+L 258.865216 100.75066 
+L 261.601315 103.704774 
+L 264.337414 106.750774 
+L 267.073513 109.893627 
+L 269.809612 113.138837 
+L 272.545711 116.492536 
+L 275.281809 119.961587 
+L 278.017908 123.553714 
+L 280.754007 127.277658 
+L 283.490106 131.143378 
+L 286.226205 135.162304 
+L 288.962304 139.347663 
+L 291.698402 143.714901 
+L 294.434501 148.282247 
+L 297.1706 153.071472 
+L 299.906699 158.108942 
+L 302.642798 163.427114 
+L 305.378897 169.066719 
+L 308.114996 175.080074 
+L 310.851094 181.536335 
+L 313.587193 188.530274 
+L 316.323292 196.198026 
+L 319.059391 204.748045 
+L 321.79549 214.530401 
+L 324.531589 226.225993 
+L 327.267688 241.588067 
+L 330.003786 279 
+L 330.003786 279 
+L 330.003786 279 
+L 327.267688 279 
+L 324.531589 279 
+L 321.79549 279 
+L 319.059391 279 
+L 316.323292 279 
+L 313.587193 279 
+L 310.851094 279 
+L 308.114996 279 
+L 305.378897 279 
+L 302.642798 279 
+L 299.906699 279 
+L 297.1706 279 
+L 294.434501 279 
+L 291.698402 279 
+L 288.962304 279 
+L 286.226205 279 
+L 283.490106 279 
+L 280.754007 279 
+L 278.017908 279 
+L 275.281809 279 
+L 272.545711 279 
+L 269.809612 279 
+L 267.073513 279 
+L 264.337414 279 
+L 261.601315 279 
+L 258.865216 279 
+L 256.129117 279 
+L 253.393019 279 
+L 250.65692 279 
+L 247.920821 279 
+L 245.184722 279 
+L 242.448623 279 
+L 239.712524 279 
+L 236.976425 279 
+L 234.240327 279 
+L 231.504228 279 
+L 228.768129 279 
+L 226.03203 279 
+L 223.295931 279 
+L 220.559832 279 
+L 217.823733 279 
+L 215.087635 279 
+L 212.351536 279 
+L 209.615437 279 
+L 206.879338 279 
+L 204.143239 279 
+L 201.40714 279 
+L 198.671041 279 
+L 195.934943 279 
+L 193.198844 279 
+L 190.462745 279 
+L 187.726646 279 
+L 184.990547 279 
+L 182.254448 279 
+L 179.51835 279 
+L 176.782251 279 
+L 174.046152 279 
+L 171.310053 279 
+L 168.573954 279 
+L 165.837855 279 
+L 163.101756 279 
+L 160.365658 279 
+L 157.629559 279 
+L 154.89346 279 
+L 152.157361 279 
+L 149.421262 279 
+L 146.685163 279 
+L 143.949064 279 
+L 141.212966 279 
+L 138.476867 279 
+L 135.740768 279 
+L 133.004669 279 
+L 130.26857 279 
+L 127.532471 279 
+L 124.796372 279 
+L 122.060274 279 
+L 119.324175 279 
+L 116.588076 279 
+L 113.851977 279 
+L 111.115878 279 
+L 108.379779 279 
+L 105.64368 279 
+L 102.907582 279 
+L 100.171483 279 
+L 97.435384 279 
+L 94.699285 279 
+L 91.963186 279 
+L 89.227087 279 
+L 86.490989 279 
+L 83.75489 279 
+L 81.018791 279 
+L 78.282692 279 
+L 75.546593 279 
+L 72.810494 279 
+L 70.074395 279 
+L 67.338297 279 
+L 64.602198 279 
+L 61.866099 279 
+L 59.13 279 
+z
+" style="fill:#1f77b4;fill-opacity:0.1;"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path d="M 0 0 
+L 0 3.5 
+" id="me87cc4303c" style="stroke:#000000;stroke-width:0.8;"/>
+      </defs>
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#me87cc4303c" y="279"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 0.00 -->
+      <defs>
+       <path d="M 31.78125 66.40625 
+Q 24.171875 66.40625 20.328125 58.90625 
+Q 16.5 51.421875 16.5 36.375 
+Q 16.5 21.390625 20.328125 13.890625 
+Q 24.171875 6.390625 31.78125 6.390625 
+Q 39.453125 6.390625 43.28125 13.890625 
+Q 47.125 21.390625 47.125 36.375 
+Q 47.125 51.421875 43.28125 58.90625 
+Q 39.453125 66.40625 31.78125 66.40625 
+z
+M 31.78125 74.21875 
+Q 44.046875 74.21875 50.515625 64.515625 
+Q 56.984375 54.828125 56.984375 36.375 
+Q 56.984375 17.96875 50.515625 8.265625 
+Q 44.046875 -1.421875 31.78125 -1.421875 
+Q 19.53125 -1.421875 13.0625 8.265625 
+Q 6.59375 17.96875 6.59375 36.375 
+Q 6.59375 54.828125 13.0625 64.515625 
+Q 19.53125 74.21875 31.78125 74.21875 
+z
+" id="DejaVuSans-48"/>
+       <path d="M 10.6875 12.40625 
+L 21 12.40625 
+L 21 0 
+L 10.6875 0 
+z
+" id="DejaVuSans-46"/>
+      </defs>
+      <g transform="translate(41.3175 298.1575)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-48"/>
+       <use x="159.033203" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="126.848447" xlink:href="#me87cc4303c" y="279"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 0.25 -->
+      <defs>
+       <path d="M 19.1875 8.296875 
+L 53.609375 8.296875 
+L 53.609375 0 
+L 7.328125 0 
+L 7.328125 8.296875 
+Q 12.9375 14.109375 22.625 23.890625 
+Q 32.328125 33.6875 34.8125 36.53125 
+Q 39.546875 41.84375 41.421875 45.53125 
+Q 43.3125 49.21875 43.3125 52.78125 
+Q 43.3125 58.59375 39.234375 62.25 
+Q 35.15625 65.921875 28.609375 65.921875 
+Q 23.96875 65.921875 18.8125 64.3125 
+Q 13.671875 62.703125 7.8125 59.421875 
+L 7.8125 69.390625 
+Q 13.765625 71.78125 18.9375 73 
+Q 24.125 74.21875 28.421875 74.21875 
+Q 39.75 74.21875 46.484375 68.546875 
+Q 53.21875 62.890625 53.21875 53.421875 
+Q 53.21875 48.921875 51.53125 44.890625 
+Q 49.859375 40.875 45.40625 35.40625 
+Q 44.1875 33.984375 37.640625 27.21875 
+Q 31.109375 20.453125 19.1875 8.296875 
+z
+" id="DejaVuSans-50"/>
+       <path d="M 10.796875 72.90625 
+L 49.515625 72.90625 
+L 49.515625 64.59375 
+L 19.828125 64.59375 
+L 19.828125 46.734375 
+Q 21.96875 47.46875 24.109375 47.828125 
+Q 26.265625 48.1875 28.421875 48.1875 
+Q 40.625 48.1875 47.75 41.5 
+Q 54.890625 34.8125 54.890625 23.390625 
+Q 54.890625 11.625 47.5625 5.09375 
+Q 40.234375 -1.421875 26.90625 -1.421875 
+Q 22.3125 -1.421875 17.546875 -0.640625 
+Q 12.796875 0.140625 7.71875 1.703125 
+L 7.71875 11.625 
+Q 12.109375 9.234375 16.796875 8.0625 
+Q 21.484375 6.890625 26.703125 6.890625 
+Q 35.15625 6.890625 40.078125 11.328125 
+Q 45.015625 15.765625 45.015625 23.390625 
+Q 45.015625 31 40.078125 35.4375 
+Q 35.15625 39.890625 26.703125 39.890625 
+Q 22.75 39.890625 18.8125 39.015625 
+Q 14.890625 38.140625 10.796875 36.28125 
+z
+" id="DejaVuSans-53"/>
+      </defs>
+      <g transform="translate(109.035947 298.1575)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-50"/>
+       <use x="159.033203" xlink:href="#DejaVuSans-53"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="194.566893" xlink:href="#me87cc4303c" y="279"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 0.50 -->
+      <g transform="translate(176.754393 298.1575)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-53"/>
+       <use x="159.033203" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="262.28534" xlink:href="#me87cc4303c" y="279"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 0.75 -->
+      <defs>
+       <path d="M 8.203125 72.90625 
+L 55.078125 72.90625 
+L 55.078125 68.703125 
+L 28.609375 0 
+L 18.3125 0 
+L 43.21875 64.59375 
+L 8.203125 64.59375 
+z
+" id="DejaVuSans-55"/>
+      </defs>
+      <g transform="translate(244.47284 298.1575)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-55"/>
+       <use x="159.033203" xlink:href="#DejaVuSans-53"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="330.003786" xlink:href="#me87cc4303c" y="279"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 1.00 -->
+      <defs>
+       <path d="M 12.40625 8.296875 
+L 28.515625 8.296875 
+L 28.515625 63.921875 
+L 10.984375 60.40625 
+L 10.984375 69.390625 
+L 28.421875 72.90625 
+L 38.28125 72.90625 
+L 38.28125 8.296875 
+L 54.390625 8.296875 
+L 54.390625 0 
+L 12.40625 0 
+z
+" id="DejaVuSans-49"/>
+      </defs>
+      <g transform="translate(312.191286 298.1575)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-49"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-48"/>
+       <use x="159.033203" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_6">
+     <!-- X -->
+     <defs>
+      <path d="M 6.296875 72.90625 
+L 16.890625 72.90625 
+L 35.015625 45.796875 
+L 53.21875 72.90625 
+L 63.8125 72.90625 
+L 40.375 37.890625 
+L 65.375 0 
+L 54.78125 0 
+L 34.28125 31 
+L 13.625 0 
+L 2.984375 0 
+L 29 38.921875 
+z
+" id="DejaVuSans-88"/>
+     </defs>
+     <g transform="translate(193.15 317.6425)scale(0.16 -0.16)">
+      <use xlink:href="#DejaVuSans-88"/>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <defs>
+       <path d="M 0 0 
+L -3.5 0 
+" id="m7c0ac10cc3" style="stroke:#000000;stroke-width:0.8;"/>
+      </defs>
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#m7c0ac10cc3" y="279"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 0.0 -->
+      <g transform="translate(26.685 285.07875)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#m7c0ac10cc3" y="226.223301"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 0.2 -->
+      <g transform="translate(26.685 232.302051)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-50"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#m7c0ac10cc3" y="173.446602"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 0.4 -->
+      <defs>
+       <path d="M 37.796875 64.3125 
+L 12.890625 25.390625 
+L 37.796875 25.390625 
+z
+M 35.203125 72.90625 
+L 47.609375 72.90625 
+L 47.609375 25.390625 
+L 58.015625 25.390625 
+L 58.015625 17.1875 
+L 47.609375 17.1875 
+L 47.609375 0 
+L 37.796875 0 
+L 37.796875 17.1875 
+L 4.890625 17.1875 
+L 4.890625 26.703125 
+z
+" id="DejaVuSans-52"/>
+      </defs>
+      <g transform="translate(26.685 179.525352)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-52"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#m7c0ac10cc3" y="120.669903"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 0.6 -->
+      <defs>
+       <path d="M 33.015625 40.375 
+Q 26.375 40.375 22.484375 35.828125 
+Q 18.609375 31.296875 18.609375 23.390625 
+Q 18.609375 15.53125 22.484375 10.953125 
+Q 26.375 6.390625 33.015625 6.390625 
+Q 39.65625 6.390625 43.53125 10.953125 
+Q 47.40625 15.53125 47.40625 23.390625 
+Q 47.40625 31.296875 43.53125 35.828125 
+Q 39.65625 40.375 33.015625 40.375 
+z
+M 52.59375 71.296875 
+L 52.59375 62.3125 
+Q 48.875 64.0625 45.09375 64.984375 
+Q 41.3125 65.921875 37.59375 65.921875 
+Q 27.828125 65.921875 22.671875 59.328125 
+Q 17.53125 52.734375 16.796875 39.40625 
+Q 19.671875 43.65625 24.015625 45.921875 
+Q 28.375 48.1875 33.59375 48.1875 
+Q 44.578125 48.1875 50.953125 41.515625 
+Q 57.328125 34.859375 57.328125 23.390625 
+Q 57.328125 12.15625 50.6875 5.359375 
+Q 44.046875 -1.421875 33.015625 -1.421875 
+Q 20.359375 -1.421875 13.671875 8.265625 
+Q 6.984375 17.96875 6.984375 36.375 
+Q 6.984375 53.65625 15.1875 63.9375 
+Q 23.390625 74.21875 37.203125 74.21875 
+Q 40.921875 74.21875 44.703125 73.484375 
+Q 48.484375 72.75 52.59375 71.296875 
+z
+" id="DejaVuSans-54"/>
+      </defs>
+      <g transform="translate(26.685 126.748653)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-54"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_10">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#m7c0ac10cc3" y="67.893204"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 0.8 -->
+      <defs>
+       <path d="M 31.78125 34.625 
+Q 24.75 34.625 20.71875 30.859375 
+Q 16.703125 27.09375 16.703125 20.515625 
+Q 16.703125 13.921875 20.71875 10.15625 
+Q 24.75 6.390625 31.78125 6.390625 
+Q 38.8125 6.390625 42.859375 10.171875 
+Q 46.921875 13.96875 46.921875 20.515625 
+Q 46.921875 27.09375 42.890625 30.859375 
+Q 38.875 34.625 31.78125 34.625 
+z
+M 21.921875 38.8125 
+Q 15.578125 40.375 12.03125 44.71875 
+Q 8.5 49.078125 8.5 55.328125 
+Q 8.5 64.0625 14.71875 69.140625 
+Q 20.953125 74.21875 31.78125 74.21875 
+Q 42.671875 74.21875 48.875 69.140625 
+Q 55.078125 64.0625 55.078125 55.328125 
+Q 55.078125 49.078125 51.53125 44.71875 
+Q 48 40.375 41.703125 38.8125 
+Q 48.828125 37.15625 52.796875 32.3125 
+Q 56.78125 27.484375 56.78125 20.515625 
+Q 56.78125 9.90625 50.3125 4.234375 
+Q 43.84375 -1.421875 31.78125 -1.421875 
+Q 19.734375 -1.421875 13.25 4.234375 
+Q 6.78125 9.90625 6.78125 20.515625 
+Q 6.78125 27.484375 10.78125 32.3125 
+Q 14.796875 37.15625 21.921875 38.8125 
+z
+M 18.3125 54.390625 
+Q 18.3125 48.734375 21.84375 45.5625 
+Q 25.390625 42.390625 31.78125 42.390625 
+Q 38.140625 42.390625 41.71875 45.5625 
+Q 45.3125 48.734375 45.3125 54.390625 
+Q 45.3125 60.0625 41.71875 63.234375 
+Q 38.140625 66.40625 31.78125 66.40625 
+Q 25.390625 66.40625 21.84375 63.234375 
+Q 18.3125 60.0625 18.3125 54.390625 
+z
+" id="DejaVuSans-56"/>
+      </defs>
+      <g transform="translate(26.685 73.971954)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-48"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-56"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_11">
+      <g>
+       <use style="stroke:#000000;stroke-width:0.8;" x="59.13" xlink:href="#m7c0ac10cc3" y="15.116505"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 1.0 -->
+      <g transform="translate(26.685 21.195255)scale(0.16 -0.16)">
+       <use xlink:href="#DejaVuSans-49"/>
+       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
+       <use x="95.410156" xlink:href="#DejaVuSans-48"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_13">
+     <!-- Y -->
+     <defs>
+      <path d="M -0.203125 72.90625 
+L 10.40625 72.90625 
+L 30.609375 42.921875 
+L 50.6875 72.90625 
+L 61.28125 72.90625 
+L 35.5 34.71875 
+L 35.5 0 
+L 25.59375 0 
+L 25.59375 34.71875 
+z
+" id="DejaVuSans-89"/>
+     </defs>
+     <g transform="translate(19.3575 147.98625)rotate(-90)scale(0.16 -0.16)">
+      <use xlink:href="#DejaVuSans-89"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <defs>
+     <path d="M 0 1.5 
+C 0.397805 1.5 0.77937 1.341951 1.06066 1.06066 
+C 1.341951 0.77937 1.5 0.397805 1.5 0 
+C 1.5 -0.397805 1.341951 -0.77937 1.06066 -1.06066 
+C 0.77937 -1.341951 0.397805 -1.5 0 -1.5 
+C -0.397805 -1.5 -0.77937 -1.341951 -1.06066 -1.06066 
+C -1.341951 -0.77937 -1.5 -0.397805 -1.5 0 
+C -1.5 0.397805 -1.341951 0.77937 -1.06066 1.06066 
+C -0.77937 1.341951 -0.397805 1.5 0 1.5 
+z
+" id="mabd896e770" style="stroke:#1f77b4;"/>
+    </defs>
+    <g clip-path="url(#p1c5d58df42)">
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="216.611562" xlink:href="#mabd896e770" y="222.544814"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="186.374493" xlink:href="#mabd896e770" y="160.424733"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="305.024674" xlink:href="#mabd896e770" y="151.163012"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="62.251315" xlink:href="#mabd896e770" y="231.604841"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="199.87474" xlink:href="#mabd896e770" y="117.839175"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="274.479325" xlink:href="#mabd896e770" y="233.807294"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="170.629969" xlink:href="#mabd896e770" y="113.242128"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="168.042783" xlink:href="#mabd896e770" y="52.858414"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="280.433065" xlink:href="#mabd896e770" y="74.305079"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="220.715426" xlink:href="#mabd896e770" y="176.04519"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="161.447594" xlink:href="#mabd896e770" y="273.314404"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="290.885266" xlink:href="#mabd896e770" y="158.06755"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="247.274988" xlink:href="#mabd896e770" y="167.808546"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="329.464772" xlink:href="#mabd896e770" y="170.194448"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="129.779697" xlink:href="#mabd896e770" y="25.42252"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="142.318557" xlink:href="#mabd896e770" y="66.157751"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="256.572603" xlink:href="#mabd896e770" y="50.995084"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="177.808102" xlink:href="#mabd896e770" y="194.442023"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="104.394513" xlink:href="#mabd896e770" y="31.153733"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="227.488524" xlink:href="#mabd896e770" y="126.64788"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="158.908158" xlink:href="#mabd896e770" y="179.913393"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="65.225604" xlink:href="#mabd896e770" y="138.74368"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="208.461544" xlink:href="#mabd896e770" y="30.987987"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="180.903878" xlink:href="#mabd896e770" y="251.908849"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="202.811264" xlink:href="#mabd896e770" y="15.663839"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="126.602594" xlink:href="#mabd896e770" y="213.499671"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="165.627877" xlink:href="#mabd896e770" y="53.818914"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="66.148688" xlink:href="#mabd896e770" y="75.84801"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="311.861388" xlink:href="#mabd896e770" y="228.729571"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="232.533412" xlink:href="#mabd896e770" y="162.862634"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="141.470733" xlink:href="#mabd896e770" y="42.303007"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="315.005963" xlink:href="#mabd896e770" y="53.448269"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="156.076913" xlink:href="#mabd896e770" y="55.754509"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="138.522925" xlink:href="#mabd896e770" y="26.439038"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="300.865628" xlink:href="#mabd896e770" y="85.34571"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="107.574667" xlink:href="#mabd896e770" y="47.990972"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="173.452478" xlink:href="#mabd896e770" y="180.232383"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="326.784572" xlink:href="#mabd896e770" y="236.561484"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="228.214204" xlink:href="#mabd896e770" y="228.452988"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="139.832998" xlink:href="#mabd896e770" y="91.070624"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="246.023629" xlink:href="#mabd896e770" y="189.890927"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="261.656873" xlink:href="#mabd896e770" y="136.674954"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="244.637649" xlink:href="#mabd896e770" y="178.968411"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="69.998346" xlink:href="#mabd896e770" y="29.002958"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="231.995343" xlink:href="#mabd896e770" y="125.024046"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="297.040066" xlink:href="#mabd896e770" y="41.165753"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="145.445816" xlink:href="#mabd896e770" y="54.562727"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="78.814267" xlink:href="#mabd896e770" y="98.961856"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="129.851213" xlink:href="#mabd896e770" y="179.300749"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="282.105624" xlink:href="#mabd896e770" y="30.513364"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="200.046629" xlink:href="#mabd896e770" y="151.492217"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="201.501536" xlink:href="#mabd896e770" y="200.273379"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="285.967863" xlink:href="#mabd896e770" y="138.966324"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="154.530008" xlink:href="#mabd896e770" y="192.366446"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="311.835773" xlink:href="#mabd896e770" y="82.955525"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="316.388618" xlink:href="#mabd896e770" y="205.440025"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="149.126511" xlink:href="#mabd896e770" y="129.855495"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="192.013572" xlink:href="#mabd896e770" y="109.394319"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="238.617552" xlink:href="#mabd896e770" y="154.918893"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="309.417221" xlink:href="#mabd896e770" y="215.16651"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="283.819533" xlink:href="#mabd896e770" y="49.625722"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="146.689909" xlink:href="#mabd896e770" y="117.470481"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="168.732117" xlink:href="#mabd896e770" y="257.960366"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="316.396638" xlink:href="#mabd896e770" y="69.446074"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="322.017317" xlink:href="#mabd896e770" y="273.933425"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="182.377265" xlink:href="#mabd896e770" y="235.042086"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="84.394457" xlink:href="#mabd896e770" y="21.308694"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="181.382727" xlink:href="#mabd896e770" y="272.349117"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="315.995806" xlink:href="#mabd896e770" y="126.55632"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="323.139119" xlink:href="#mabd896e770" y="42.033293"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="218.048885" xlink:href="#mabd896e770" y="184.46571"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="155.891718" xlink:href="#mabd896e770" y="87.552011"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="264.838346" xlink:href="#mabd896e770" y="135.011322"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="190.653534" xlink:href="#mabd896e770" y="101.395763"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="128.078691" xlink:href="#mabd896e770" y="222.157397"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="79.329495" xlink:href="#mabd896e770" y="131.364473"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="299.184021" xlink:href="#mabd896e770" y="148.820818"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="210.239834" xlink:href="#mabd896e770" y="231.063165"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="161.969087" xlink:href="#mabd896e770" y="134.301172"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="157.275696" xlink:href="#mabd896e770" y="270.654428"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="79.45817" xlink:href="#mabd896e770" y="269.821036"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="142.75334" xlink:href="#mabd896e770" y="211.939009"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="65.693652" xlink:href="#mabd896e770" y="68.493228"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="300.052455" xlink:href="#mabd896e770" y="190.744853"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="144.809365" xlink:href="#mabd896e770" y="19.975686"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="156.26929" xlink:href="#mabd896e770" y="16.520322"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="240.055402" xlink:href="#mabd896e770" y="52.385136"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="205.544133" xlink:href="#mabd896e770" y="54.070471"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="174.431517" xlink:href="#mabd896e770" y="273.567748"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="131.647663" xlink:href="#mabd896e770" y="229.565032"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="130.0908" xlink:href="#mabd896e770" y="106.624131"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="90.406282" xlink:href="#mabd896e770" y="263.61865"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="298.692519" xlink:href="#mabd896e770" y="112.185457"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="287.776278" xlink:href="#mabd896e770" y="94.414376"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="118.232168" xlink:href="#mabd896e770" y="152.436141"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="118.815381" xlink:href="#mabd896e770" y="88.651688"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="74.881756" xlink:href="#mabd896e770" y="237.521914"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="292.446704" xlink:href="#mabd896e770" y="68.002796"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="158.335431" xlink:href="#mabd896e770" y="261.367411"/>
+     <use style="fill:#1f77b4;stroke:#1f77b4;" x="176.754135" xlink:href="#mabd896e770" y="132.31395"/>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 59.13 279 
+L 59.13 7.2 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 338.13 279 
+L 338.13 7.2 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 59.13 279 
+L 338.13 279 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 59.13 7.2 
+L 338.13 7.2 
+" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1c5d58df42">
+   <rect height="271.8" width="279" x="59.13" y="7.2"/>
+  </clipPath>
+ </defs>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">pi_mc</span><span class="p">(</span><span class="n">seed</span><span class="p">):</span>
-    <span class="n">num_trials</span> <span class="o">=</span> <span class="mi">1000000</span>
+    <span class="n">num_trials</span> <span class="o">=</span> <span class="mi">500000</span>
     <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>
-        <span class="n">x_val</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-        <span class="n">y_val</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+        <span class="n">x_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span>
+        <span class="n">y_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random_sample</span><span class="p">()</span>
 
         <span class="n">radius</span> <span class="o">=</span> <span class="n">x_val</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y_val</span><span class="o">**</span><span class="mi">2</span>
-        
+
         <span class="k">if</span> <span class="n">radius</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-
+            
     <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">counter</span><span class="o">/</span><span class="n">num_trials</span>
 </pre></div>
 
@@ -13717,7 +14560,7 @@ x = 5, PID = 129652
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> pi_mc(1)
@@ -13737,7 +14580,7 @@ x = 5, PID = 129652
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>306 ms ± 4.44 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>359 ms ± 2.11 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13748,7 +14591,7 @@ x = 5, PID = 129652
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">seed_array</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
@@ -13769,7 +14612,7 @@ x = 5, PID = 129652
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.21 s ± 1.89 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.44 s ± 11.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -13780,7 +14623,7 @@ x = 5, PID = 129652
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -13803,25 +14646,11 @@ x = 5, PID = 129652
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>370 ms ± 1.33 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>577 ms ± 4.91 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pi_mc</span><span class="p">,</span> <span class="n">seed_array</span><span class="p">)</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -13845,7 +14674,7 @@ x = 5, PID = 129652
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import python image library functions</span>
@@ -13862,7 +14691,7 @@ x = 5, PID = 129652
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Read image</span>
@@ -13881,7 +14710,7 @@ x = 5, PID = 129652
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13900,7 +14729,7 @@ x = 5, PID = 129652
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
@@ -13916,7 +14745,7 @@ x = 5, PID = 129652
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13943,7 +14772,7 @@ x = 5, PID = 129652
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">image_flipper</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
@@ -13957,7 +14786,7 @@ x = 5, PID = 129652
     <span class="n">im_flipped</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span>
     
     <span class="c1"># Saves a PDF output with a new file name</span>
-    <span class="n">im_flipped</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">base_name</span> <span class="o">+</span> <span class="s2">&quot;_flipped.pdf&quot;</span><span class="p">)</span>
+    <span class="n">im_flipped</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">base_name</span> <span class="o">+</span> <span class="s2">&quot;_flipped.pdf&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;PDF&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13967,7 +14796,7 @@ x = 5, PID = 129652
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./data/*jpg&#39;</span><span class="p">)</span>
@@ -14010,7 +14839,7 @@ x = 5, PID = 129652
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
@@ -14029,10 +14858,10 @@ x = 5, PID = 129652
 
 </div>
 </div>
-</div>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">ls</span> ./data/*pdf
@@ -14064,6 +14893,14 @@ x = 5, PID = 129652
 </div>
 </div>
 
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="./data/euston_flipped.pdf" alt=""></p>
+
+</div>
+</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14084,7 +14921,7 @@ x = 5, PID = 129652
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dead-Simple-Queue">Dead Simple Queue<a class="anchor-link" href="#Dead-Simple-Queue">&#182;</a></h1><p>Similar to the <code>map</code> functionality discussed earlier is the Dead Simple Queue (<code>dSQ</code>) module available on each cluster.</p>
+<h1 id="Dead-Simple-Queue">Dead Simple Queue<a class="anchor-link" href="#Dead-Simple-Queue">&#182;</a></h1><p>Similar to the <code>map</code> functionality discussed earlier is the Dead Simple Queue (<code>dSQ</code>, <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/">docs</a>) module available on each cluster.</p>
 
 <pre><code>module load dSQ
 
@@ -14093,26 +14930,7 @@ x = 5, PID = 129652
 
 </div>
 </div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>dSQ --help
-
-usage: dSQ --jobfile jobfile [dSQ args] [slurm args]
-
-Dead Simple Queue v0.9
-https://github.com/ycrc/dSQ
-A simple utility for submitting a list of jobss as a job array using sbatch.
-The job file should specify one independent job you want to run per line. 
-Empty lines or lines that begin with # will be ignored. Without specifying
-any additional sbatch arguments, some defaults will be set. To generate a 
-list of the jobss that didn't run or failed, use dSQAutopsy</code></pre>
-
-</div>
-</div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14122,7 +14940,7 @@ list of the jobss that didn't run or failed, use dSQAutopsy</code></pre>
 
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14179,7 +14997,7 @@ Job: the line from your job file
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
@@ -14248,12 +15066,12 @@ python image_flipper.py ./data/london_bridge.jpg
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can either save this output as a sbatch submission script (and then run it: <code>sbatch run.sh</code>), or we can add the <code>--submit</code> flag to the dSQ command which will automatically submit the job array:</p>
 
-<pre><code>dSQ --jobfile jf.txt --submit
+<pre><code>dSQ --job-file jf.txt --submit
 
 </code></pre>
 <p>We can also add any further SLURM arguments that we need:</p>
 
-<pre><code>dSQ --jobfile jf.txt --submit --partition day -t 6:00:00 --mempercpu 10000 --cpus-per-task=1
+<pre><code>dSQ --job-file jf.txt --submit --partition day -t 6:00:00 --mem-per-cpu 10000 --cpus-per-task=1
 
 </code></pre>
 <p>This will submit our job to the <code>day</code> partition while requesting one CPU for each task, 10GB of memory per CPU, and a wall time of 6 hours.</p>
@@ -14646,7 +15464,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load CUPY module</span>
@@ -14668,7 +15486,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14698,7 +15516,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.53 s ± 906 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>3.98 s ± 924 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -14717,7 +15535,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14751,7 +15569,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>452 ms ± 787 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>471 ms ± 774 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -14789,7 +15607,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">january</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../taxi/yellow_tripdata_2017-01.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>
@@ -14803,7 +15621,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tip_jan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">january</span><span class="p">[</span><span class="s1">&#39;tip_amount&#39;</span><span class="p">])</span>
@@ -14828,7 +15646,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_jan</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">tip_jan</span><span class="p">)</span>
@@ -14852,7 +15670,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
@@ -14873,7 +15691,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.44 ms ± 4.15 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<pre>1.09 ms ± 1.27 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre>
 </div>
 </div>
@@ -14884,7 +15702,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it 
@@ -14905,7 +15723,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>32.9 µs ± 1.99 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<pre>34.2 µs ± 2.68 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre>
 </div>
 </div>
@@ -14924,7 +15742,7 @@ Rank: 1, data: {'key1': [7, 2.72, (2+3j), 1], 'key2': ('abc', 'xyz')}</code></pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">gpu_tip_per_mile</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">gpu_tip_jan</span><span class="p">,</span> <span class="n">gpu_dist_jan</span><span class="p">)</span>
@@ -14998,7 +15816,7 @@ z
 " style="fill:#ffffff;"/>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#pe33cec0f1b)" d="M 60.696307 263.19625 
+    <path clip-path="url(#p07a72acd16)" d="M 60.696307 263.19625 
 L 60.696307 83.070758 
 L 62.218125 83.070758 
 L 62.218125 68.681692 
@@ -15356,7 +16174,7 @@ L 365.059943 263.19625
 " style="fill:none;stroke:#1f77b4;stroke-linejoin:miter;"/>
    </g>
    <g id="patch_4">
-    <path clip-path="url(#pe33cec0f1b)" d="M 60.696307 263.19625 
+    <path clip-path="url(#p07a72acd16)" d="M 60.696307 263.19625 
 L 60.696307 80.22042 
 L 62.218125 80.22042 
 L 62.218125 68.106583 
@@ -15727,10 +16545,10 @@ L 365.059943 263.19625
       <defs>
        <path d="M 0 0 
 L 0 3.5 
-" id="m1035080c31" style="stroke:#000000;stroke-width:0.8;"/>
+" id="m702345edc9" style="stroke:#000000;stroke-width:0.8;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#m1035080c31" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="57.621927" xlink:href="#m702345edc9" y="224.64"/>
       </g>
      </g>
      <g id="text_1">
@@ -15766,7 +16584,7 @@ z
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#m1035080c31" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="119.10953" xlink:href="#m702345edc9" y="224.64"/>
       </g>
      </g>
      <g id="text_2">
@@ -15805,7 +16623,7 @@ z
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#m1035080c31" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="180.597133" xlink:href="#m702345edc9" y="224.64"/>
       </g>
      </g>
      <g id="text_3">
@@ -15837,7 +16655,7 @@ z
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#m1035080c31" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="242.084737" xlink:href="#m702345edc9" y="224.64"/>
       </g>
      </g>
      <g id="text_4">
@@ -15882,7 +16700,7 @@ z
     <g id="xtick_5">
      <g id="line2d_5">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#m1035080c31" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="303.57234" xlink:href="#m702345edc9" y="224.64"/>
       </g>
      </g>
      <g id="text_5">
@@ -15936,7 +16754,7 @@ z
     <g id="xtick_6">
      <g id="line2d_6">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#m1035080c31" y="224.64"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="365.059943" xlink:href="#m702345edc9" y="224.64"/>
       </g>
      </g>
      <g id="text_6">
@@ -16304,10 +17122,10 @@ z
       <defs>
        <path d="M 0 0 
 L -3.5 0 
-" id="mc63e45f257" style="stroke:#000000;stroke-width:0.8;"/>
+" id="m8afe836072" style="stroke:#000000;stroke-width:0.8;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="214.756364"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m8afe836072" y="214.756364"/>
       </g>
      </g>
      <g id="text_8">
@@ -16322,7 +17140,7 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_8">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="169.988356"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m8afe836072" y="169.988356"/>
       </g>
      </g>
      <g id="text_9">
@@ -16337,7 +17155,7 @@ L -3.5 0
     <g id="ytick_3">
      <g id="line2d_9">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="125.220349"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m8afe836072" y="125.220349"/>
       </g>
      </g>
      <g id="text_10">
@@ -16352,7 +17170,7 @@ L -3.5 0
     <g id="ytick_4">
      <g id="line2d_10">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="80.452341"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m8afe836072" y="80.452341"/>
       </g>
      </g>
      <g id="text_11">
@@ -16401,7 +17219,7 @@ z
     <g id="ytick_5">
      <g id="line2d_11">
       <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#mc63e45f257" y="35.684334"/>
+       <use style="stroke:#000000;stroke-width:0.8;" x="45.478125" xlink:href="#m8afe836072" y="35.684334"/>
       </g>
      </g>
      <g id="text_12">
@@ -16418,269 +17236,269 @@ z
       <defs>
        <path d="M 0 0 
 L -2 0 
-" id="m01103323fd" style="stroke:#000000;stroke-width:0.6;"/>
+" id="mbc3493b3e1" style="stroke:#000000;stroke-width:0.6;"/>
       </defs>
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="221.691016"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="221.691016"/>
       </g>
      </g>
     </g>
     <g id="ytick_7">
      <g id="line2d_13">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="219.094832"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="219.094832"/>
       </g>
      </g>
     </g>
     <g id="ytick_8">
      <g id="line2d_14">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="216.804835"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="216.804835"/>
       </g>
      </g>
     </g>
     <g id="ytick_9">
      <g id="line2d_15">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="201.279851"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="201.279851"/>
       </g>
      </g>
     </g>
     <g id="ytick_10">
      <g id="line2d_16">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="193.396596"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="193.396596"/>
       </g>
      </g>
     </g>
     <g id="ytick_11">
      <g id="line2d_17">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="187.803337"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="187.803337"/>
       </g>
      </g>
     </g>
     <g id="ytick_12">
      <g id="line2d_18">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="183.464869"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="183.464869"/>
       </g>
      </g>
     </g>
     <g id="ytick_13">
      <g id="line2d_19">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="179.920083"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="179.920083"/>
       </g>
      </g>
     </g>
     <g id="ytick_14">
      <g id="line2d_20">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="176.923008"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="176.923008"/>
       </g>
      </g>
     </g>
     <g id="ytick_15">
      <g id="line2d_21">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="174.326824"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="174.326824"/>
       </g>
      </g>
     </g>
     <g id="ytick_16">
      <g id="line2d_22">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="172.036828"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="172.036828"/>
       </g>
      </g>
     </g>
     <g id="ytick_17">
      <g id="line2d_23">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="156.511843"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="156.511843"/>
       </g>
      </g>
     </g>
     <g id="ytick_18">
      <g id="line2d_24">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="148.628588"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="148.628588"/>
       </g>
      </g>
     </g>
     <g id="ytick_19">
      <g id="line2d_25">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="143.03533"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="143.03533"/>
       </g>
      </g>
     </g>
     <g id="ytick_20">
      <g id="line2d_26">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="138.696862"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="138.696862"/>
       </g>
      </g>
     </g>
     <g id="ytick_21">
      <g id="line2d_27">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="135.152075"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="135.152075"/>
       </g>
      </g>
     </g>
     <g id="ytick_22">
      <g id="line2d_28">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="132.155001"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="132.155001"/>
       </g>
      </g>
     </g>
     <g id="ytick_23">
      <g id="line2d_29">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="129.558817"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="129.558817"/>
       </g>
      </g>
     </g>
     <g id="ytick_24">
      <g id="line2d_30">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="127.26882"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="127.26882"/>
       </g>
      </g>
     </g>
     <g id="ytick_25">
      <g id="line2d_31">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="111.743836"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="111.743836"/>
       </g>
      </g>
     </g>
     <g id="ytick_26">
      <g id="line2d_32">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="103.860581"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="103.860581"/>
       </g>
      </g>
     </g>
     <g id="ytick_27">
      <g id="line2d_33">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="98.267323"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="98.267323"/>
       </g>
      </g>
     </g>
     <g id="ytick_28">
      <g id="line2d_34">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="93.928854"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="93.928854"/>
       </g>
      </g>
     </g>
     <g id="ytick_29">
      <g id="line2d_35">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="90.384068"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="90.384068"/>
       </g>
      </g>
     </g>
     <g id="ytick_30">
      <g id="line2d_36">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="87.386993"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="87.386993"/>
       </g>
      </g>
     </g>
     <g id="ytick_31">
      <g id="line2d_37">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="84.79081"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="84.79081"/>
       </g>
      </g>
     </g>
     <g id="ytick_32">
      <g id="line2d_38">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="82.500813"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="82.500813"/>
       </g>
      </g>
     </g>
     <g id="ytick_33">
      <g id="line2d_39">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="66.975828"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="66.975828"/>
       </g>
      </g>
     </g>
     <g id="ytick_34">
      <g id="line2d_40">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="59.092573"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="59.092573"/>
       </g>
      </g>
     </g>
     <g id="ytick_35">
      <g id="line2d_41">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="53.499315"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="53.499315"/>
       </g>
      </g>
     </g>
     <g id="ytick_36">
      <g id="line2d_42">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="49.160847"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="49.160847"/>
       </g>
      </g>
     </g>
     <g id="ytick_37">
      <g id="line2d_43">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="45.61606"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="45.61606"/>
       </g>
      </g>
     </g>
     <g id="ytick_38">
      <g id="line2d_44">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="42.618986"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="42.618986"/>
       </g>
      </g>
     </g>
     <g id="ytick_39">
      <g id="line2d_45">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="40.022802"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="40.022802"/>
       </g>
      </g>
     </g>
     <g id="ytick_40">
      <g id="line2d_46">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="37.732806"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="37.732806"/>
       </g>
      </g>
     </g>
     <g id="ytick_41">
      <g id="line2d_47">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="22.207821"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="22.207821"/>
       </g>
      </g>
     </g>
     <g id="ytick_42">
      <g id="line2d_48">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="14.324566"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="14.324566"/>
       </g>
      </g>
     </g>
     <g id="ytick_43">
      <g id="line2d_49">
       <g>
-       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#m01103323fd" y="8.731308"/>
+       <use style="stroke:#000000;stroke-width:0.6;" x="45.478125" xlink:href="#mbc3493b3e1" y="8.731308"/>
       </g>
      </g>
     </g>
@@ -16891,7 +17709,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pe33cec0f1b">
+  <clipPath id="p07a72acd16">
    <rect height="217.44" width="334.8" x="45.478125" y="7.2"/>
   </clipPath>
  </defs>
