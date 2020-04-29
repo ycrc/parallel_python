@@ -13811,6 +13811,20 @@ x = 5, PID = 129652
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">pi_mc</span><span class="p">,</span> <span class="n">seed_array</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14072,7 +14086,7 @@ x = 5, PID = 129652
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Dead-Simple-Queue">Dead Simple Queue<a class="anchor-link" href="#Dead-Simple-Queue">&#182;</a></h1><p>Similar to the <code>map</code> functionality discussed earlier is the Dead Simple Queue (<code>dSQ</code>) module available on each cluster.</p>
 
-<pre><code>module load Tools/dSQ
+<pre><code>module load dSQ
 
 </code></pre>
 <p>With this we have access to a simple way to map a function across a job array.</p>
@@ -14296,14 +14310,14 @@ python image_flipper.py ./data/london_bridge.jpg
 <h2 id="Installing-mpi4py">Installing mpi4py<a class="anchor-link" href="#Installing-mpi4py">&#182;</a></h2><p>By far the easiest way to install mpi4py is using Anaconda, which will also install dependences (including <code>MPI</code>).</p>
 <p>On your personal machine, run the following:</p>
 
-<pre><code>conda create --name mpi python=3.6 mpi4py numpy scipy
+<pre><code>conda create --name mpi python=3.8 mpi4py numpy scipy
 
 </code></pre>
 <p>This creates a new <code>conda</code> environment named <code>mpi</code> with various dependences.</p>
 <p>On the clusters, you can use the <code>miniconda</code> tool to help create this environment</p>
 
-<pre><code>module load Langs/Python/miniconda
-conda create --name mpi python=3.6 mpi4py numpy scipy </code></pre>
+<pre><code>module load miniconda
+conda create --name mpi python=3.8 mpi4py numpy scipy </code></pre>
 
 </div>
 </div>
