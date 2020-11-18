@@ -1,0 +1,10 @@
+python image_flipper.py ./data/waterloo.jpg
+python image_flipper.py ./data/victoria.jpg
+python image_flipper.py ./data/paddington.jpg
+python image_flipper.py ./data/charing_cross.jpg
+python image_flipper.py ./data/euston.jpg
+python image_flipper.py ./data/kings_cross.jpg
+python image_flipper.py ./data/fenchurch.jpg
+python image_flipper.py ./data/liverpool_street.jpg
+python image_flipper.py ./data/st_pancras.jpg
+python image_flipper.py ./data/london_bridge.jpg
