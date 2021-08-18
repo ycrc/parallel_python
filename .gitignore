@@ -106,3 +106,4 @@ venv.bak/
 # PDF outputs
 *.pdf
 
+.DS_Store/
