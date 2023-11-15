@@ -8,7 +8,7 @@ dependencies:
   - matplotlib
   - dask
   - distributed
-  - mpi4py
+  - joblib
   - cupy
   - jupyter
   - jupyterlab
