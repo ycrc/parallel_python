@@ -10,15 +10,17 @@ import matplotlib.pyplot as plt
 import glob, time
 
 # Define single unit of the Dask Distributed "Cluster"
-cluster = SLURMCluster(queue='gpu',job_extra=['--reservation=tl397_40'], cores=1, memory="10GB")
+cluster = SLURMCluster(queue='admintest', cores=1, memory="10GB")
 # Scale up the cluster to have 10 members
-cluster.scale(5)
+cluster.scale(10)
 # Initialize the "client" so that the script is connected to the Cluster
 client = Client(cluster)
 
+print(client)
+
 # Get the list of NYC taxi cab data
 # https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page
-file_list = glob.glob('/home/hep/heeger/tl397/scratch60/taxi/*2017*csv')
+file_list = glob.glob('/home/tl397/ycrc/workshops/taxi/*2017*csv')
 print(f"{len(file_list)} files selected")
 
 # Prep Dask to load the data
