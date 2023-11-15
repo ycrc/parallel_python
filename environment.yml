@@ -2,7 +2,7 @@ name: parallel
 channels:
   - conda-forge
 dependencies:
-  - python==3.8
+  - python>3.8
   - numpy
   - pillow
   - matplotlib
@@ -12,4 +12,5 @@ dependencies:
   - cupy
   - jupyter
   - jupyterlab
-  - rise
+  - pip:
+    - jupyterlab-rise
